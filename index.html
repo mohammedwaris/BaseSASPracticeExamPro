@@ -1,0 +1,1084 @@
+<html>
+  <head>
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+     <link rel="stylesheet" href="jquery.mobile-1.3.1.min.css" />
+     <link rel="stylesheet" href="tolito-1.0.5.min.css" />
+     <script src="jquery-1.9.1.min.js"></script>
+     <script src="jquery.timer.js"></script>
+     <script src="jquery.mobile-1.3.1.min.js"></script>
+     <script src="tolito-1.0.5.min.js"></script>
+     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	 <script type="text/javascript">
+	       //var baseUrl = 'http://www.jlojic.com?api_key=abc123&';
+	       var practiceQuestions;
+	       var currentPracticeQuestionNumber;
+	       var practiceAnswers;
+	
+	       var examQuestions;
+	       var examAnswers;
+	       var currentExamQuestionNumber;
+	       var timer = null;
+	       var time;
+	       var totalQuestions;
+	       
+	       document.addEventListener("deviceready", onDeviceReady, false);
+			function onDeviceReady(){
+				document.addEventListener("backbutton", onBackKeyDown, false);
+				document.addEventListener("pause", onApplicationPause, false);
+				document.addEventListener("resume", onApplicationResume, false);
+				
+				if(getDevice() == "Android"){
+				  $('#exit-button').removeClass('visibility-hidden');
+				}
+			}
+			
+			function onApplicationPause(){
+				pageId = $.mobile.activePage.attr('id');
+				if(pageId == "exam-questions"){
+					timer.pause();				
+				}			
+			}
+			
+			function onApplicationResume(){
+				pageId = $.mobile.activePage.attr('id');
+				if(pageId == "exam-questions"){
+					timer.play(false);				
+				}			
+			}
+			
+			function onBackKeyDown(evt){
+				var eventHandled = false;
+				pageId = $.mobile.activePage.attr('id');
+				if(pageId == "index"){
+				    if(getDevice() != "iPhone" && getDevice() != "iPad"){
+				        eventHandled = true;
+	    				$( "#exit-dialog-popup" ).popup( "open" );
+	    			}
+	    		}else if(pageId == "exam-questions"){
+	    				eventHandled = true;
+	    				$("#quit-dialog-popup").popup( "open" )
+	    		else if(pageId == "practice-questions"){
+	    				eventHandled = true;
+	    				gotoIndexPage();
+	    		}else if(pageId == "help"){
+	    				eventHandled = true;
+						gotoIndexPage();	    		
+	    		}else if(pageId == "result"){
+	    				eventHandled = true;
+	    				gotoIndexPage();
+	    		}else if(pageId == "help"){
+	    				eventHandled = true;
+	    				$.mobile.changePage('#index');
+	    		}else if(pageId == "settings"){
+	    				eventHandled = true;
+    					$.mobile.changePage('#index');
+    			}else if(pageId == "top-rankers"){
+    					eventHandled = true;
+    					$.mobile.changePage('#index');
+    			}
+    			
+    			
+    			if(eventHandled == true)
+    				evt.preventDefault();
+			}
+	       
+	       function hasConnection(){
+				var networkState = navigator.network.connection.type;
+				if(networkState == Connection.NONE){
+					return false;
+				}
+				return true;
+			}
+	       
+	       function showVirtualExam(){
+		         if(hasConnection() == false){
+		         	alert("No internet connection found. Please connect to the internet");
+		         }else{
+		         	 if(timer != null)
+		         	 	timer.stop();
+			         showProgressBar('exam-progress-bar');
+			         $('.content').addClass('display-none');
+			         $('#exam-header h1').html('Loading');
+			         $('#timer').html('');
+			         $('#exam-questions-next').addClass('visibility-hidden');
+			         $('#exam-questions-previous').addClass('visibility-hidden');
+			         $('#show-exam-result').addClass('visibility-hidden');
+			         $('#goto-div').removeClass('display-none');
+			         $('#goto-div').addClass('visibility-hidden');
+			         $('#ques-num').val('');
+			         $.ajax({
+			              url: 'http://www.jlojic.com/basesas/getbasesas64questions?api_key=abc123',
+			              crossDomain: true,
+			              type: 'get',
+			              dataType: 'jsonp',
+			              success: function(questions){ 
+			                 hideProgressBar('exam-progress-bar');
+			                 examQuestions = questions;
+			                 examAnswers = new Array();
+			                 currentExamQuestionNumber = 1;
+			                 totalQuestions = questions.length;
+			                 $('#goto-div').removeClass('visibility-hidden');
+			                 $('#exam-header h1').html('Ques 1 of ' + totalQuestions);
+			                 //$('#exam-questions-qnum').html('1.&nbsp;&nbsp;');
+			                 $('#exam-questions-question').html('<strong>1.&nbsp;&nbsp;</strong>' + examQuestions[0].question);
+			                 $('#exam-questions-option1').html('<strong>A.&nbsp;&nbsp;</strong>' + examQuestions[0].option1);
+			                 $('#exam-questions-option2').html('<strong>B.&nbsp;&nbsp;</strong>' + examQuestions[0].option2);
+			                 $('#exam-questions-option3').html('<strong>C.&nbsp;&nbsp;</strong>' + examQuestions[0].option3);
+			                 $('#exam-questions-option4').html('<strong>D.&nbsp;&nbsp;</strong>' + examQuestions[0].option4);
+			                 $('.content').removeClass('display-none');
+			                 $('#exam-questions-next').removeClass('visibility-hidden');
+			                 $('#show-exam-result').removeClass('visibility-hidden');
+			                 
+			                 time = 110*60;
+			                 sec = 60;
+			                 timer = $.timer(function(){
+			                               time = time - 1;
+			                               hour = parseInt(time/(60*60));
+			                               if(hour<=9)
+			                                 hour = '0'+hour;
+			                               
+			                               min = parseInt(time%(60*60)/60);
+			
+			                               if(min<=9)
+			                                 min = '0'+min;
+			
+			                               if(time%60 == 0){
+			                                 sec = 0;
+			                               }
+			                               else
+			                                 sec = sec - 1;
+			                               if(sec<=9)
+			                                 sec_text = '0'+sec;
+			                               else
+			                                 sec_text = sec;
+			
+			                               if(time%60 == 0){
+			                                 sec = 60;
+			                               }
+			
+			                               
+			                               
+			                               if(time >= 0){
+			                               		$('#timer').html(hour + ":" + min + ":" + sec_text);	
+			                               }else{
+			                                 timer.stop();
+			                                 $( "#time-over-dialog-popup" ).popup( "open" )
+			                               }
+			                          }, 1000, true);     
+			                         $('input[type="radio"]').prop('checked', false).checkboxradio('refresh');                    
+			              },
+			              error:function(error){
+			                 alert('Unknown error. Please try again later');
+			                 gotoIndexPage();
+			              }
+			           });
+			           $.mobile.changePage('#exam-questions');
+			       }//end of else
+	       }
+	
+	       function showPracticeExam(){
+	       		if(hasConnection() == false){
+		         	alert("No internet connection found. Please connect to the internet");
+		         }else{
+		             if(timer != null)
+		             	timer.stop();
+			         showProgressBar('exam-progress-bar');
+			         $('.content').addClass('display-none');
+			         $('#exam-header h1').html('Loading');
+			         $('#timer').html('');
+			         $('#exam-questions-next').addClass('visibility-hidden');
+			         $('#exam-questions-previous').addClass('visibility-hidden');
+			         $('#show-exam-result').addClass('visibility-hidden');
+			         $('#goto-div').addClass('display-none');
+			         $.ajax({
+			              url: 'http://www.jlojic.com/basesas/getbasesas10questions?api_key=abc123',
+			              crossDomain: true,
+			              type: 'get',
+			              dataType: 'jsonp',
+			              success: function(questions){ 
+			                 hideProgressBar('exam-progress-bar');
+			                 examQuestions = questions;
+			                 examAnswers = new Array();
+			                 currentExamQuestionNumber = 1;
+			                 totalQuestions = questions.length;
+			                 $('#exam-header h1').html('Ques 1 of ' + totalQuestions);
+			                 //$('#exam-questions-qnum').html('1.&nbsp;&nbsp;');
+			                 $('#exam-questions-question').html('<strong>1.&nbsp;&nbsp</strong>' + examQuestions[0].question);
+			                 $('#exam-questions-option1').html('<strong>A.&nbsp;&nbsp</strong>' + examQuestions[0].option1);
+			                 $('#exam-questions-option2').html('<strong>B.&nbsp;&nbsp</strong>' + examQuestions[0].option2);
+			                 $('#exam-questions-option3').html('<strong>C.&nbsp;&nbsp</strong>' + examQuestions[0].option3);
+			                 $('#exam-questions-option4').html('<strong>D.&nbsp;&nbsp</strong>' + examQuestions[0].option4);
+			                 $('.content').removeClass('display-none');
+			                 $('#exam-questions-next').removeClass('visibility-hidden');
+			                 $('#show-exam-result').removeClass('visibility-hidden');
+			                 //$('input[type="radio"]').prop('checked', false).checkboxradio('refresh');
+			                 time = 12*60;
+			                 sec = 60;
+			                 timer = $.timer(function(){
+			                               time = time - 1;
+			                               hour = parseInt(time/(60*60));
+			                               if(hour<=9)
+			                                 hour = '0'+hour;
+			                               
+			                               min = parseInt(time%(60*60)/60);
+			
+			                               if(min<=9)
+			                                 min = '0'+min;
+			
+			                               if(time%60 == 0){
+			                                 sec = 0;
+			                               }
+			                               else
+			                                 sec = sec - 1;
+			                               if(sec<=9)
+			                                 sec_text = '0'+sec;
+			                               else
+			                                 sec_text = sec;
+			
+			                               if(time%60 == 0){
+			                                 sec = 60;
+			                               }
+			
+			                               
+			                               if(time >= 0){
+			                               		$('#timer').html(hour + ":" + min + ":" + sec_text);	
+			                               }else{
+			                                 timer.stop();
+			                                 $( "#time-over-dialog-popup" ).popup( "open" )
+			                               }
+			                          }, 1000, true);   
+			                       $('input[type="radio"]').prop('checked', false).checkboxradio('refresh');                      
+			              },
+			              error:function(error){
+			                 alert('Unknown error. Please try again later');
+			                 gotoIndexPage();
+			              }
+			           });
+			           $.mobile.changePage('#exam-questions');
+			       }//end of else
+	       }
+	       
+	       function showPracticeQuestions(){
+				if(hasConnection() == false){
+		         	alert("No internet connection found. Please connect to the internet");
+		         }else{
+			           showProgressBar('practice-progress-bar');
+			           $('.content').addClass('display-none');
+			           $('#practice-questions .header h1').html('Loading');
+			           $('#practice-questions-next').addClass('visibility-hidden');
+			           $('#practice-questions-previous').addClass('visibility-hidden');
+			           $.ajax({
+			              url: 'http://www.jlojic.com/basesas/getbasesaspracticequestions?api_key=abc123',
+			              crossDomain: true,
+			              type: 'get',
+			              dataType: 'jsonp',
+			              success: function(questions){ 
+			                 hideProgressBar('practice-progress-bar');
+			                 practiceQuestions = questions;
+			                 practiceAnswers = new Array();
+			                 currentPracticeQuestionNumber = 1;
+			                 $('#practice-questions .header h1').html('Practice questions');
+			                 //$('#practice-questions-qnum').html('1.&nbsp;&nbsp;');
+			                 $('#practice-questions-question').html('<strong>1.&nbsp;&nbsp</strong>' + practiceQuestions[0].question);
+			                 $('#practice-questions-option1').html('<strong>A.&nbsp;&nbsp</strong>' + practiceQuestions[0].option1);
+			                 $('#practice-questions-option2').html('<strong>B.&nbsp;&nbsp</strong>' + practiceQuestions[0].option2);
+			                 $('#practice-questions-option3').html('<strong>C.&nbsp;&nbsp</strong>' + practiceQuestions[0].option3);
+			                 $('#practice-questions-option4').html('<strong>D.&nbsp;&nbsp</strong>' + practiceQuestions[0].option4);
+			                 $('.content').removeClass('display-none');
+			                 $('#practice-questions-next').removeClass('visibility-hidden');
+			                 $('input[type="radio"]').prop('checked', false).checkboxradio('refresh');
+			                 $('#practice-answer-toggle').val('on');
+			                 $('#practice-answer-toggle').slider('refresh');
+			                 $('#practice-questions-correct-answer').html('');
+			                 $('#practice-questions-explanation').html('');
+			              },
+			              error:function(error){
+			                 alert('Unknown error. Please try again later');
+			                 gotoIndexPage();
+			              }
+			           });
+			           $.mobile.changePage('#practice-questions');
+			       }//end of else
+	       }
+	       
+	       
+	       $(document).ready(function(){
+	          
+	           $('input[name="practice-question-answer"]').bind('change', function(){
+	              practiceAnswers[currentPracticeQuestionNumber - 1] = $('input[name="practice-question-answer"]:checked').val();
+	           });
+	
+	           $('input[name="exam-question-answer"]').bind('change', function(){
+	              examAnswers[currentExamQuestionNumber - 1] = $('input[name="exam-question-answer"]:checked').val();
+	           });
+	
+	           $('#practice-answer-toggle').bind('change', function(){
+	              i = currentPracticeQuestionNumber;
+	              if($('#practice-answer-toggle').val() == 'off') {
+	                 if(practiceAnswers[i-1] == undefined){
+	                    $('#practice-questions-correct-answer').html('Correct answer is <strong>' + practiceQuestions[i-1].answer + '</strong>');
+	                    $('#practice-questions-correct-answer').addClass('color-black'); 
+	                    $('#practice-questions-correct-answer').removeClass('color-green');
+	                    $('#practice-questions-correct-answer').removeClass('color-red');
+	                 }else{
+	                    if(practiceAnswers[i-1] == practiceQuestions[i-1].answer) {
+	                      $('#practice-questions-correct-answer').html('You are right, correct answer is <strong>' + practiceQuestions[i-1].answer + '</strong>');
+	                      $('#practice-questions-correct-answer').addClass('color-green');
+	                    $('#practice-questions-correct-answer').removeClass('color-black');
+	                    $('#practice-questions-correct-answer').removeClass('color-red');
+	                    }
+	                    else{
+	                      $('#practice-questions-correct-answer').html('You are wrong, correct answer is <strong>' + practiceQuestions[i-1].answer + '</strong>');
+	                      $('#practice-questions-correct-answer').addClass('color-red');
+	                    $('#practice-questions-correct-answer').removeClass('color-green');
+	                    $('#practice-questions-correct-answer').removeClass('color-black');
+	                   }
+	                }
+	                $('#practice-questions-explanation').html(practiceQuestions[i-1].explanation);
+	             }else if($('#practice-answer-toggle').val() == 'on'){
+	                $('#practice-questions-correct-answer').html('');
+	                $('#practice-questions-explanation').html('');
+	             }
+	           });
+	           
+	           $('#top-rankers').on('pagebeforeshow', function(){
+	        	
+	        	$('#top-rankers-content').html('<p style="text-align:center">Retrieving list...</p>');
+	        	$.ajax({
+	        		url: 'http://www.jlojic.com/basesas/getTopRankers?api_key=abc123&limit=10&user_type=basesaspro',
+	        		crossDomain: true,
+	                type: 'get',
+	                dataType: 'jsonp',
+	        		success: function(data){
+	        		    table = '<table border="1" style="margin:auto;width:100%;text-align:center;"><tr><th>Position</th><th>Name</th><th>Score</th><th>Location</th></tr>';
+	        			for(i=0;i<data.length;i++){
+	        			  tr = '<tr>' + 
+	        			          '<td>' + (i+1) + '</td>' +
+	        			          '<td>' + data[i].user_name + '</td>' +
+	        			          '<td>' + data[i].user_score + '</td>' +
+	        			          '<td>' + data[i].user_city + ', ' + data[i].user_country + '</td>' +
+	        			          '</tr>';
+	        			  table += tr;
+	        			}
+	        			table += '</table>';
+	        			$('#top-rankers-content').html(table);
+	        		},
+	        		error: function(error){
+	        			alert(error);
+	        		}
+	        	});
+	        });
+	           
+	    		if(localStorage.getItem("user-last-score")){
+	           			con = '<table border="1" style="width:100%;margin:auto;text-align:center"><tr><th colspan="2">Your last result</th><tr><th>Score</th><th>Rank</th></tr>';
+	           			con += '<tr><td>' + localStorage.getItem("user-last-score") + '</td><td>' + localStorage.getItem("user-last-rank") + '</td></tr></table>';
+	           			$('#last-result').html(con);
+	            }   
+
+
+			$('#settings').on('pagebeforeshow', function(){
+			   if(localStorage.getItem("user-name")){
+			      $('#user-name').val(localStorage.getItem("user-name"));
+			      $('#user-email').val(localStorage.getItem("user-email"));
+			      $('#user-city').val(localStorage.getItem("user-city"));
+			      $('#user-country').val(localStorage.getItem("user-country"));
+			   }else{
+			      $('#user-name').val("");
+			      $('#user-email').val("");
+			      $('#user-city').val("");
+			      $('#user-country').val("");
+			   } 		 
+			
+			});
+	           
+	       });// end of document.ready
+	       function nextPracticeQuestion(){
+	         if(currentPracticeQuestionNumber+1 == practiceQuestions.length)
+	           $('#practice-questions-next').addClass('visibility-hidden');
+	         if(currentPracticeQuestionNumber == 1)
+	           $('#practice-questions-previous').removeClass('visibility-hidden');
+	         
+	         currentPracticeQuestionNumber += 1;
+	         i = currentPracticeQuestionNumber;
+	         //$('#practice-questions-qnum').html(i+'.&nbsp;&nbsp;');
+	         $('#practice-questions-question').html('<strong>' + i + '.&nbsp;&nbsp</strong>' + practiceQuestions[i-1].question);
+	         $('#practice-questions-option1').html('<strong>A.&nbsp;&nbsp</strong>' + practiceQuestions[i-1].option1);
+	         $('#practice-questions-option2').html('<strong>B.&nbsp;&nbsp</strong>' + practiceQuestions[i-1].option2);
+	         $('#practice-questions-option3').html('<strong>C.&nbsp;&nbsp</strong>' + practiceQuestions[i-1].option3);
+	         $('#practice-questions-option4').html('<strong>D.&nbsp;&nbsp</strong>' + practiceQuestions[i-1].option4);
+	         
+	         $('input[name="practice-question-answer"]').removeAttr('checked').checkboxradio("refresh");
+	         if(practiceAnswers[i-1] != undefined){
+	            $('input[id="' + "practice-question-option" + practiceAnswers[i-1] + '"]').prop('checked', true).checkboxradio("refresh");
+	         }
+	         $('#practice-answer-toggle').val('on');
+	         $('#practice-answer-toggle').slider('refresh');
+	         $('#practice-questions-correct-answer').html('');
+	         $('#practice-questions-explanation').html('');
+	       }
+	
+	       function previousPracticeQuestion(){
+	         if(currentPracticeQuestionNumber == practiceQuestions.length)
+	           $('#practice-questions-next').removeClass('visibility-hidden');
+	         if(currentPracticeQuestionNumber == 2)
+	           $('#practice-questions-previous').addClass('visibility-hidden');
+	         
+	         currentPracticeQuestionNumber -= 1;
+	         i = currentPracticeQuestionNumber;
+	         //$('#practice-questions-qnum').html(i+'.&nbsp;&nbsp;');
+	         $('#practice-questions-question').html('<strong>' + i + '.&nbsp;&nbsp</strong>' + practiceQuestions[i-1].question);
+	         $('#practice-questions-option1').html('<strong>A.&nbsp;&nbsp</strong>' + practiceQuestions[i-1].option1);
+	         $('#practice-questions-option2').html('<strong>B.&nbsp;&nbsp</strong>' + practiceQuestions[i-1].option2);
+	         $('#practice-questions-option3').html('<strong>C.&nbsp;&nbsp</strong>' + practiceQuestions[i-1].option3);
+	         $('#practice-questions-option4').html('<strong>D.&nbsp;&nbsp</strong>' + practiceQuestions[i-1].option4);
+	
+	         $('input[name="practice-question-answer"]').removeAttr('checked').checkboxradio("refresh");
+	         if(practiceAnswers[i-1] != undefined){
+	            $('input[id="' + "practice-question-option" + practiceAnswers[i-1] + '"]').prop('checked', true).checkboxradio("refresh");
+	         }
+	         $('#practice-answer-toggle').val('on');
+	         $('#practice-answer-toggle').slider('refresh');
+	         $('#practice-questions-correct-answer').html('');
+	         $('#practice-questions-explanation').html('');
+	       }
+	
+	       function nextExamQuestion(){
+	         if(currentExamQuestionNumber+1 == examQuestions.length)
+	           $('#exam-questions-next').addClass('visibility-hidden');
+	         if(currentExamQuestionNumber == 1)
+	           $('#exam-questions-previous').removeClass('visibility-hidden');
+	         
+	         currentExamQuestionNumber += 1;
+	         i = currentExamQuestionNumber;
+	         $('#exam-header h1').html('Ques ' + i + ' of ' + examQuestions.length);
+	         //$('#exam-questions-qnum').html(i+'.&nbsp;&nbsp;');
+	         $('#exam-questions-question').html('<strong>' + i + '.&nbsp;&nbsp</strong>' + examQuestions[i-1].question);
+	         $('#exam-questions-option1').html('<strong>A.&nbsp;&nbsp</strong>' + examQuestions[i-1].option1);
+	         $('#exam-questions-option2').html('<strong>B.&nbsp;&nbsp</strong>' + examQuestions[i-1].option2);
+	         $('#exam-questions-option3').html('<strong>C.&nbsp;&nbsp</strong>' + examQuestions[i-1].option3);
+	         $('#exam-questions-option4').html('<strong>D.&nbsp;&nbsp</strong>' + examQuestions[i-1].option4);
+	         
+	         $('input[name="exam-question-answer"]').removeAttr('checked').checkboxradio("refresh");
+	         if(examAnswers[i-1] != undefined){
+	            $('input[id="' + "exam-question-option" + examAnswers[i-1] + '"]').prop('checked', true).checkboxradio("refresh");
+	         }
+	       }
+	
+	       function previousExamQuestion(){
+	         if(currentExamQuestionNumber == examQuestions.length)
+	           $('#exam-questions-next').removeClass('visibility-hidden');
+	         if(currentExamQuestionNumber == 2)
+	           $('#exam-questions-previous').addClass('visibility-hidden');
+	         
+	         currentExamQuestionNumber -= 1;
+	         i = currentExamQuestionNumber;
+	         $('#exam-header h1').html('Ques ' + i + ' of ' + examQuestions.length);
+	         //$('#exam-questions-qnum').html(i+'.&nbsp;&nbsp;');
+	         $('#exam-questions-question').html('<strong>' + i + '.&nbsp;&nbsp</strong>' + examQuestions[i-1].question);
+	         $('#exam-questions-option1').html('<strong>A.&nbsp;&nbsp</strong>' + examQuestions[i-1].option1);
+	         $('#exam-questions-option2').html('<strong>B.&nbsp;&nbsp</strong>' + examQuestions[i-1].option2);
+	         $('#exam-questions-option3').html('<strong>C.&nbsp;&nbsp</strong>' + examQuestions[i-1].option3);
+	         $('#exam-questions-option4').html('<strong>D.&nbsp;&nbsp</strong>' + examQuestions[i-1].option4);
+	
+	         $('input[name="exam-question-answer"]').removeAttr('checked').checkboxradio("refresh");
+	         if(examAnswers[i-1] != undefined){
+	            $('input[id="' + "exam-question-option" + examAnswers[i-1] + '"]').prop('checked', true).checkboxradio("refresh");
+	         }
+	
+	       }
+	
+	      function gotoExamQuestion(num){
+	         currentExamQuestionNumber = num;
+	
+	         if(currentExamQuestionNumber < examQuestions.length)
+	           $('#exam-questions-next').removeClass('visibility-hidden');
+	         else
+	           $('#exam-questions-next').addClass('visibility-hidden');
+	
+	         if(currentExamQuestionNumber > 1)
+	           $('#exam-questions-previous').removeClass('visibility-hidden');
+	         else
+	           $('#exam-questions-previous').addClass('visibility-hidden');
+	         
+	         i = currentExamQuestionNumber;
+	         $('#exam-header h1').html('Ques ' + i + ' of ' + examQuestions.length);
+	         //$('#exam-questions-qnum').html(i+'.&nbsp;&nbsp;');
+	         $('#exam-questions-question').html('<strong>' + i + '.&nbsp;&nbsp</strong>' + examQuestions[i-1].question);
+	         $('#exam-questions-option1').html('<strong>A.&nbsp;&nbsp</strong>' + examQuestions[i-1].option1);
+	         $('#exam-questions-option2').html('<strong>B.&nbsp;&nbsp</strong>' + examQuestions[i-1].option2);
+	         $('#exam-questions-option3').html('<strong>C.&nbsp;&nbsp</strong>' + examQuestions[i-1].option3);
+	         $('#exam-questions-option4').html('<strong>D.&nbsp;&nbsp</strong>' + examQuestions[i-1].option4);
+	         
+	         $('input[name="exam-question-answer"]').removeAttr('checked').checkboxradio("refresh");
+	         if(examAnswers[i-1] != undefined){
+	            $('input[id="' + "exam-question-option" + examAnswers[i-1] + '"]').prop('checked', true).checkboxradio("refresh");
+	         }
+	       }
+	
+	      function showProgressBar(id){
+	          $('#'+id).removeClass('display-none');
+	          TolitoProgressBar(id)
+	                    .setOuterTheme('b')
+	                    .isIndefinite(true)
+	                    .isMini(true)
+	                    .showCounter(false)
+	                    .logOptions()
+	                    .build();
+	       }
+	       function hideProgressBar(id){
+	         $('#'+id).addClass('display-none');
+	       }
+	
+	      function showExamResult(){
+	      	navigator.notification.confirm(
+            	'Have you completed the exam',  // message
+            	function(button){
+            		if(button == 1){
+            			$timer.stop();
+            			calculateResult();
+            		}
+            	},         // callback
+            	'',            // title
+            	'Yes,No'                  // buttonName
+        	);
+	      }
+	      
+	      function calculateResult(){
+	      	 $.mobile.changePage('#result');
+	         d= "";
+	         attempted = 0;
+	         correct = 0;
+	         wrong = 0;
+	         for(i=0;i<totalQuestions;i++){
+	            if(examAnswers[i] != undefined){
+	              attempted++;
+	              if(examAnswers[i] == examQuestions[i].answer)
+	                 correct++;
+	              else
+	                 wrong++;
+	            }else{}
+	         }
+	         if((correct/totalQuestions)*100 >= 70){
+	             color_style = 'style="color:green;font-weight:bold;"';
+	             res = "Pass";
+	         }
+	         else{
+	             color_style = 'style="color:red;font-weight:bold;"';
+	             res = "Fail";
+	         }
+	
+	         per = (correct/totalQuestions)*100;
+	         per = per.toFixed(2);
+	
+	         d = '<table style="margin:auto;">' +
+	                      '<tr>' +
+	                         '<td>Total questions</td>' +
+	                         '<td>' + totalQuestions + '</td>' +
+	                      '</tr>' +
+	                      '<tr>' +
+	                         '<td>Attempted</td>' +
+	                         '<td>' + attempted + '</td>' +
+	                      '</tr>' +
+	                      '<tr>' +
+	                         '<td>Correct</td>' +
+	                         '<td>' + correct + '</td>' +
+	                      '</tr>' +
+	                      '<tr>' +
+	                         '<td>Wrong</td>' +
+	                         '<td>' + wrong + '</td>' +
+	                      '</tr>' +
+	                      '<tr>' +
+	                         '<td>Result</td>' +
+	                         '<td '+ color_style + '>' + res + '</td>' +
+	                      '</tr>' +
+	                   '</table>';
+	         $('#result #result-content').html(d);
+	         
+	         
+	            score_percent = per;
+			    if(score_percent >= 70)
+				  $('#progress-bar').css('background-color','#006600');
+				else
+				  $('#progress-bar').css('background-color','#ee0000');
+				  
+                $('#progress-bar').animate({width:score_percent + '%'},score_percent * 30);
+				
+				s = 0;
+				score_percent_int = parseInt(score_percent);
+				var t = setInterval(function(){
+				  $('#score-text').html(s + '%');
+				  if(s == score_percent_int){
+				    clearInterval(t);
+					$('#score-text').html(score_percent + '%');
+				  }
+				  else
+				    s += 1;  
+				}, 30);
+				
+				if(totalQuestions == 10)
+	         		return;
+				
+				if(localStorage.getItem("user-name")){
+            		$('#result #result-content').append('<br/><p style="text-align:center">Your rank is</p>');
+            		$('#result #result-content').append('<div id="rank"><p style="text-align:center;font-size:30px;"></p></div>');
+            		$('#rank p').html('Retrieving...');
+            		
+
+            		values = {'user_uuid': device.uuid,'user_name': localStorage.getItem("user-name"), 
+            		          'user_city': localStorage.getItem("user-city"), 'user_email': localStorage.getItem("user-email"), 
+            		          'user_device': getDevice() + "-" + device.name, 'user_country': localStorage.getItem("user-country"),  
+            		          'user_score': per, 'user_type': 'basesaspro'};
+            		         
+	            $.ajax({
+			         url: 'http://www.jlojic.com/basesas/getRank?api_key=abc123',
+			         crossDomain: true,
+			         type: 'POST',
+			         data: values,
+			         dataType: 'jsonp',
+			         success: function(data){					             	                   
+			                  if(data.msg == "Unknown error")
+			                     $('#rank p').html(data.msg);
+			                  else{
+			                     rank = data.msg + "";
+			                     ch = rank.charAt(rank.length -1)
+			                     if(ch == "0" || ch == "4" || ch == "5" || ch == "6" || ch == "7" ||ch == "8" || ch == "9")
+			                        txt = "th";
+			                     else if(ch == 1)
+			                        txt = "st"
+			                     else if(ch == 2)
+			                        txt = "nd";
+			                     else if(ch == 3)
+			                       txt = "rd";
+			
+			                     $('#rank p').html(rank + txt);
+			                     localStorage.setItem("user-last-rank", rank + txt);
+			                     localStorage.setItem("user-last-score", per + '%');
+			                     if(localStorage.getItem("user-last-score")){
+	           						con = '<table border="1" style="width:100%;margin:auto;text-align:center"><tr><th colspan="2">Your last result</th><tr><th>Score</th><th>Rank</th></tr>';
+	           						con += '<tr><td>' + localStorage.getItem("user-last-score") + '</td><td>' + localStorage.getItem("user-last-rank") + '</td></tr></table>';
+	           						$('#last-result').html(con);
+	            				 }
+			                  }
+			         },
+			         error: function(error, txt){
+			         	$('#rank p').html('Unknown error occured while retrieving your rank.');
+			         }
+			    });
+		            
+           		}//end of if(localStorage.getItem("user-name")
+           		else{
+             		alert("Please fill the details in settings page to know your rank among other Base SAS users.");
+           		}
+	         
+	      }
+	      
+	      function quitExam(){
+	      		if(timer != null)
+            		timer.stop();
+            	gotoIndexPage();
+	      }
+	
+	      function gotoIndexPage(){
+	        $.mobile.changePage('#index');
+	      }
+	
+	      function exitApp(){
+	           try{
+	           		navigator.app.exitApp();
+	           }catch(e){
+	           }
+	      }
+	
+	      function gotoQuestion(){
+	         quesNum = $('#ques-num').val();
+	         num = parseInt(quesNum);
+	  
+	         if(num >=1 && num <= 64){
+	            gotoExamQuestion(num);
+	         }else{
+	           alert("Invalid question number");
+	         }
+	      }
+	
+	      function showAnswers(){
+	        html = '';
+	        for(i=0;i<totalQuestions;i++){
+	           if(examAnswers[i] == undefined)
+	             ans = 'NONE';
+	           else
+	             ans = examAnswers[i];
+	           userResponse = '<p style="font-weight:bold;">you have answered ' + ans + '</p>';
+	           if(examAnswers[i] == undefined) {
+	             userResponse += '<p style="color:#000000;font-weight:bold;">' + 'correct answer is ' + examQuestions[i].answer +'</p>';
+	           }else if(examAnswers[i] == examQuestions[i].answer) {
+	              userResponse += '<p style="color:green;font-weight:bold;">' + 'you are right, correct answer is ' + examQuestions[i].answer + '</p>';
+	           }else if(examAnswers[i] != examQuestions[i].answer) {
+	              userResponse += '<p style="color:red;font-weight:bold;">' + 'you are wrong, correct answer is ' + examQuestions[i].answer + '</p>';
+	           }
+	
+	
+	           data = '<div><strong>' + (i+1) + '.&nbsp;&nbsp;</strong>'+ examQuestions[i].question +'</div>' +
+	                  '<br/>' +
+	                  '<div><strong>A.&nbsp;&nbsp;</strong>' + examQuestions[i].option1 + '</div>' +
+	                  '<div><strong>B.&nbsp;&nbsp;</strong>' + examQuestions[i].option2 + '</div>' +
+	                  '<div><strong>C.&nbsp;&nbsp;</strong>' + examQuestions[i].option3 + '</div>' +
+	                  '<div><strong>D.&nbsp;&nbsp;</strong>' + examQuestions[i].option4 + '</div>' +
+	                  '<br/>' +
+	                  '<div>' + userResponse + '</div>'
+	                  ;
+	            if(i+1 < totalQuestions)
+	              data += '<hr/>';
+	           html = html + data;
+	        }
+	
+	        $('#show-answers-content').html(html);
+	        $.mobile.changePage('#show-answers');
+	      }
+	      
+	      
+	      function submitSettingsForm(){
+		      user_name = $('#user-name').val();
+			  user_email = $('#user-email').val();
+			  user_city = $('#user-city').val();
+			  user_country = $('#user-country').val();
+			  is_valid = validate_form(user_name, user_email, user_city, user_country);
+			  
+			  if(is_valid == false){
+			      alert("Please fill all the details");
+				  return;
+			  }
+			  
+			  if(hasConnection() == false){
+			  	alert("Cannot submit, no internet connection");
+			  	return;
+			  }
+			  
+			  values = '&user_uuid=' + device.uuid + '&user_name=' + user_name + '&user_email=' + user_email + 
+			           '&user_city=' + user_city + '&user_country=' + user_country + "&user_device=" + getDevice() + "-" + device.name+
+					   '&user_type=basesaspro';
+		
+		      
+			  $('#user-form-popup').popup('open');
+			  setInterval(function(){$('#user-form-popup').popup('close');}, 2000);
+			  $.ajax({
+			      url: 'http://www.jlojic.com/basesas/saveuser?api_key=abc123' + values,
+				  crossDomain: true,
+		          type: 'get',
+		          dataType: 'jsonp',
+		          success: function(data){
+		             if(data.msg == "success"){
+					   localStorage.setItem("user-name", user_name);
+					   localStorage.setItem("user-email", user_email);
+					   localStorage.setItem("user-city", user_city);
+					   localStorage.setItem("user-country", user_country);
+					}
+				  },
+				  error: function(error){
+				    alert(error);
+				  }
+			  });		
+		}
+		
+		function validate_form(user_name, user_email, user_city, user_country){
+			if(user_name == "" || user_email == "" || user_city == "" || user_country == "Select country")
+		    	return false;
+		}
+		
+		function closePopUp(id){
+			$('#'+id).popup('close');
+		}
+		
+		function getDevice(){
+		  var inPlatform = device.platform;
+		  //alert(inPlatform);
+		  if(inPlatform.indexOf("iPhone") >= 0)
+		     outPlatform = "iPhone";
+		  else if(inPlatform.indexOf("iPad") >= 0)
+		     outPlatform = "iPad";
+		  else if(inPlatform.indexOf("Android") >= 0)
+		     outPlatform = "Android";
+		  else if(inPlatform.indexOf("BlackBerry") >= 0)
+		     outPlatofrm = "BlackBerry";
+		  
+		  	 
+		  	 outPlatform = "iPhone";
+		  
+		  
+		  return outPlatform;
+		    
+		}
+	      
+	      
+	     </script>
+	     <style type="text/css">
+	        .display-none{
+	           display:none;
+	        }
+	        .visibility-hidden{
+	           visibility: hidden;
+	        }
+	        #practice-questions-qnum, .option, #exam-questions-qnum{
+	          font-weight: bold;
+	        }
+	        .practice-answer-toggle-container .ui-slider-switch { width: 15em }
+	        .color-red{
+	          color: red;
+	        }
+	        .color-green{
+	          color: green;
+	        }
+	        .color-black{
+	          color: black;
+	        }
+	     </style>
+	  </head>
+	  <body>
+	    <div id="index" data-role="page">
+	      <div data-role="header" data-theme="b" data-position="fixed" data-tap-toggle="false">
+	        <h1>Base SAS</h1>
+	        <a href="#exit-dialog-popup" data-rel="popup" class="ui-btn-right visibility-hidden" id="exit-button">Exit</a>
+	      </div>
+	      <div data-role="popup" id="exit-dialog-popup" data-position-to="window" data-theme="b" data-overlay-theme="b" data-dismissible="false">
+               <p style="text-align:center"><strong>Are you sure want to exit</strong></p>
+               <div class="ui-grid-a">
+  	             <div class="ui-block-a" style="text-align:right"><a href="javascript: exitApp()" data-role="button" data-inline="true">Yes</a></div>
+  	             <div class="ui-block-b"><a href="javascript: closePopUp('exit-dialog-popup')" data-role="button" data-inline="true">No</a></div>
+               </div>
+         </div>
+	      <div data-role="content">
+	          <div id="last-result"></div>
+	          <ul data-role="listview" data-inset="true">
+	              <li><a href="javascript:showVirtualExam()">Virtual exam</a></li>
+	              <li><a href="javascript:showPracticeExam()">Short exam</a></li>
+	              <li><a href="javascript:showPracticeQuestions()">300+ Practice questions</a></li>
+	              <li><a href="#top-rankers">Top rankers</a></li>
+              	  <li><a href="#settings">Settings</a></li>
+	              <li><a href="#help">Help</a></li>
+	          </ul>
+	      </div>
+	    </div>
+	   
+	    <div data-role="page" id="exam-questions">
+	      <div data-role="header" id="exam-header" data-theme="b" data-position="fixed" data-tap-toggle="false">
+	         <a id="quit-exam" href="#quit-dialog-popup" data-rel="popup" class="ui-btn-left">Quit</a>
+	         <h1>Loading</h1>
+	         <a id="show-exam-result" href="#show-result-dialog-popup" data-rel="popup" class="ui-btn-right">Show result</a>
+	
+	         <div data-role="navbar" id="goto-div">
+	            <div class="ui-grid-b">
+	
+		      <div class="ui-block-a"><p style="text-align:right;padding-right:10px;">Ques</p></div>
+	       	      <div class="ui-block-b"><input type="number" id="ques-num"/></div>
+	       	      <div class="ui-block-c"><a href="javascript: gotoQuestion()">Go</a></div>
+	
+	            </div><!-- /grid-b -->
+		</div><!-- /navbar -->
+	
+	      </div>
+	      
+	      <div data-role="popup" id="quit-dialog-popup" data-position-to="window" data-theme="b" data-overlay-theme="b" data-dismissible="false">
+	        <p style="text-align:center"><strong>Are you sure want to quit the exam</strong></p>
+            <div class="ui-grid-a">
+	           <div class="ui-block-a" style="text-align:right"><a href="javascript:quitExam()" data-role="button" data-inline="true">Yes</a></div>
+	           <div class="ui-block-b"><a href="javascript: closePopUp('quit-dialog-popup')" data-role="button" data-inline="true">No</a></div>
+            </div>
+         </div>
+       <div id="show-result-dialog-popup" data-role="popup" data-position-to="window" data-theme="b" data-overlay-theme="b" data-dismissible="false">
+             <p style="text-align:center"><strong>Have you completed the exam</strong></p>
+             <div class="ui-grid-a">
+	           <div class="ui-block-a" style="text-align:right"><a href="javascript:calculateResult()" data-role="button" data-inline="true">Yes</a></div>
+	           <div class="ui-block-b"><a href="javascript: closePopUp('show-result-dialog-popup')" data-role="button" data-inline="true">No</a></div>
+             </div>
+       </div>
+       <div id="time-over-dialog-popup" data-role="popup" data-position-to="window" data-theme="b" data-overlay-theme="b" data-dismissible="false">
+             <p style="text-align:center"><strong id="time-over-dialog-content">Time is over</strong></p>
+		     <div style="text-align:center"><a href="javascript: calculateResult()" data-role="button" data-inline="true">Ok</a></div>
+       </div>
+	      
+	      <div data-role="content" id="exam-content">
+	         <div id="exam-progress-bar" class="display-none"></div>
+	          <div class="content">
+	            <div><span id="exam-questions-question"></span></div>
+	            <div><span id="exam-questions-option1"></span></div>
+	            <div><span id="exam-questions-option2"></span></div>
+	            <div><span id="exam-questions-option3"></span></div>
+	            <div><span id="exam-questions-option4"></span></div>
+	            <br/>
+	            <div><strong>your response</strong></div>
+	            <fieldset data-role="controlgroup" data-type="horizontal">
+	    	       <input type="radio" name="exam-question-answer" id="exam-question-optionA" value="A" />
+	    	       <label for="exam-question-optionA">A</label>
+	
+	  	       <input type="radio" name="exam-question-answer" id="exam-question-optionB" value="B"  />
+	    	       <label for="exam-question-optionB">B</label>
+	    	
+	    	       <input type="radio" name="exam-question-answer" id="exam-question-optionC" value="C"  />
+	    	       <label for="exam-question-optionC">C</label>
+	
+	    	       <input type="radio" name="exam-question-answer" id="exam-question-optionD" value="D"  />
+	    	       <label for="exam-question-optionD">D</label>
+	            </fieldset>
+	         </div>
+	      </div>
+	      <div data-role="footer" id="exam-footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+	         <a id="exam-questions-previous" href="javascript:previousExamQuestion()" class="ui-btn-left visibility-hidden">Previous</a>
+	          <h1 id="timer">&nbsp;</h1>
+	          <a id="exam-questions-next" href="javascript: nextExamQuestion()" class="ui-btn-right visibility-hidden">Next</a>
+	      </div>
+	    </div>
+	
+	   <div data-role="page" id="result">
+	       <div data-role="header" data-theme="b" data-tap-toggle="false" data-position="fixed">
+	          <a id="" href="javascript:showAnswers();" class="ui-btn-left">Show answers</a>
+	          <h1>Result</h1>
+	          <a href="javascript: gotoIndexPage()" class="ui-btn-right">Okay</a>
+	       </div>
+	       <div data-role="content">
+	       		<div id="progress-bar-container">
+				    <div style="border-radius:10px;background-color:#b0b0b0;height:20px;width:100%;border:2px solid #000000;">
+				      <div id="progress-bar" style="width:0%;border-radius:9px;height:100%;"></div>
+				    </div>
+				  	<div style="padding-left:5px;padding-top:5px;">Your score: <strong id="score-text">0%</strong></div>
+				</div>
+				<br/>
+				<div id="result-content"></div>
+			
+	       </div>
+	       
+	   </div>
+	
+	   <div data-role="page" id="show-answers">
+	       <div data-role="header" data-theme="b" data-position="fixed" data-tap-toggle="false">
+	       	  <a href="#result" class="ui-btn-left">Back</a>
+	          <h1>Answers</h1>
+	          <a href="javascript: gotoIndexPage()" class="ui-btn-right">Okay</a>
+	       </div>
+	       <div data-role="content" id="show-answers-content"></div>
+	   </div>
+	
+	   <div data-role="page" id="help">
+	       <div data-role="header" data-theme="b" data-position="fixed" data-tap-toggle="false">
+	          <h1>Help</h1>
+	          <a href="javascript: gotoIndexPage()" class="ui-btn-right">Back</a>
+	       </div>
+	       <div data-role="content">
+	          <h2>Virtual exam</h2>
+	          <ul>
+	             <li>You will get 64 questions to solve in 110 minutes.</li>
+	             <li>Must score 70% correct to pass.</li>
+	             <li>You can quit the exam anytime with the QUIT button.</li>
+	             <li>After completing the exam press the SHOW RESULT button to view your score and rank.</li>
+	          </ul>
+	
+	          <h2>Short Exam</h2>
+	          <ul>
+	             <li>You will get 10 questions to solve in 12 minutes.</li>
+	             <li>Must score 70% correct to pass.</li>
+	             <li>You can quit the exam anytime with the QUIT button.</li>
+	             <li>After completing the exam press the SHOW RESULT button to view your score.</li>
+	          </ul>
+	
+	          <h2>Practice questions</h2>
+	          <ul>
+	             <li>300+ questions to practice.</li>
+	             <li>Slider at the bottom of the question to check your answers.</li>
+	          </ul>
+	          
+	          <h2>Top rankers</h2>
+	          <ul>
+	             <li>You can view a list of top rank holders from all over the world.</li>
+	          </ul>
+	          
+	          <h2>Settings</h2>
+	          <ul>
+	          	  <li>The information here is required if you want to know your rank among other Base SAS users.</li>
+	          	  <li>The rank is only available for virtual exam and not for short exam.</li>
+	          </ul>
+	
+	       </div>
+	   </div>
+	
+	
+	    <div id="practice-questions" data-role="page">
+	       <div class="header" data-role="header" data-theme="b" data-position="fixed" data-tap-toggle="false">
+	       		<h1>Loading</h1>
+	       		 <a href="javascript: gotoIndexPage()" class="ui-btn-right">Back</a>
+	       </div>
+	       <div data-role="content">
+	          <div id="practice-progress-bar" class="display-none"></div>
+	          <div class="content">
+	            <div><span id="practice-questions-question"></span></div>
+	            <div><span id="practice-questions-option1"></span></div>
+	            <div><span id="practice-questions-option2"></span></div>
+	            <div><span id="practice-questions-option3"></span></div>
+	            <div><span id="practice-questions-option4"></span></div>
+	            <br/>
+	            <div><strong>your response</strong></div>
+	            <fieldset data-role="controlgroup" data-type="horizontal">
+	    	       <input type="radio" name="practice-question-answer" id="practice-question-optionA" value="A" />
+	    	       <label for="practice-question-optionA">A</label>
+	
+	  	       <input type="radio" name="practice-question-answer" id="practice-question-optionB" value="B"  />
+	    	       <label for="practice-question-optionB">B</label>
+	    	
+	    	       <input type="radio" name="practice-question-answer" id="practice-question-optionC" value="C"  />
+	    	       <label for="practice-question-optionC">C</label>
+	
+	    	       <input type="radio" name="practice-question-answer" id="practice-question-optionD" value="D"  />
+	    	       <label for="practice-question-optionD">D</label>
+	            </fieldset>
+	
+	         <div  class="practice-answer-toggle-container">
+		       <label for="flip-min"></label>
+		       <select name="practice-answer-toggle" id="practice-answer-toggle" data-role="slider">
+			  <option value="on">Show answer/explanation</option>
+			  <option value="off">Hide answer/explanation</option>
+		       </select>
+	         </div>
+	            <div id="practice-questions-correct-answer"></div>
+	            <br/>
+	            <div id="practice-questions-explanation"></div>
+	         </div>
+	       </div>
+	       <div data-role="footer" data-theme="b" data-position="fixed" data-tap-toggle="false">
+	          <a id="practice-questions-previous" href="javascript:previousPracticeQuestion()" class="ui-btn-left visibility-hidden">Previous</a>
+	          <h1>&nbsp;</h1>
+	          <a id="practice-questions-next" href="javascript: nextPracticeQuestion()" class="ui-btn-right visibility-hidden">Next</a>
+	       </div>
+	    </div>
+	    
+	   <div data-role="page" id="top-rankers">
+         <div data-role="header" data-theme="b" data-position="fixed" data-tap-toggle="false">
+           <h1>Top rankers</h1>
+           <a href="#index" class="ui-btn-right">Back</a>
+         </div>
+         <div data-role="content" id="top-rankers-content">
+       </div>
+     </div>
+     
+     <div data-role="page" id="settings">
+         <div data-role="header" data-theme="b" data-position="fixed" data-tap-toggle="false">
+           <h1>Settings</h1>
+           <a href="#index" class="ui-btn-right">Back</a>
+         </div>
+         <div data-role="popup" id="user-form-popup" data-position-to="window">
+	       <p>Saved<p>
+         </div>
+         <div data-role="content">
+            <p>Please fill in the below details to know your rank among other Base SAS users.</p>
+            <br/>
+            <label for="user-name">Name</label>
+            <input type="text" name="user-name" id="user-name" />
+			<label for="user-email">Email</label>
+			<input type="text" name="user-email" id="user-email" />
+			<label for="user-city">City</label>
+			<input type="text" name="user-city" id="user-city"/>
+			<label for="user-country">Country</label>
+			<input type="text" name="user-country" id="user-country"/>
+			<p style="text-align:center"><a href="javascript: submitSettingsForm()" data-role="button" data-inline="true" id="user-save-button">Save</a></p>
+         </div>
+     </div>
+	    
+	    
+	  </body>
+</html>
