@@ -23,6 +23,7 @@
 	       
 	       document.addEventListener("deviceready", onDeviceReady, false);
 			function onDeviceReady(){
+			
 				document.addEventListener("backbutton", onBackKeyDown, false);
 				document.addEventListener("pause", onApplicationPause, false);
 				document.addEventListener("resume", onApplicationResume, false);
@@ -30,6 +31,8 @@
 				if(getDevice() == "Android"){
 				  $('#exit-button').removeClass('visibility-hidden');
 				}
+
+				
 			}
 			
 			function onApplicationPause(){
@@ -57,7 +60,7 @@
 	    		}else if(pageId == "exam-questions"){
 	    				eventHandled = true;
 	    				$("#quit-dialog-popup").popup( "open" )
-	    		else if(pageId == "practice-questions"){
+	    		}else if(pageId == "practice-questions"){
 	    				eventHandled = true;
 	    				gotoIndexPage();
 	    		}else if(pageId == "help"){
@@ -78,8 +81,8 @@
     			}
     			
     			
-    			if(eventHandled == true)
-    				evt.preventDefault();
+    			//if(eventHandled == true)
+    				//evt.preventDefault();
 			}
 	       
 	       function hasConnection(){
@@ -350,7 +353,7 @@
 	                type: 'get',
 	                dataType: 'jsonp',
 	        		success: function(data){
-	        		    table = '<table border="1" style="margin:auto;width:100%;text-align:center;"><tr><th>Position</th><th>Name</th><th>Score</th><th>Location</th></tr>';
+	        		    table = '<table border="1" style="margin:auto;width:100%;text-align:center;"><tr><th>Rank</th><th>Name</th><th>Score</th><th>Location</th></tr>';
 	        			for(i=0;i<data.length;i++){
 	        			  tr = '<tr>' + 
 	        			          '<td>' + (i+1) + '</td>' +
@@ -801,7 +804,7 @@
 		     outPlatofrm = "BlackBerry";
 		  
 		  	 
-		  	 outPlatform = "iPhone";
+		  	 //outPlatform = "iPhone";
 		  
 		  
 		  return outPlatform;
