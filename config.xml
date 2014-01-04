@@ -34,14 +34,12 @@
     <icon src="icons/android/icon72x72.png" gap:platform="android" gap:density="hdpi" />
     <icon src="icons/android/icon96x96.png" gap:platform="android" gap:density="xhdpi" />
 
-    <gap:splash src="splash/android/splash320x200.png" gap:platform="android" gap:density="ldpi" width="320" height="200"/>
+
     <gap:splash src="splash/android/splash200x320.png" gap:platform="android" gap:density="ldpi" width="200" height="320"/>
     <gap:splash src="splash/android/splash320x480.png" gap:platform="android" gap:density="mdpi" width="320" height="480"/>
-    <gap:splash src="splash/android/splash480x320.png" gap:platform="android" gap:density="mdpi" width="480" height="320"/>
-    <gap:splash src="splash/android/splash800x480.png" gap:platform="android" gap:density="hdpi" width="800" height="480"/>
     <gap:splash src="splash/android/splash480x800.png" gap:platform="android" gap:density="hdpi" width="480" height="800"/>
     <gap:splash src="splash/android/splash720x1280.png" gap:platform="android" gap:density="xhdpi" width="720" height="1280"/>
-    <gap:splash src="splash/android/splash1280x720.png" gap:platform="android" gap:density="xhdpi" width="1280" height="720"/>
+
 
     <!-- iPhone and iPad -->
 
