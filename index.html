@@ -629,7 +629,7 @@
 
             		values = {'user_uuid': device.uuid,'user_name': localStorage.getItem("user-name"), 
             		          'user_city': localStorage.getItem("user-city"), 'user_email': localStorage.getItem("user-email"), 
-            		          'user_device': getDevice() + "-" + device.name, 'user_country': localStorage.getItem("user-country"),  
+            		          'user_device': getDevice(), 'user_country': localStorage.getItem("user-country"),  
             		          'user_score': per, 'user_type': 'basesaspro'};
             		         
 	            $.ajax({
@@ -643,18 +643,9 @@
 			                     $('#rank p').html(data.msg);
 			                  else{
 			                     rank = data.msg + "";
-			                     ch = rank.charAt(rank.length -1)
-			                     if(ch == "0" || ch == "4" || ch == "5" || ch == "6" || ch == "7" ||ch == "8" || ch == "9")
-			                        txt = "th";
-			                     else if(ch == 1)
-			                        txt = "st"
-			                     else if(ch == 2)
-			                        txt = "nd";
-			                     else if(ch == 3)
-			                       txt = "rd";
 			
-			                     $('#rank p').html(rank + txt);
-			                     localStorage.setItem("user-last-rank", rank + txt);
+			                     $('#rank p').html(rank);
+			                     localStorage.setItem("user-last-rank", rank);
 			                     localStorage.setItem("user-last-score", per + '%');
 			                     if(localStorage.getItem("user-last-score")){
 	           						con = '<table border="1" style="width:100%;margin:auto;text-align:center"><tr><th colspan="2">Your last result</th><tr><th>Score</th><th>Rank</th></tr>';
@@ -757,7 +748,7 @@
 			  }
 			  
 			  values = '&user_uuid=' + device.uuid + '&user_name=' + user_name + '&user_email=' + user_email + 
-			           '&user_city=' + user_city + '&user_country=' + user_country + "&user_device=" + getDevice() + "-" + device.name+
+			           '&user_city=' + user_city + '&user_country=' + user_country + "&user_device=" + getDevice() +
 					   '&user_type=basesaspro';
 		
 		      
