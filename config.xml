@@ -69,5 +69,16 @@
     <gap:splash src="splash/ios/splash1496x2048.png" gap:platform="ios" width="1496" height="2048" />
 
 
+    <!-- Blackberry -->
+    <gap:platform name="blackberry" />
+    <icon src="icons/blackberry/icon144x144.png" gap:platform="blackberry" />
+    <icon src="icons/blackberry/icon144x144.png" gap:platform="blackberry" gap:state="hover"/>
+
+    <gap:splash src="splash/blackberry/splash720x1280.png" gap:platform="blackberry" />
+
+
+    <!-- windows phone -->
+    
+
 
 </widget>
