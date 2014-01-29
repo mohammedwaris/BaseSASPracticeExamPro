@@ -20,15 +20,16 @@
 	       var timer = null;
 	       var time;
 	       var totalQuestions;
+	       var ajaxRequest;
 	       
 	       document.addEventListener("deviceready", onDeviceReady, false);
 			function onDeviceReady(){
-			
+				//alert('device ready');
 				document.addEventListener("backbutton", onBackKeyDown, false);
 				document.addEventListener("pause", onApplicationPause, false);
 				document.addEventListener("resume", onApplicationResume, false);
 				
-				if(getDevice() == "Android"){
+				if(getDevice() != "ios"){
 				  $('#exit-button').removeClass('visibility-hidden');
 				}
 
@@ -53,7 +54,7 @@
 				var eventHandled = false;
 				pageId = $.mobile.activePage.attr('id');
 				if(pageId == "index"){
-				    if(getDevice() != "iPhone" && getDevice() != "iPad"){
+				    if(getDevice() != "ios"){
 				        eventHandled = true;
 	    				$( "#exit-dialog-popup" ).popup( "open" );
 	    			}
@@ -109,7 +110,7 @@
 			         $('#goto-div').removeClass('display-none');
 			         $('#goto-div').addClass('visibility-hidden');
 			         $('#ques-num').val('');
-			         $.ajax({
+			         ajaxRequest = $.ajax({
 			              url: 'http://www.jlojic.com/basesas/getbasesas64questions?api_key=abc123',
 			              crossDomain: true,
 			              type: 'get',
@@ -667,9 +668,14 @@
 	      }
 	      
 	      function quitExam(){
+	      	try{
+	      		if(ajaxRequest)
+	      			ajaxRequest.abort();
 	      		if(timer != null)
             		timer.stop();
-            	gotoIndexPage();
+            }catch(e){}
+            
+            gotoIndexPage();
 	      }
 	
 	      function gotoIndexPage(){
@@ -753,7 +759,7 @@
 		
 		      
 			  $('#user-form-popup').popup('open');
-			  setInterval(function(){$('#user-form-popup').popup('close');}, 2000);
+			  setTimeout(function(){$('#user-form-popup').popup('close');}, 2000);
 			  $.ajax({
 			      url: 'http://www.jlojic.com/basesas/saveuser?api_key=abc123' + values,
 				  crossDomain: true,
@@ -784,18 +790,19 @@
 		
 		function getDevice(){
 		  var inPlatform = device.platform;
-		  //alert(inPlatform);
-		  if(inPlatform.indexOf("iPhone") >= 0)
-		     outPlatform = "iPhone";
-		  else if(inPlatform.indexOf("iPad") >= 0)
-		     outPlatform = "iPad";
-		  else if(inPlatform.indexOf("Android") >= 0)
-		     outPlatform = "Android";
-		  else if(inPlatform.indexOf("BlackBerry") >= 0)
-		     outPlatofrm = "BlackBerry";
+		  inPlatform = inPlatform.toLowerCase();
+                  
+          var outPlatform = "";
+		  
+		  if(inPlatform.indexOf("ios") >= 0)
+		     outPlatform = "ios";
+		  else if(inPlatform.indexOf("android") >= 0)
+		     outPlatform = "android";
+		  else if(inPlatform.indexOf("blackberry") >= 0)
+		     outPlatofrm = "blackberry";
 		  
 		  	 
-		  	 //outPlatform = "iPhone";
+		  	// outPlatform = "ios";
 		  
 		  
 		  return outPlatform;
