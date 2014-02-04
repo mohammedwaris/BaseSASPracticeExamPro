@@ -2,11 +2,11 @@
   <head>
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
      <link rel="stylesheet" href="jquery.mobile-1.3.1.min.css" />
-     <link rel="stylesheet" href="tolito-1.0.5.min.css" />
      <script src="jquery-1.9.1.min.js"></script>
      <script src="jquery.timer.js"></script>
      <script src="jquery.mobile-1.3.1.min.js"></script>
-     <script src="tolito-1.0.5.min.js"></script>
+     <script src="questions.js"></script>
+     <script src="questions_api.js"></script>
      <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 	 <script type="text/javascript">
 	       //var baseUrl = 'http://www.jlojic.com?api_key=abc123&';
@@ -21,19 +21,40 @@
 	       var time;
 	       var totalQuestions;
 	       var ajaxRequest;
-	       
+	        
 	       document.addEventListener("deviceready", onDeviceReady, false);
 			function onDeviceReady(){
+				getRankIfNA();
+				localStorage.setItem("database-created", "false")
+				if(localStorage.getItem("database-created") == "true"){
+					initializeDB(function(){
+						$('#menu-items').removeClass('visibility-hidden');
+						
+					});
+					
+				}else{
+					$('#setup-msg').html('Initializing app...Please wait');
+					createDB(function(){
+						localStorage.setItem("database-created","true");
+						$('#setup-msg').html('');
+						$('#menu-items').removeClass('visibility-hidden');
+					
+					});
+				}
 				//alert('device ready');
 				document.addEventListener("backbutton", onBackKeyDown, false);
 				document.addEventListener("pause", onApplicationPause, false);
 				document.addEventListener("resume", onApplicationResume, false);
 				
+				document.addEventListener("online", onOnline, false);
 				if(getDevice() != "ios"){
-				  $('#exit-button').removeClass('visibility-hidden');
-				}
-
-				
+				  			$('#exit-button').removeClass('visibility-hidden');
+						}
+			}
+			
+			function onOnline() {
+    			// Handle the online event
+    			getRankIfNA();
 			}
 			
 			function onApplicationPause(){
@@ -87,55 +108,39 @@
 			}
 	       
 	       function hasConnection(){
-				var networkState = navigator.network.connection.type;
+				var networkState = navigator.connection.type;
 				if(networkState == Connection.NONE){
 					return false;
 				}
 				return true;
 			}
-	       
-	       function showVirtualExam(){
-		         if(hasConnection() == false){
-		         	alert("No internet connection found. Please connect to the internet");
-		         }else{
-		         	 if(timer != null)
+			
+			function showVirtualExam(){
+				get64Questions(function(questions){
+					 $.mobile.changePage('#exam-questions');
+					 if(timer != null)
 		         	 	timer.stop();
-			         showProgressBar('exam-progress-bar');
-			         $('.content').addClass('display-none');
-			         $('#exam-header h1').html('Loading');
-			         $('#timer').html('');
-			         $('#exam-questions-next').addClass('visibility-hidden');
-			         $('#exam-questions-previous').addClass('visibility-hidden');
-			         $('#show-exam-result').addClass('visibility-hidden');
+		         	 	
+			         examQuestions = questions;
+			         examAnswers = new Array();
+			         currentExamQuestionNumber = 1;
+			         totalQuestions = questions.length;
 			         $('#goto-div').removeClass('display-none');
-			         $('#goto-div').addClass('visibility-hidden');
-			         $('#ques-num').val('');
-			         ajaxRequest = $.ajax({
-			              url: 'http://www.jlojic.com/basesas/getbasesas64questions?api_key=abc123',
-			              crossDomain: true,
-			              type: 'get',
-			              dataType: 'jsonp',
-			              success: function(questions){ 
-			                 hideProgressBar('exam-progress-bar');
-			                 examQuestions = questions;
-			                 examAnswers = new Array();
-			                 currentExamQuestionNumber = 1;
-			                 totalQuestions = questions.length;
-			                 $('#goto-div').removeClass('visibility-hidden');
-			                 $('#exam-header h1').html('Ques 1 of ' + totalQuestions);
-			                 //$('#exam-questions-qnum').html('1.&nbsp;&nbsp;');
-			                 $('#exam-questions-question').html('<strong>1.&nbsp;&nbsp;</strong>' + examQuestions[0].question);
-			                 $('#exam-questions-option1').html('<strong>A.&nbsp;&nbsp;</strong>' + examQuestions[0].option1);
-			                 $('#exam-questions-option2').html('<strong>B.&nbsp;&nbsp;</strong>' + examQuestions[0].option2);
-			                 $('#exam-questions-option3').html('<strong>C.&nbsp;&nbsp;</strong>' + examQuestions[0].option3);
-			                 $('#exam-questions-option4').html('<strong>D.&nbsp;&nbsp;</strong>' + examQuestions[0].option4);
-			                 $('.content').removeClass('display-none');
-			                 $('#exam-questions-next').removeClass('visibility-hidden');
-			                 $('#show-exam-result').removeClass('visibility-hidden');
+			         $('#goto-div').removeClass('visibility-hidden');
+			         $('#exam-header h1').html('Ques 1 of ' + totalQuestions);
+			         //$('#exam-questions-qnum').html('1.&nbsp;&nbsp;');
+			         $('#exam-questions-question').html('<strong>1.&nbsp;&nbsp;</strong>' + examQuestions[0].question);
+			         $('#exam-questions-option1').html('<strong>A.&nbsp;&nbsp;</strong>' + examQuestions[0].option1);
+			         $('#exam-questions-option2').html('<strong>B.&nbsp;&nbsp;</strong>' + examQuestions[0].option2);
+			         $('#exam-questions-option3').html('<strong>C.&nbsp;&nbsp;</strong>' + examQuestions[0].option3);
+			         $('#exam-questions-option4').html('<strong>D.&nbsp;&nbsp;</strong>' + examQuestions[0].option4);
+			         $('.content').removeClass('display-none');
+			         $('#exam-questions-next').removeClass('visibility-hidden');
+			         $('#show-exam-result').removeClass('visibility-hidden');
 			                 
-			                 time = 110*60;
-			                 sec = 60;
-			                 timer = $.timer(function(){
+			         time = 110*60;
+			         sec = 60;
+			         timer = $.timer(function(){
 			                               time = time - 1;
 			                               hour = parseInt(time/(60*60));
 			                               if(hour<=9)
@@ -169,42 +174,21 @@
 			                                 $( "#time-over-dialog-popup" ).popup( "open" )
 			                               }
 			                          }, 1000, true);     
-			                         $('input[type="radio"]').prop('checked', false).checkboxradio('refresh');                    
-			              },
-			              error:function(error){
-			                 alert('Unknown error. Please try again later');
-			                 gotoIndexPage();
-			              }
-			           });
-			           $.mobile.changePage('#exam-questions');
-			       }//end of else
-	       }
-	
-	       function showPracticeExam(){
-	       		if(hasConnection() == false){
-		         	alert("No internet connection found. Please connect to the internet");
-		         }else{
-		             if(timer != null)
-		             	timer.stop();
-			         showProgressBar('exam-progress-bar');
-			         $('.content').addClass('display-none');
-			         $('#exam-header h1').html('Loading');
-			         $('#timer').html('');
-			         $('#exam-questions-next').addClass('visibility-hidden');
-			         $('#exam-questions-previous').addClass('visibility-hidden');
-			         $('#show-exam-result').addClass('visibility-hidden');
-			         $('#goto-div').addClass('display-none');
-			         $.ajax({
-			              url: 'http://www.jlojic.com/basesas/getbasesas10questions?api_key=abc123',
-			              crossDomain: true,
-			              type: 'get',
-			              dataType: 'jsonp',
-			              success: function(questions){ 
-			                 hideProgressBar('exam-progress-bar');
+			         $('input[type="radio"]').prop('checked', false).checkboxradio('refresh');
+				});//end of get64Questions();
+			}// end of showVirtualExam();
+	       
+
+	       
+	       function showShortExam(){
+	       		get10Questions(function(questions){
+	       					 $.mobile.changePage('#exam-questions');
+	       					
 			                 examQuestions = questions;
 			                 examAnswers = new Array();
 			                 currentExamQuestionNumber = 1;
 			                 totalQuestions = questions.length;
+			                 $('#goto-div').addClass('display-none');
 			                 $('#exam-header h1').html('Ques 1 of ' + totalQuestions);
 			                 //$('#exam-questions-qnum').html('1.&nbsp;&nbsp;');
 			                 $('#exam-questions-question').html('<strong>1.&nbsp;&nbsp</strong>' + examQuestions[0].question);
@@ -251,33 +235,17 @@
 			                                 $( "#time-over-dialog-popup" ).popup( "open" )
 			                               }
 			                          }, 1000, true);   
-			                       $('input[type="radio"]').prop('checked', false).checkboxradio('refresh');                      
-			              },
-			              error:function(error){
-			                 alert('Unknown error. Please try again later');
-			                 gotoIndexPage();
-			              }
-			           });
-			           $.mobile.changePage('#exam-questions');
-			       }//end of else
+			                       $('input[type="radio"]').prop('checked', false).checkboxradio('refresh');
+	       		});
 	       }
+	
+
 	       
 	       function showPracticeQuestions(){
-				if(hasConnection() == false){
-		         	alert("No internet connection found. Please connect to the internet");
-		         }else{
-			           showProgressBar('practice-progress-bar');
-			           $('.content').addClass('display-none');
-			           $('#practice-questions .header h1').html('Loading');
-			           $('#practice-questions-next').addClass('visibility-hidden');
-			           $('#practice-questions-previous').addClass('visibility-hidden');
-			           $.ajax({
-			              url: 'http://www.jlojic.com/basesas/getbasesaspracticequestions?api_key=abc123',
-			              crossDomain: true,
-			              type: 'get',
-			              dataType: 'jsonp',
-			              success: function(questions){ 
-			                 hideProgressBar('practice-progress-bar');
+
+	             getPracticeQuestions(function(questions){
+	             			$.mobile.changePage('#practice-questions'); 
+			                // hideProgressBar('practice-progress-bar');
 			                 practiceQuestions = questions;
 			                 practiceAnswers = new Array();
 			                 currentPracticeQuestionNumber = 1;
@@ -295,19 +263,14 @@
 			                 $('#practice-answer-toggle').slider('refresh');
 			                 $('#practice-questions-correct-answer').html('');
 			                 $('#practice-questions-explanation').html('');
-			              },
-			              error:function(error){
-			                 alert('Unknown error. Please try again later');
-			                 gotoIndexPage();
-			              }
-			           });
-			           $.mobile.changePage('#practice-questions');
-			       }//end of else
+			              });
 	       }
 	       
 	       
 	       $(document).ready(function(){
-	          
+	       
+	          	
+	          	
 	           $('input[name="practice-question-answer"]').bind('change', function(){
 	              practiceAnswers[currentPracticeQuestionNumber - 1] = $('input[name="practice-question-answer"]:checked').val();
 	           });
@@ -519,7 +482,7 @@
 	         }
 	       }
 	
-	      function showProgressBar(id){
+	     /* function showProgressBar(id){
 	          $('#'+id).removeClass('display-none');
 	          TolitoProgressBar(id)
 	                    .setOuterTheme('b')
@@ -531,7 +494,7 @@
 	       }
 	       function hideProgressBar(id){
 	         $('#'+id).addClass('display-none');
-	       }
+	       }*/
 	
 	      function showExamResult(){
 	      	navigator.notification.confirm(
@@ -621,6 +584,16 @@
 				
 				if(totalQuestions == 10)
 	         		return;
+	         		
+	         	if(hasConnection() != true){
+	         		localStorage.setItem("user-last-rank", "-");
+			        localStorage.setItem("user-last-score", per + '%');
+			        con = '<table border="1" style="width:100%;margin:auto;text-align:center"><tr><th colspan="2">Your last result</th><tr><th>Score</th><th>Rank</th></tr>';
+	           		con += '<tr><td>' + localStorage.getItem("user-last-score") + '</td><td>' + localStorage.getItem("user-last-rank") + '</td></tr></table>';
+	           		$('#last-result').html(con);
+			        alert("Sorry...cannot retrieve your rank...no internet connection found.");
+			        return;
+	         	}
 				
 				if(localStorage.getItem("user-name")){
             		$('#result #result-content').append('<br/><p style="text-align:center">Your rank is</p>');
@@ -656,6 +629,8 @@
 			                  }
 			         },
 			         error: function(error, txt){
+         				localStorage.setItem("user-last-rank", "-");
+			            localStorage.setItem("user-last-score", per + '%');
 			         	$('#rank p').html('Unknown error occured while retrieving your rank.');
 			         }
 			    });
@@ -808,6 +783,55 @@
 		  return outPlatform;
 		    
 		}
+		
+		function getRankIfNA(){
+			if(hasConnection() != true){
+				return;
+			}
+			
+			//alert('getting rank');
+			
+			if(localStorage.getItem("user-name")){
+				if(localStorage.getItem("user-last-score")){
+					if(localStorage.getItem("user-last-rank") == "-" ){
+						per = parseFloat(localStorage.getItem("user-last-score"));
+						values = {'user_uuid': device.uuid,'user_name': localStorage.getItem("user-name"), 
+            		          		'user_city': localStorage.getItem("user-city"), 'user_email': localStorage.getItem("user-email"), 
+            		          		'user_device': getDevice(), 'user_country': localStorage.getItem("user-country"),  
+            		          		'user_score': per, 'user_type': 'basesaspro'};
+						$.ajax({
+			         				url: 'http://www.jlojic.com/basesas/getRank?api_key=abc123',
+			         				crossDomain: true,
+			         				type: 'POST',
+			         				data: values,
+			         				dataType: 'jsonp',
+			         				success: function(data){					             	                   
+			                  					if(data.msg == "Unknown error"){
+			                     					//$('#rank p').html(data.msg);
+			                  					}else{
+			                     					rank = data.msg + "";
+			
+			                     					//$('#rank p').html(rank);
+			                     					alert('Rank retrieved: ' + rank);
+			                     					localStorage.setItem("user-last-rank", rank);
+			                     					localStorage.setItem("user-last-score", per + '%');
+			                     					if(localStorage.getItem("user-last-score")){
+	           											con = '<table border="1" style="width:100%;margin:auto;text-align:center"><tr><th colspan="2">Your last result</th><tr><th>Score</th><th>Rank</th></tr>';
+	           											con += '<tr><td>' + localStorage.getItem("user-last-score") + '</td><td>' + localStorage.getItem("user-last-rank") + '</td></tr></table>';
+	           											$('#last-result').html(con);
+	            				 					}
+			                  					}
+			         				},
+			         				error: function(error, txt){
+         										//localStorage.setItem("user-last-rank", "-");
+			            						//localStorage.setItem("user-last-score", per + '%');
+			         							//$('#rank p').html('Unknown error occured while retrieving your rank.');
+			         				}
+			    		});	
+					}
+				}
+			}
+		}
 	      
 	      
 	     </script>
@@ -834,6 +858,8 @@
 	     </style>
 	  </head>
 	  <body>
+
+	  	
 	    <div id="index" data-role="page">
 	      <div data-role="header" data-theme="b" data-position="fixed" data-tap-toggle="false">
 	        <h1>Base SAS</h1>
@@ -847,10 +873,11 @@
                </div>
          </div>
 	      <div data-role="content">
+	      	  <div id="setup-msg" style="text-align:center"></div>
 	          <div id="last-result"></div>
-	          <ul data-role="listview" data-inset="true">
+	          <ul data-role="listview" data-inset="true" class="visibility-hidden" id="menu-items">
 	              <li><a href="javascript:showVirtualExam()">Virtual exam</a></li>
-	              <li><a href="javascript:showPracticeExam()">Short exam</a></li>
+	              <li><a href="javascript:showShortExam()">Short exam</a></li>
 	              <li><a href="javascript:showPracticeQuestions()">300+ Practice questions</a></li>
 	              <li><a href="#top-rankers">Top rankers</a></li>
               	  <li><a href="#settings">Settings</a></li>
@@ -897,7 +924,7 @@
        </div>
 	      
 	      <div data-role="content" id="exam-content">
-	         <div id="exam-progress-bar" class="display-none"></div>
+	        <!-- <div id="exam-progress-bar" class="display-none"></div> -->
 	          <div class="content">
 	            <div><span id="exam-questions-question"></span></div>
 	            <div><span id="exam-questions-option1"></span></div>
@@ -1005,8 +1032,8 @@
 	       		<h1>Loading</h1>
 	       		 <a href="javascript: gotoIndexPage()" class="ui-btn-right">Back</a>
 	       </div>
-	       <div data-role="content">
-	          <div id="practice-progress-bar" class="display-none"></div>
+	       <div data-role="content"> 
+	          <!-- <div id="practice-progress-bar" class="display-none"></div> -->
 	          <div class="content">
 	            <div><span id="practice-questions-question"></span></div>
 	            <div><span id="practice-questions-option1"></span></div>
