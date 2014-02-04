@@ -25,7 +25,7 @@
 	       document.addEventListener("deviceready", onDeviceReady, false);
 			function onDeviceReady(){
 				getRankIfNA();
-				localStorage.setItem("database-created", "false")
+				//localStorage.setItem("database-created", "false")
 				if(localStorage.getItem("database-created") == "true"){
 					initializeDB(function(){
 						$('#menu-items').removeClass('visibility-hidden');
