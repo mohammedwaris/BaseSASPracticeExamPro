@@ -116,7 +116,7 @@ function get10Questions(callback){
 function getPracticeQuestions(callback){
 		
 	 db.transaction(function(tx){
-	 					tx.executeSql("SELECT * FROM questions WHERE set_num != -1 AND subject = 'base_sas'", [],
+	 					tx.executeSql("SELECT * FROM questions WHERE subject = 'base_sas'", [],
 	 								function(tx, results){
 										rows = results.rows;
 										len = rows.length;

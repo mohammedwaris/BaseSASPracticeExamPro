@@ -307,8 +307,13 @@
 	                $('#practice-questions-explanation').html('');
 	             }
 	           });
-	           
+	            
 	           $('#top-rankers').on('pagebeforeshow', function(){
+	        	
+	        	if(hasConnection() != true){
+	        		$('#top-rankers-content').html('<p style="text-align:center">Cannot retrieve list...no internet connection</p>');
+	        		return;
+	        	}
 	        	
 	        	$('#top-rankers-content').html('<p style="text-align:center">Retrieving list...</p>');
 	        	$.ajax({
