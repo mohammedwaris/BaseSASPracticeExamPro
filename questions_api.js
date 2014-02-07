@@ -82,13 +82,12 @@ function get64Questions(callback){
 function get10Questions(callback){
 		
 	 db.transaction(function(tx){
-	 					tx.executeSql("SELECT * FROM questions WHERE set_num != -1 AND subject = 'base_sas' LIMIT 10", [],
+	 					tx.executeSql("SELECT * FROM questions WHERE set_num != -1 AND subject = 'base_sas'", [],
 	 								function(tx, results){
 										rows = results.rows;
-										len = rows.length;
 										//alert(len);
 										var questions = new Array();
-										for(i=0;i<len;i++){
+										for(i=0;i<10;i++){
 											question = new Object();
 											question.id = rows.item(i).id;
 											question.question = rows.item(i).question;

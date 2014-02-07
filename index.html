@@ -9,7 +9,7 @@
      <script src="questions_api.js"></script>
      <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 	 <script type="text/javascript">
-	       //var baseUrl = 'http://www.jlojic.com?api_key=abc123&';
+	      
 	       var practiceQuestions;
 	       var currentPracticeQuestionNumber;
 	       var practiceAnswers;
@@ -20,7 +20,7 @@
 	       var timer = null;
 	       var time;
 	       var totalQuestions;
-	       var ajaxRequest;
+	      
 	        
 	       document.addEventListener("deviceready", onDeviceReady, false);
 			function onDeviceReady(){
@@ -128,7 +128,7 @@
 			         $('#goto-div').removeClass('display-none');
 			         $('#goto-div').removeClass('visibility-hidden');
 			         $('#exam-header h1').html('Ques 1 of ' + totalQuestions);
-			         //$('#exam-questions-qnum').html('1.&nbsp;&nbsp;');
+			         
 			         $('#exam-questions-question').html('<strong>1.&nbsp;&nbsp;</strong>' + examQuestions[0].question);
 			         $('#exam-questions-option1').html('<strong>A.&nbsp;&nbsp;</strong>' + examQuestions[0].option1);
 			         $('#exam-questions-option2').html('<strong>B.&nbsp;&nbsp;</strong>' + examQuestions[0].option2);
@@ -199,7 +199,7 @@
 			                 $('.content').removeClass('display-none');
 			                 $('#exam-questions-next').removeClass('visibility-hidden');
 			                 $('#show-exam-result').removeClass('visibility-hidden');
-			                 //$('input[type="radio"]').prop('checked', false).checkboxradio('refresh');
+			                 
 			                 time = 12*60;
 			                 sec = 60;
 			                 timer = $.timer(function(){
@@ -235,7 +235,9 @@
 			                                 $( "#time-over-dialog-popup" ).popup( "open" )
 			                               }
 			                          }, 1000, true);   
-			                       $('input[type="radio"]').prop('checked', false).checkboxradio('refresh');
+			                       try{   
+			                       		$('input[type="radio"]').prop('checked', false).checkboxradio('refresh');
+			                       }catch(e){}
 	       		});
 	       }
 	
@@ -502,17 +504,10 @@
 	       }*/
 	
 	      function showExamResult(){
-	      	navigator.notification.confirm(
-            	'Have you completed the exam',  // message
-            	function(button){
-            		if(button == 1){
-            			$timer.stop();
+
+            			timer.stop();
             			calculateResult();
-            		}
-            	},         // callback
-            	'',            // title
-            	'Yes,No'                  // buttonName
-        	);
+
 	      }
 	      
 	      function calculateResult(){
@@ -649,8 +644,7 @@
 	      
 	      function quitExam(){
 	      	try{
-	      		if(ajaxRequest)
-	      			ajaxRequest.abort();
+	      	
 	      		if(timer != null)
             		timer.stop();
             }catch(e){}
@@ -919,13 +913,13 @@
        <div id="show-result-dialog-popup" data-role="popup" data-position-to="window" data-theme="b" data-overlay-theme="b" data-dismissible="false">
              <p style="text-align:center"><strong>Have you completed the exam</strong></p>
              <div class="ui-grid-a">
-	           <div class="ui-block-a" style="text-align:right"><a href="javascript:calculateResult()" data-role="button" data-inline="true">Yes</a></div>
+	           <div class="ui-block-a" style="text-align:right"><a href="javascript:showExamResult()" data-role="button" data-inline="true">Yes</a></div>
 	           <div class="ui-block-b"><a href="javascript: closePopUp('show-result-dialog-popup')" data-role="button" data-inline="true">No</a></div>
              </div>
        </div>
        <div id="time-over-dialog-popup" data-role="popup" data-position-to="window" data-theme="b" data-overlay-theme="b" data-dismissible="false">
              <p style="text-align:center"><strong id="time-over-dialog-content">Time is over</strong></p>
-		     <div style="text-align:center"><a href="javascript: calculateResult()" data-role="button" data-inline="true">Ok</a></div>
+		     <div style="text-align:center"><a href="javascript: showExamResult()" data-role="button" data-inline="true">Ok</a></div>
        </div>
 	      
 	      <div data-role="content" id="exam-content">
