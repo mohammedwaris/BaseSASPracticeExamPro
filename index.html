@@ -586,15 +586,17 @@
 				    s += 1;  
 				}, 30);
 				
-				if(totalQuestions == 10)
+				if(totalQuestions == 10) 
 	         		return;
 	         		
-	         	if(hasConnection() != true){
-	         		localStorage.setItem("user-last-rank", "-");
-			        localStorage.setItem("user-last-score", per + '%');
-			        con = '<table border="1" style="width:100%;margin:auto;text-align:center"><tr><th colspan="2">Your last result</th><tr><th>Score</th><th>Rank</th></tr>';
-	           		con += '<tr><td>' + localStorage.getItem("user-last-score") + '</td><td>' + localStorage.getItem("user-last-rank") + '</td></tr></table>';
-	           		$('#last-result').html(con);
+	         		
+				localStorage.setItem("user-last-rank", "-");
+			    localStorage.setItem("user-last-score", per + '%');
+			    con = '<table border="1" style="width:100%;margin:auto;text-align:center"><tr><th colspan="2">Your last result</th><tr><th>Score</th><th>Rank</th></tr>';
+	           	con += '<tr><td>' + localStorage.getItem("user-last-score") + '</td><td>' + localStorage.getItem("user-last-rank") + '</td></tr></table>';
+	           	$('#last-result').html(con);
+	           		         		
+	         	if(hasConnection() != true){  
 			        alert("Sorry...cannot retrieve your rank...no internet connection found.");
 			        return;
 	         	}
@@ -602,6 +604,8 @@
 				if(localStorage.getItem("user-name")){
             		$('#result #result-content').append('<br/><p style="text-align:center">Your rank is</p>');
             		$('#result #result-content').append('<div id="rank"><p style="text-align:center;font-size:30px;"></p></div>');
+            		
+            		
             		$('#rank p').html('Retrieving...');
             		
 
