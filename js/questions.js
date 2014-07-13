@@ -1,4 +1,4 @@
-var jsonQuestions = [
+var questionsJSON = [
   {
     "id": 1,
     "question": "In the following SAS program, the input data files are sorted by the NAMES variable: <br/><br/> data temp.sales;<br/> merge temp.sales work.receipt;<br/> by names;<br/> run;<br/>   <br/> Which one of the following result occurs when this program is submitted ? <br/><br/> ",
@@ -7,7 +7,7 @@ var jsonQuestions = [
     "option3": "The program fails execution because the same SAS data set is referenced for both read and write operations.",
     "option4": "The program fails execution because the SAS data sets on the MERGE statement are in two different libraries.",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -19,7 +19,7 @@ var jsonQuestions = [
     "option3": "401 for PROC PRINT <br/> 4500 for PROC MEANS",
     "option4": "500 for PROC PRINT <br/> 5000 for PROC MEANS",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -31,7 +31,7 @@ var jsonQuestions = [
     "option3": "<table>   <tr><th>amount</th><th>word</th></tr>   <tr><td>7</td><td>DOG</td></tr> </table>",
     "option4": "<table>   <tr><th>amount</th><th>word</th></tr>   <tr><td>7</td><td>''(missing character value)</td></tr> </table>",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -43,7 +43,7 @@ var jsonQuestions = [
     "option3": "It adds the value of an expression to an accumulator variable and ignores missing values.",
     "option4": "It does not retain the accumulator variable value from one iteration of the SAS DATA step to the next.",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -55,7 +55,7 @@ var jsonQuestions = [
     "option3": "7",
     "option4": "8",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -67,7 +67,7 @@ var jsonQuestions = [
     "option3": "options reset pageno = 1;",
     "option4": "options reset pagenum = 1;",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -79,7 +79,7 @@ var jsonQuestions = [
     "option3": ".(missing numeric value)",
     "option4": "No value is stored as the program fails to execute due to errors",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -91,7 +91,7 @@ var jsonQuestions = [
     "option3": "<table>  <tr>     <th>type</th>    <th>color</th>  <tr>  <tr>     <td>daisyyellow</td>    <td>(missing character value)</td>  <tr> </table>",
     "option4": "No values are stored as the program fails to execute due to syntax errors.",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -103,7 +103,7 @@ var jsonQuestions = [
     "option3": "'rawdata1'",
     "option4": "'rawdata2'",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -115,7 +115,7 @@ var jsonQuestions = [
     "option3": "if end = 1;",
     "option4": "if eof = 1;",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -127,7 +127,7 @@ var jsonQuestions = [
     "option3": "data family;<br/> infile 'file-specification' dlm=',';<br/> input relation $ firstname $;<br/> run;<br/>",
     "option4": "data family;<br/> infile 'file-specification';<br/> input relation $ firstname $ / dlm = ',';<br/> run;<br/> ",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -139,7 +139,7 @@ var jsonQuestions = [
     "option3": ".(missing numeric value)",
     "option4": "''(missing character value)",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -151,7 +151,7 @@ var jsonQuestions = [
     "option3": "5",
     "option4": "7",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -163,7 +163,7 @@ var jsonQuestions = [
     "option3": "3",
     "option4": "4",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -175,7 +175,7 @@ var jsonQuestions = [
     "option3": "7",
     "option4": "12",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -187,7 +187,7 @@ var jsonQuestions = [
     "option3": "5",
     "option4": "6",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -199,7 +199,7 @@ var jsonQuestions = [
     "option3": "5",
     "option4": "No variables are output to the data set as the program fails to execute due to errors",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -211,7 +211,7 @@ var jsonQuestions = [
     "option3": "merge work.employee<br/> work.salary(rename=(fname=name));",
     "option4": "merge work.employee<br/> work.salary(rename=(name=fname));",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -223,7 +223,7 @@ var jsonQuestions = [
     "option3": "The data sets were not merged in the order by which they were sorted",
     "option4": "The RUN statements were omitted after each of the SORT procedures",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -235,7 +235,7 @@ var jsonQuestions = [
     "option3": "HOUSES",
     "option4": "SASUSER",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -247,7 +247,7 @@ var jsonQuestions = [
     "option3": "The program is reading from a permanent data set and writing to a temporary data set",
     "option4": "The program is reading from a permanent data set and writing to a permanent data set",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -259,7 +259,7 @@ var jsonQuestions = [
     "option3": "libname sasdata 'SAS-data-library';<br/> data sasdata.mydata;<br/> save mydata;<br/> run;<br/>",
     "option4": "libname sasdata 'SAS-data-library';<br/> data sasdata.mydata;<br/> set mydata;<br/> run;<br/>",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -271,7 +271,7 @@ var jsonQuestions = [
     "option3": "The data sets listed in the last two IF statements require a  library reference",
     "option4": "The data sets listed in the first two IF statements require a library reference",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -283,7 +283,7 @@ var jsonQuestions = [
     "option3": "the numeric value 14725, representing the SAS date for April 25, 2000",
     "option4": "the numeric value 04252000, representing the SAS date for April 25, 2000",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -295,7 +295,7 @@ var jsonQuestions = [
     "option3": "a numeric value of 14692, which represents the SAS date value for March 23, 2000",
     "option4": "a numeric value of 3232000, which represents the SAS date value for March 23, 2000",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -307,7 +307,7 @@ var jsonQuestions = [
     "option3": "1151960",
     "option4": "'1/15/1960'",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -319,7 +319,7 @@ var jsonQuestions = [
     "option3": "6",
     "option4": "9",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -331,7 +331,7 @@ var jsonQuestions = [
     "option3": "<table>   <tr>     <th>Obs</th>     <th>newdate</th>     <th>qdate</th>     <th>ddate</th>   </tr>   <tr>     <td>1</td>     <td>APR152000</td>     <td>2</td>     <td>7</td>   </tr> <table>",
     "option4": "<table>   <tr>     <th>Obs</th>     <th>newdate</th>     <th>qdate</th>     <th>ddate</th>   </tr>   <tr>     <td>1</td>     <td>04/15/2000</td>     <td>2</td>     <td>7</td>   </tr> <table>",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -343,7 +343,7 @@ var jsonQuestions = [
     "option3": "ddMMMyy9.",
     "option4": "ddmmmyyyy9.",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -355,7 +355,7 @@ var jsonQuestions = [
     "option3": "libname perm 'SAS-data-library';<br/> data _null_;<br/> set perm.jan_sales;<br/> file 'file-specification';<br/> put idnum sales_date:mmddyy10. dlm=',';<br/> run;<br/>",
     "option4": "libname perm 'SAS-data-library';<br/> data _null_;<br/> set perm.jan_sales;<br/> file 'file-specification'; put idnum sales_date:mmddyy10. dsd=',';<br/> run;<br/>  ",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -367,7 +367,7 @@ var jsonQuestions = [
     "option3": "<br/> ----|----10----|----20----|----30<br/> Alfr14ed<br/> Alic13e<br/> Barb13ara<br/> Caro14l<br/><br/>",
     "option4": "<br/> ----|----10----|----20----|----30<br/> Alfred 14<br/> Alice 13<br/> Barbara 13<br/> Carol 14<br/><br/>",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -379,7 +379,7 @@ var jsonQuestions = [
     "option3": "a SAS data set named GROUP and a raw data file",
     "option4": "No output is generated as the program fails to execute due to errors",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -391,7 +391,7 @@ var jsonQuestions = [
     "option3": "the SAS output window or an output file",
     "option4": "the data set mentioned in the DATA statement",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -403,7 +403,7 @@ var jsonQuestions = [
     "option3": ",(comma)",
     "option4": ";(semicolon)",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -415,7 +415,7 @@ var jsonQuestions = [
     "option3": "499",
     "option4": "1000",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -427,7 +427,7 @@ var jsonQuestions = [
     "option3": "4",
     "option4": "6",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -439,7 +439,7 @@ var jsonQuestions = [
     "option3": "20",
     "option4": "25",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -451,7 +451,7 @@ var jsonQuestions = [
     "option3": "3",
     "option4": "No data set is created as the program fails to execute due to errors",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -463,7 +463,7 @@ var jsonQuestions = [
     "option3": "the descriptor portion of every data set in the SASUSER library",
     "option4": "the descriptor portion of the data set SASUSER.AIRPLANES only",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -475,7 +475,7 @@ var jsonQuestions = [
     "option3": "CONTENTS",
     "option4": "DATASETS",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -487,7 +487,7 @@ var jsonQuestions = [
     "option3": "the descriptor portion and the data portion",
     "option4": "neither the data portion nor the descriptor portion",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -499,7 +499,7 @@ var jsonQuestions = [
     "option3": "DIFSALES1, DIFSALES2 and DIFSALES3",
     "option4": "DIFF_SALES1, DIFF_SALES2 and DIFF_SALES3",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -511,7 +511,7 @@ var jsonQuestions = [
     "option3": "None, the DATA step fails becuase the ARRAY statement can reference only numeric data",
     "option4": "None, the DATA step fails becuase the ARRAY statement can reference only pre-existing variables",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -523,7 +523,7 @@ var jsonQuestions = [
     "option3": "do i=mon tue wed thu fri;",
     "option4": "A DO loop cannot be used because the variables referenced do not end in a digit",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -535,7 +535,7 @@ var jsonQuestions = [
     "option3": "It exists only for the duration of the DATA step",
     "option4": "It can be the same as the name of a variable in the data set",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -547,7 +547,7 @@ var jsonQuestions = [
     "option3": "The data set WORK.TESTSORTED is stored in ascending order by values of the NAME variable",
     "option4": "The data set WORK.TESTSORTED is stored in descending order by values of the NAME variable",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -559,7 +559,7 @@ var jsonQuestions = [
     "option3": "<table>   <tr>     <td>Wang</td>     <td>3</td>   </tr>   <tr>     <td>Wang</td>     <td>1</td>   </tr>   <tr>     <td>Wang</td>     <td>2</td>   </tr>   <tr>     <td>Gerard</td>     <td>3</td>   </tr>   <tr>     <td>Amy</td>     <td>2</td>   </tr>   <tr>     <td>Amy</td>     <td>1</td>   </tr> </table>",
     "option4": "<table>   <tr>     <td>Wang</td>     <td>1</td>   </tr>   <tr>     <td>Wang</td>     <td>2</td>   </tr>   <tr>     <td>Wang</td>     <td>3</td>   </tr>   <tr>     <td>Gerard</td>     <td>3</td>   </tr>   <tr>     <td>Amy</td>     <td>1</td>   </tr>   <tr>     <td>Amy</td>     <td>2</td>   </tr> </table>",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -571,7 +571,7 @@ var jsonQuestions = [
     "option3": "by ascending (IDNumber Expenses);",
     "option4": "by ascending IDNumber ascending Expenses;",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -583,7 +583,7 @@ var jsonQuestions = [
     "option3": "COMPANY.PAYROLL is stored in original order, and a new data set COMPANY.PAYROLLSORTED is created in sorted order by EmployeeIDNumber",
     "option4": "COMPANY.PAYROLL is recreated in sorted order by EmployeeIDNumber, and a new data set PAYROLL is created in sorted order by EmployeeIDNumber",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -595,7 +595,7 @@ var jsonQuestions = [
     "option3": "<table>   <tr>     <th>destination</th>     <th>revenue</th>   </tr>   <tr>     <td>FRA</td>     <td>62129</td>   </tr> </table>",
     "option4": "<table>   <tr>     <th>destination</th>     <th>revenue</th>   </tr>   <tr>     <td>FRA</td>     <td>75962</td>   </tr> </table>",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -607,7 +607,7 @@ var jsonQuestions = [
     "option3": "by IDNumber descending Expenses descending;",
     "option4": "by descending IDNumber descending Expenses;",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -619,7 +619,7 @@ var jsonQuestions = [
     "option3": "<table>   <tr>     <th>amount</th>     <th>word</th>   </tr>   <tr>     <td>4</td>     <td>FOUR</td>   </tr> </table>",
     "option4": "<table>   <tr>     <th>amount</th>     <th>word</th>   </tr>   <tr>     <td>''</td>     <td>(missing character value)</td>   </tr> </table>",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -631,7 +631,7 @@ var jsonQuestions = [
     "option3": "Copenhagen",
     "option4": "''(missing character value)",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -643,7 +643,7 @@ var jsonQuestions = [
     "option3": "Copenhagen",
     "option4": "''(missing character value)",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -655,7 +655,7 @@ var jsonQuestions = [
     "option3": "data work.test;<br/> capacity=150;<br/> if 100 le capacity le 200 then<br/> do;<br/> airplanetype='Large';<br/> staff=10;<br/> else<br/> do;<br/> airplanetype='Small';<br/> staff=5;<br/> end;<br/> run;<br/>",
     "option4": "data work.test;<br/> capacity=150;<br/> if 100 le capacity le 200 then;<br/> airplanetype='Small';<br/> staff=5;<br/> else;<br/> airplanetype='Large';<br/> staff=10;<br/> run;<br/>",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -667,7 +667,7 @@ var jsonQuestions = [
     "option3": ".(missing numeric value)",
     "option4": "The program fails to execute due to errors",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -679,7 +679,7 @@ var jsonQuestions = [
     "option3": "FA 1",
     "option4": "''(missing character value)",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -691,7 +691,7 @@ var jsonQuestions = [
     "option3": "200",
     "option4": ".(missing numeric value)",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -703,7 +703,7 @@ var jsonQuestions = [
     "option3": "Neither variable JCODE nor JOBCODE is written to the output data set",
     "option4": "The program fails to execute due to errors",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -715,7 +715,7 @@ var jsonQuestions = [
     "option3": "set work.dept1<br/> work.dept2(rename=jcode=jobcode<br/> sal=salary);",
     "option4": "set work.dept1<br/> work.dept2(rename=(jcode jobcode)<br/> (sal salary));",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -727,7 +727,7 @@ var jsonQuestions = [
     "option3": "12",
     "option4": "The length can not be determined as the program fails to execute due to errors",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -739,7 +739,7 @@ var jsonQuestions = [
     "option3": "8",
     "option4": "12",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -751,7 +751,7 @@ var jsonQuestions = [
     "option3": "14 bytes",
     "option4": "200 bytes",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -763,7 +763,7 @@ var jsonQuestions = [
     "option3": "The values of the variable PAYROLL represent the total for each department in the WORK.SALARY data set",
     "option4": "The values of the variable PAYROLL represent a total for all vaues of WAGERATE in the WORK.SALARY data set",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -775,7 +775,7 @@ var jsonQuestions = [
     "option3": "4 observations, 3 variables",
     "option4": "can not tell because some values are missing",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Rows in the data set are called observations, and columns are called variables. Missing values do not affect the structure of the data set.",
     "subject": "base_sas"
   },
@@ -787,7 +787,7 @@ var jsonQuestions = [
     "option3": "five",
     "option4": "six",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "When it encounters a DATA, PROC, or RUN statement, SAS stops reading statements and executes the previous step in the program. The program above contains one DATA step and two PROC steps, for a total of three program steps.",
     "subject": "base_sas"
   },
@@ -799,7 +799,7 @@ var jsonQuestions = [
     "option3": "can be either character or numeric",
     "option4": "can not tell from the data shown",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "It must be a character variable, because the values contain letters and underscores, which are not valid characters for numeric values.",
     "subject": "base_sas"
   },
@@ -811,7 +811,7 @@ var jsonQuestions = [
     "option3": "can be aither character or numeric",
     "option4": "can not tell from the data shown",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "It must be a numeric variable, because the missing value is indicated by a period rather than by a blank.",
     "subject": "base_sas"
   },
@@ -823,7 +823,7 @@ var jsonQuestions = [
     "option3": "_Items_",
     "option4": "Tax-Rate",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Variable names follow the same rules as SAS data set names. They can be 1 to 32 characters long, must begin with a letter (A?Z, either uppercase or lowercase) or an underscore, and can continue with any combination of numbers, letters, or underscores.",
     "subject": "base_sas"
   },
@@ -835,7 +835,7 @@ var jsonQuestions = [
     "option3": "Profits.Quarter1",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To store a file permanently in a SAS data library, you assign it a libref other than the default Work. For example, by assigning the libref Profits to a SAS data library, you specify that files within the library are to be stored until you delete them. Therefore, SAS files in the Sashelp and Sasuser libraries are permanent files.",
     "subject": "base_sas"
   },
@@ -847,7 +847,7 @@ var jsonQuestions = [
     "option3": "Sales.Forecast(after assigning the libref Sales)",
     "option4": "only a and b above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To reference a temporary SAS file in a DATA step or PROC step, you can specify the onelevel name of the file (for example, Forecast) or the two-level name using the libref Work(for example, Work.Forecast).",
     "subject": "base_sas"
   },
@@ -859,7 +859,7 @@ var jsonQuestions = [
     "option3": "7",
     "option4": "8",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The numeric variable Balance has a default length of 8. Numeric values (no matter how many digits they contain) are stored in 8 bytes of storage unless you specify a different length.",
     "subject": "base_sas"
   },
@@ -871,7 +871,7 @@ var jsonQuestions = [
     "option3": "five",
     "option4": "six",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The five statements are <ul> <li>PROC PRINT statement (two lines long)</li> <li>VAR statement</li> <li>WHERE statement (on the same line as the VAR statement)</li> <li>LABEL statement</li> <li>RUN statement (on the same line as the LABEL statement)</li> </ul>",
     "subject": "base_sas"
   },
@@ -883,7 +883,7 @@ var jsonQuestions = [
     "option3": "in some operating environments, a logically related collection of SAS files",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Every SAS file is stored in a SAS data library, which is a collection of SAS files, such as SAS data sets and catalogs. In some operating environments, a SAS data library is a physical collection of files. In others, the files are only logically related. In the Windows and UNIX environments, a SAS data library is typically a group of SAS files in the same folder or directory.",
     "subject": "base_sas"
   },
@@ -895,7 +895,7 @@ var jsonQuestions = [
     "option3": "Each page of output from both PROC steps is 55 lines long and has no page numbers, and the PROC MEANS output has a print line width of 80 characters",
     "option4": "The date does not appear on output from either PROC step",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "When you specify a system option, it remains in effect until you change the option or end your SAS session, so both PROC steps generate output that is printed 55 lines per page with no page numbers. If you do not specify a system option, SAS uses the default value for that system option.",
     "subject": "base_sas"
   },
@@ -907,7 +907,7 @@ var jsonQuestions = [
     "option3": "1946 or higher",
     "option4": "any value",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "As long as you specify an informat with the correct field width for reading the entire date value, the YEARCUTOFF= option does not affect date values that have four-digit years.",
     "subject": "base_sas"
   },
@@ -919,7 +919,7 @@ var jsonQuestions = [
     "option3": "access to other software vendors files",
     "option4": "instructions for creating temporary SAS files",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "A SAS engine is a set of internal instructions that SAS uses for writing to and reading from files in a SAS library. Each engine specifies the file format for files that are stored in the library, which in turn enables SAS to access files with a particular format. Some engines access SAS files, and other engines support access to other vendors files.",
     "subject": "base_sas"
   },
@@ -931,7 +931,7 @@ var jsonQuestions = [
     "option3": "proc contents data=area51 _all_ noobs;",
     "option4": "proc contents data=area51 _all_.nods;",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To print a summary of library contents with the CONTENTS procedure, use a period to append the _ALL_ option to the libref. Adding the NODS option suppresses detailed information about the files.",
     "subject": "base_sas"
   },
@@ -943,7 +943,7 @@ var jsonQuestions = [
     "option3": "NUMBER and DATE only",
     "option4": "none of the above",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Clearly, the DATE and PAGENO= options are specified. Because the page number on the output is 1, even though PROC TABULATE output was just produced. If you do not specify PAGENO=, all output in the Output window is numbered sequentially throughout your SAS session.",
     "subject": "base_sas"
   },
@@ -955,7 +955,7 @@ var jsonQuestions = [
     "option3": "proc print data = salesanalysis.quarter1;<br/> var sales salesrep month;<br/> run;",
     "option4": "proc freq data = 1999data.salesanalysis;<br/> tables quarter * sales;<br/> run;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Librefs must be 1 to 8 characters long, must begin with a letter or underscore, and can contain only letters, numbers, or underscores. After you assign a libref, you specify it as the first element in the two-level name for a SAS file.",
     "subject": "base_sas"
   },
@@ -967,7 +967,7 @@ var jsonQuestions = [
     "option3": "1949-2050",
     "option4": "1950-2000",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The YEARCUTOFF= option specifies which 100-year span is used to interpret two-digit year values. The default value of YEARCUTOFF= is 1920. However, you can override the default and change the value of YEARCUTOFF= to the first year of another 100-year span. If you specify YEARCUTOFF = 1950, then the 100-year span will be from 1950 to 2049.",
     "subject": "base_sas"
   },
@@ -979,7 +979,7 @@ var jsonQuestions = [
     "option3": "Librefs can last from one SAS session to another",
     "option4": "You can access files that were created with other vendor's software by submitting a LIBNAME statement",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The LIBNAME statement is global, which means that librefs remain in effect until you modify them, cancel them, or end your SAS session. Therefore, the LIBNAME statement assigns the libref for the current SAS session only. You must assign a libref before accessing SAS files that are stored in a permanent SAS data library.",
     "subject": "base_sas"
   },
@@ -991,7 +991,7 @@ var jsonQuestions = [
     "option3": "defines two libraries called Osiris and Spss using the default engine",
     "option4": "defines the default library using the OSIRIS and SPSS engines",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "In the LIBNAME statement, you specify the library name before the engine name. Both are followed by the path.",
     "subject": "base_sas"
   },
@@ -1003,7 +1003,7 @@ var jsonQuestions = [
     "option3": "suppresses the date and limits the vertical page size for text and HTML output",
     "option4": "suppresses the date and limits the horizontal page size for text output",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "These options affect the format of listing output only. NODATE suppresses the date and PAGESIZE= determines the number of rows to print on the page.",
     "subject": "base_sas"
   },
@@ -1015,7 +1015,7 @@ var jsonQuestions = [
     "option3": "begin RUN statements in column one",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Although you can write SAS statements in almost any format, a consistent layout enhances readability and enables you to understand the program purpose. Its a good idea to begin DATA and PROC steps in column one, to indent statements within a step, to begin RUN statements in column one, and to include a RUN statement after every DATA step or PROC step.",
     "subject": "base_sas"
   },
@@ -1027,7 +1027,7 @@ var jsonQuestions = [
     "option3": "SAS stops processing the step in which the error occurred, and the SAS log displays messages about the error",
     "option4": "SAS stops processing the step in which the error occurred, and the Output window displays messages about the error",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Syntax errors generally cause SAS to stop processing the step in which the error occurred. When a program that contains an error is submitted, messages regarding the problem also appear in the SAS log. When a syntax error is detected, the SAS log displays the word ERROR, identifies the possible location of the error, and gives an explanation of the error.",
     "subject": "base_sas"
   },
@@ -1039,7 +1039,7 @@ var jsonQuestions = [
     "option3": "program statements do not conform to the rules of the SAS language",
     "option4": "none of the above",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Syntax errors are common types of errors. Some SAS system options, features of the Editor window, and the DATA step debugger can help you identify syntax errors. Other types of errors include data errors, semantic errors, and execution-time errors.",
     "subject": "base_sas"
   },
@@ -1051,7 +1051,7 @@ var jsonQuestions = [
     "option3": "The message \"PROC running\" or \"DATA step running\" appears at the top of the active window",
     "option4": "You cannot tell until you view the output from the program",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "When you submit a SAS statement that contains an invalid option, a log message notifies you that the option is not valid or not recognized. You should recall the program, remove or replace the invalid option, check your statement syntax as needed, and resubmit the corrected program.",
     "subject": "base_sas"
   },
@@ -1063,7 +1063,7 @@ var jsonQuestions = [
     "option3": "proc print data = sasuser.mysales label;<br/> label region = 'Sales Region';<br/> run;",
     "option4": "none of the above",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The DATA step contains a misspelled keyword (<strong>dat</strong> instead of <strong>data</strong>). However, this is such a common (and easily interpretable) error that SAS produces only a warning message, not an error.",
     "subject": "base_sas"
   },
@@ -1075,7 +1075,7 @@ var jsonQuestions = [
     "option3": "SAS has stopped processing the program because of errors",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Because there is a missing semicolon at the end of the PROC PRINT statement, SAS interprets VAR as an option in PROC PRINT and finds a syntax error at that location. SAS stops processing programs when it encounters a syntax error.",
     "subject": "base_sas"
   },
@@ -1087,7 +1087,7 @@ var jsonQuestions = [
     "option3": "proc print data = flights.laguardia label;<br/> id date;<br/> var boarded transferred flight;<br/> label boarded = 'On' transferred = 'Changed';<br/> where flight='219';<br/> run;",
     "option4": "proc print flights.laguardia noobs;<br/> id date;<br/> var date on changed flight;<br/> where flight='219';<br/> run; ",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The DATA= option specifies the data set that you are listing, and the ID statement replaces the Obs column with the specified variable. The VAR statement specifies variables and controls the order in which they appear, and the WHERE statement selects rows based on a condition. The LABEL option in the PROC PRINT statement causes the labels that are specified in the LABEL statement to be displayed.",
     "subject": "base_sas"
   },
@@ -1099,7 +1099,7 @@ var jsonQuestions = [
     "option3": "proc print data allsales.totals label noobs;<br/> run;",
     "option4": "proc print allsales.totals label;<br/> run;",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You use the DATA= option to specify the data set to be printed. The LABEL option specifies that variable labels appear in output instead of variable names.",
     "subject": "base_sas"
   },
@@ -1111,7 +1111,7 @@ var jsonQuestions = [
     "option3": "where style in (RANCH, SPLIT, TWOSTORY);",
     "option4": "where style in ('RANCH','SPLIT','TWOSTORY');",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "In the WHERE statement, the IN operator enables you to select observations based on several values. You specify values in parentheses and separate them by spaces or commas. Character values must be enclosed in quotation marks and must be in the same case as in the data set.",
     "subject": "base_sas"
   },
@@ -1123,7 +1123,7 @@ var jsonQuestions = [
     "option3": "proc sort data = finance.dividend out = work.calc; by account;<br/> run;",
     "option4": "proc sort from finance.dividend to calc;<br/> by account;<br/> run;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "In a PROC SORT step, you specify the DATA= option to specify the data set to sort. The OUT= option specifies an output data set. The required BY statement specifies the variable(s) to use in sorting the data.",
     "subject": "base_sas"
   },
@@ -1135,7 +1135,7 @@ var jsonQuestions = [
     "option3": "the DATE and NONUMBER system options and the DOUBLE option in PROC PRINT",
     "option4": "the DATE and NONUMBER system options and the NOOBS option in PROC PRINT",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The DATE and NONUMBER system options cause the output to appear with the date but without page numbers. In the PROC PRINT step, the DOUBLE option specifies double spacing, and the NOOBS option removes the default Obs column.",
     "subject": "base_sas"
   },
@@ -1147,7 +1147,7 @@ var jsonQuestions = [
     "option3": "var month instructors aerclass;<br/> sum instructors aerclass walkjogrun swim;",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You do not need to name the variables in a VAR statement if you specify them in the SUM statement, but you can. If you choose not to name the variables in the VAR statement as well, then the SUM statement determines the order of the variables in the output.",
     "subject": "base_sas"
   },
@@ -1159,7 +1159,7 @@ var jsonQuestions = [
     "option3": "The PROC SORT step generates errors and stops processing, but the PROC PRINT step runs successfully, printing observations in their original (unsorted) order",
     "option4": "The PROC SORT step runs successfully, but the PROC PRINT step generates errors and stops processing",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The BY statement is required in PROC SORT. Without it, the PROC SORT step fails. However, the PROC PRINT step prints the original data set as requested.",
     "subject": "base_sas"
   },
@@ -1171,7 +1171,7 @@ var jsonQuestions = [
     "option3": "<table>   <tr>     <th>Months</th>     <th>Amount</th>     <th>Payment</th>   </tr>   <tr>     <td>12</td>     <td>$3,500</td>     <td>$308.52</td>   </tr>   <tr>     <td>48</td>     <td>$5,000</td>     <td>$128.02</td>   </tr>   <tr>     <td>24</td>     <td>$8,700</td>     <td>$403.47</td>   </tr>   <tr>     <td>36</td>     <td>$10,000</td>     <td>$325.02</td>   </tr>   <tr>     <td>&nbsp;</td>     <td style=\"font-weight:bold;\">$27,200</td>     <td style=\"font-weight:bold;\">$1,165.03</td>   </tr> </table>",
     "option4": "<table>   <tr>     <th>Months</th>     <th>Amount</th>     <th>Payment</th>   </tr>   <tr>     <td>12</td>     <td>$3,500</td>     <td>$308.52</td>   </tr>   <tr>     <td>24</td>     <td>$8,700</td>     <td>$403.47</td>   </tr>   <tr>     <td>36</td>     <td>$10,000</td>     <td>$325.02</td>   </tr>   <tr>     <td>48</td>     <td>$5,000</td>     <td>$128.02</td>   </tr>   <tr>     <td>&nbsp;</td>     <td style=\"font-weight:bold;\">&nbsp;</td>     <td style=\"font-weight:bold;\">$1,165.03</td>   </tr> </table>",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Column totals appear at the end of the report in the same format as the values of the variables, so b is incorrect. Work.Loans is sorted by Month and Amount, so c is incorrect. The program sums both Amount and Payment, so d is incorrect.",
     "subject": "base_sas"
   },
@@ -1183,7 +1183,7 @@ var jsonQuestions = [
     "option3": "where amount <= 5000 and<br/> (account='101-1092' or rate eq 0.095);",
     "option4": "where amount <= 5000 or account='101-1092'<br/> and rate = 0.095;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To ensure that the compound expression is evaluated correctly, you can use parentheses to group<br/> <table>   <tr>     <th>OBS</th>     <th>Account</th>     <th>Amount</th>     <th>Rate</th>     <th>MonthsPayment</th>   </tr>   <tr>     <td>1</td>     <td>1001-1092</td>     <td>$22,000</td>     <td>10.00%60</td>     <td>$467.43</td>   </tr>   <tr>     <td>2</td>     <td>101-1731</td>     <td>$114,0009</td>     <td>.50%360</td>     <td>$$958.57</td>   </tr>   <tr>     <td>3</td>     <td>101-1289</td>     <td>$10,000</td>     <td>10.50%36</td>     <td>$325.02</td>   </tr>   <tr>     <td>4</td>     <td>101-3144</td>     <td>$3,500</td>     <td>10.50%12</td>     <td>$308.52</td>   </tr>   <tr>     <td>5</td>     <td>103-1135</td>     <td>$8,700</td>     <td>10.50%24</td>     <td>$403.47</td>   </tr>   <tr>     <td>6</td>     <td>103-1994</td>     <td>$18,500</td>     <td>10.00%60</td>     <td>$393.07</td>   </tr>   <tr>     <td>7</td>     <td>103-2335</td>     <td>$5,000</td>     <td>10.50%48</td>     <td>$128.02</td>   </tr>   <tr>     <td>8</td>     <td>103-3864</td>     <td>$87,000</td>     <td>9.50%360</td>     <td>$735.75</td>   </tr>   <tr>     <td>9</td>     <td>103-3891</td>     <td>$30,000</td>     <td>9.75%360</td>     <td>$257.75</td>   </tr> </table><br/> For example, from the data set above, a and b above select observations 2 and 8 (those that have a rate of 0.095); c selects no observations; and d selects observations 4 and 7 (those that have an amount less than or equal to 5000).",
     "subject": "base_sas"
   },
@@ -1195,7 +1195,7 @@ var jsonQuestions = [
     "option3": "PROC PRINT displays columns in the following order: a column for observation numbers, all character variables, and all numeric variables",
     "option4": "PROC PRINT displays all observations and variables in the data set, a column for observation numbers on the far left, and variables in the order in which they occur in the data set",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You can remove the column for observation numbers. You can also specify the variables you want, and you can select observations according to conditions.",
     "subject": "base_sas"
   },
@@ -1207,7 +1207,7 @@ var jsonQuestions = [
     "option3": "fileref crime 'c:\\states\\data\\crime';",
     "option4": "filename 'c:\\states\\data\\crime' crime;",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Before you can read your raw data, you must reference the raw data file by creating a fileref. You assign a fileref by using a FILENAME statement in the same way that you assign a libref by using a LIBNAME statement.",
     "subject": "base_sas"
   },
@@ -1219,7 +1219,7 @@ var jsonQuestions = [
     "option3": "you end your SAS session",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Like LIBNAME statements, FILENAME statements are global; they remain in effect until you change them, cancel them, or end your SAS session.",
     "subject": "base_sas"
   },
@@ -1231,7 +1231,7 @@ var jsonQuestions = [
     "option3": "input products obs=15;",
     "option4": "input products 1-15;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You use an INFILE statement to specify the raw data file to be read. You can specify a fileref or an actual filename (in quotation marks). The OBS= option in the INFILE statement enables you to process only records 1 through n.",
     "subject": "base_sas"
   },
@@ -1243,7 +1243,7 @@ var jsonQuestions = [
     "option3": "data _null_;<br/> set work.patients;<br/> file c:\\clinic\\patients\\referrals.dat;<br/> put id 1-4 sex 6 age 8-9 height 11-12<br/> weight 14-16 pulse 18-20;<br/> run;",
     "option4": "data _null_;<br/> set work.patients;<br/> file 'c:\\clinic\\patients\\referrals.dat';<br/> put id 1-4 sex 6 age 8-9 height 11-12<br/> weight 14-16 pulse 18-20;<br/> run;",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The keyword _NULL_ in the DATA statement enables you to use the power of the DATA step without actually creating a SAS data set. You use the FILE and PUT statements to write out the observations from a SAS data set to a raw data file. The FILE statement specifies the raw data file and the PUT statement describes the lines to write to the raw data file. The filename and location that are specified in the FILE statement must be enclosed in quotation marks.",
     "subject": "base_sas"
   },
@@ -1255,7 +1255,7 @@ var jsonQuestions = [
     "option3": "<table>   <tr>     <td colspan=\"2\">1---+----10----+----20----+</td>   </tr>   <tr>     <td>Avery John</td>     <td>$601.23</td>   </tr>   <tr>     <td>Davison Sherril</td>     <td>$723.15</td>   </tr>   <tr>     <td>Holbrook Grace</td>     <td>$489.76</td>   </tr>   <tr>     <td>Jansen Mike</td>     <td>$638.42</td>   </tr> </table>",
     "option4": "all of the above",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Column input is appropriate only in some situations. When you use column input, your data must be standard character or numeric values, and they must be in fixed fields. That is, values for a particular variable must be in the same location in all records.",
     "subject": "base_sas"
   },
@@ -1267,7 +1267,7 @@ var jsonQuestions = [
     "option3": "data work.salesrep;<br/> infile empdata;<br/> input ID $ 1-4 name1 $ 6-12<br/> name2 $ 14-18 City $ 20-29;<br/> run;<br/><br/> proc print data = work.salesrep;<br/> run;",
     "option4": "all of the above",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The INPUT statement creates a variable using the name that you assign to each field. Therefore, when you write an INPUT statement, you need to specify the variable names exactly as you want them to appear in the SAS data set.",
     "subject": "base_sas"
   },
@@ -1279,7 +1279,7 @@ var jsonQuestions = [
     "option3": "input $ StockNumber 1-3 Price 27-32 <br/>$ Item 20-24 $ Finish 5-9 $ Style 11-18;",
     "option4": "input StockNumber $ 1-3 Price $ 27-32 <br/>Item $ 20-24 Finish $ 5-9 Style $ 11-18;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You can use column input to read fields in any order. You must specify the variable name to be created, identify character values with a $, and name the correct starting column and ending column for each field.",
     "subject": "base_sas"
   },
@@ -1291,7 +1291,7 @@ var jsonQuestions = [
     "option3": "income=income*2;",
     "option4": "income= *2;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To re-define the values of the variable Income in an Assignment statement, you specify the variable name on the left side of the equal sign and an appropriate expression including the variable name on the right side of the equal sign.",
     "subject": "base_sas"
   },
@@ -1303,7 +1303,7 @@ var jsonQuestions = [
     "option3": "data finance.newloan;<br/> input Year 1-4 Country 6-11<br/> Vehicle 13-18 Amount 20-28;<br/> if country='JAPAN';<br/> MonthAvg=amount/12;<br/> datalines; <table>   <tr>     <td>1998</td>     <td>US</td>     <td>CARS</td>     <td>194324.12</td>   </tr>   <tr>     <td>1998</td>     <td>US</td>     <td>TRUCKS</td>     <td>142290.30</td>   </tr>   <tr>     <td>1998</td>     <td>CANADA</td>     <td>CARS</td>     <td>10483.44</td>   </tr>   <tr>     <td>1998</td>     <td>CANADA</td>     <td>TRUCKS</td>     <td>93543.64</td>   </tr>   <tr>     <td>1998</td>     <td>MEXICO</td>     <td>CARS</td>     <td>22500.57</td>   </tr>   <tr>     <td>1998</td>     <td>MEXICO</td>     <td>TRUCKS</td>     <td>10098.88</td>   </tr>   <tr>     <td>1998</td>     <td>JAPAN</td>     <td>CARS</td>     <td>15066.43</td>   </tr>   <tr>     <td>1998</td>     <td>JAPAN</td>     <td>TRUCKS</td>     <td>40700.34</td>   </tr> </table> ;",
     "option4": "data finance.newloan;<br/> input Year 1-4 Country $ 6-11<br/> Vehicle $ 13-18 Amount 20-28;<br/> if country='JAPAN';<br/> MonthAvg=amount/12;<br/> datalines; <table>   <tr>     <td>1998</td>     <td>US</td>     <td>CARS</td>     <td>194324.12</td>   </tr>   <tr>     <td>1998</td>     <td>US</td>     <td>TRUCKS</td>     <td>142290.30</td>   </tr>   <tr>     <td>1998</td>     <td>CANADA</td>     <td>CARS</td>     <td>10483.44</td>   </tr>   <tr>     <td>1998</td>     <td>CANADA</td>     <td>TRUCKS</td>     <td>93543.64</td>   </tr>   <tr>     <td>1998</td>     <td>MEXICO</td>     <td>CARS</td>     <td>22500.57</td>   </tr>   <tr>     <td>1998</td>     <td>MEXICO</td>     <td>TRUCKS</td>     <td>10098.88</td>   </tr>   <tr>     <td>1998</td>     <td>JAPAN</td>     <td>CARS</td>     <td>15066.43</td>   </tr>   <tr>     <td>1998</td>     <td>JAPAN</td>     <td>TRUCKS</td>     <td>40700.34</td>   </tr> </table> ;",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To read instream data, you specify a DATALINES statement and data lines, followed by a null statement (single semicolon) to indicate the end of the input data. Program a contains no DATALINES statement, and the INPUT statement does not specify the fields to read. Program b contains no data lines, and the INPUT statement in program c does not specify the necessary dollar signs for the character variables Country and Vehicle.",
     "subject": "base_sas"
   },
@@ -1315,7 +1315,7 @@ var jsonQuestions = [
     "option3": "if sex='F';",
     "option4": "a or b",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To subset data, you can use a subsetting IF statement in any DATA step to process only those observations that meet a specified condition. Because Sex is a character variable, the value F must be enclosed in quotation marks and must be in the same case as in the data set.",
     "subject": "base_sas"
   },
@@ -1327,7 +1327,7 @@ var jsonQuestions = [
     "option3": "the program data vector",
     "option4": "the _N_ and _ERROR_ automatic variables",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "At the beginning of the compilation phase, the program data vector is created. The program data vector includes the two automatic variables _N_ and _ERROR_. The descriptor portion of the new SAS data set is created at the end of the compilation phase. The descriptor portion includes the name of the data set, the number of observations and variables, and the names and attributes of the variables. Observations are not written until the execution phase.",
     "subject": "base_sas"
   },
@@ -1339,7 +1339,7 @@ var jsonQuestions = [
     "option3": "missing or invalid punctuation",
     "option4": "missing or misspelled keywords",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Syntax checking can detect many common errors, but it cannot verify the values of variables or the correctness of formats.",
     "subject": "base_sas"
   },
@@ -1351,7 +1351,7 @@ var jsonQuestions = [
     "option3": "once for each record in the input file",
     "option4": "once for each variable in the input file",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The DATA step executes once for each record in the input file, unless otherwise directed.",
     "subject": "base_sas"
   },
@@ -1363,7 +1363,7 @@ var jsonQuestions = [
     "option3": "undefined",
     "option4": "missing",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The remaining variables are initialized to missing. Missing numeric values are represented by periods, and missing character values are represented by blanks.",
     "subject": "base_sas"
   },
@@ -1375,7 +1375,7 @@ var jsonQuestions = [
     "option3": "2",
     "option4": "3",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The default value of _ERROR_ is 0, which means there is no error. When an error occurs, whether it is one error or multiple errors, the value is set to 1.",
     "subject": "base_sas"
   },
@@ -1387,7 +1387,7 @@ var jsonQuestions = [
     "option3": "The descriptor portion of the data set is written",
     "option4": "The values of variables created in programming statements are re-set to missing in the program data vector",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "By default, at the end of the DATA step, the values in the program data vector are written to the data set as an observation, the value of the automatic variable _N_ is incremented by one, control returns to the top of the DATA step, and the values of variables created in programming statements are set to missing. The automatic variable _ERROR_ retains its value.",
     "subject": "base_sas"
   },
@@ -1399,7 +1399,7 @@ var jsonQuestions = [
     "option3": "Total IDnum Item InStock BackOrd",
     "option4": "Total Item IDnum InStock BackOrd",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The order in which variables are defined in the DATA step determines the order in which the variables are stored in the data set.",
     "subject": "base_sas"
   },
@@ -1411,7 +1411,7 @@ var jsonQuestions = [
     "option3": "the DATA step still compiles, but it does not execute",
     "option4": "the DATA step still compiles and executes",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "When SAS can not interpret syntax errors, the DATA step compiles, but it does not execute.",
     "subject": "base_sas"
   },
@@ -1423,7 +1423,7 @@ var jsonQuestions = [
     "option3": "incorrect order of variables",
     "option4": "incorrect variable type",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "A semicolon is missing from the second line. It will cause an error because the INPUT statement will be interpreted as invalid INFILE statement options.",
     "subject": "base_sas"
   },
@@ -1435,7 +1435,7 @@ var jsonQuestions = [
     "option3": "A variable was misspelled in the INPUT statement",
     "option4": "A dollar sign was missing in the INPUT statement",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The third line of the log displays the values for IDnum, which are clearly character values. The fourth line displays the values in the program data vector and shows that the values for IDnum are missing, even though the other values are correctly assigned. Thus, it appears that numeric values were expected for IDnum. A dollar sign, to indicate character values, must be missing from the INPUT statement.",
     "subject": "base_sas"
   },
@@ -1447,7 +1447,7 @@ var jsonQuestions = [
     "option3": "only for the current SAS session",
     "option4": "permanently",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "If you do not specify the LIBRARY= option, formats are stored in a default format catalog named Work.Formats. As the libref Work implies, any format that is stored in Work.Formats is a temporary format that exists only for the current SAS session.",
     "subject": "base_sas"
   },
@@ -1459,7 +1459,7 @@ var jsonQuestions = [
     "option3": "library='c:\\sas\\formats\\lib';proc format library ...;",
     "option4": "library='c:\\sas\\formats\\lib';proc library ...;",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To store formats in a permanent catalog, you first write a LIBNAME statement to associate the libref with the SAS data library in which the catalog will be stored. Then add the LIB= (or LIBRARY=) option to the PROC FORMAT statement, specifying the name of the catalog.",
     "subject": "base_sas"
   },
@@ -1471,7 +1471,7 @@ var jsonQuestions = [
     "option3": "must be at least eight characters long",
     "option4": "must begin with a dollar sign ($) if used with a character variable",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The name of a format that is created with a VALUE statement must begin with a dollar sign ($) if it applies to a character variable.",
     "subject": "base_sas"
   },
@@ -1483,7 +1483,7 @@ var jsonQuestions = [
     "option3": "proc format lib=library; value colorfmt; 1='Red' 2='Green' 3='Blue' run;",
     "option4": "proc format lib=library; value colorfmt 1='Red'; 2='Green'; 3='Blue'; run;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "A semicolon is needed after the PROC FORMAT statement. The VALUE statement begins with the keyword VALUE and ends with a semicolon after all the labels have been defined.",
     "subject": "base_sas"
   },
@@ -1495,7 +1495,7 @@ var jsonQuestions = [
     "option3": "a range of character values, such as 'A'-'M'",
     "option4": "a list of numeric and character values separated by commas, such as 90,'B',180,'D',270.",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You can list values separated by commas, but the list must contain either all numeric values or all character values. Data set variables are either numeric or character.",
     "subject": "base_sas"
   },
@@ -1507,7 +1507,7 @@ var jsonQuestions = [
     "option3": "200",
     "option4": "256",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "When specifying a label, enclose it in quotation marks and limit the label to 256 characters.",
     "subject": "base_sas"
   },
@@ -1519,7 +1519,7 @@ var jsonQuestions = [
     "option3": "MISSING",
     "option4": "OTHER",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "MISS and MISSING are invalid keywords, and LOW does not include missing values. The keyword OTHER can be used in the VALUE statement to label missing values as well as any values that are not specifically included in a range.",
     "subject": "base_sas"
   },
@@ -1531,7 +1531,7 @@ var jsonQuestions = [
     "option3": "You replace the original data with the format labels",
     "option4": "You make the formats available to other data sets",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "By placing the FORMAT statement in a DATA step, you permanently associate the defined formats with variables.",
     "subject": "base_sas"
   },
@@ -1543,7 +1543,7 @@ var jsonQuestions = [
     "option3": "format jobtitle=jobfmt;",
     "option4": "format jobtitle='jobfmt';",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To associate a user-defined format with a variable, place a period at the end of the format name when it is used in the FORMAT statement.",
     "subject": "base_sas"
   },
@@ -1555,7 +1555,7 @@ var jsonQuestions = [
     "option3": "FMTCAT",
     "option4": "FMTLIB",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Adding the keyword FMTLIB to the PROC FORMAT statement displays a list of all the formats in your catalog, along with descriptions of their values.",
     "subject": "base_sas"
   },
@@ -1567,7 +1567,7 @@ var jsonQuestions = [
     "option3": "<table>   <tr>     <th>Style</th>     <th>SqFeet</th>     <th>Bedrooms</th>     <th>Price</th>   </tr>   <tr>     <td>15</td>     <td>21705</td>     <td>40</td>     <td>$1,240,800</td>   </tr> </table>",
     "option4": "<table>   <tr>     <th>Style</th>     <th>SqFeet</th>     <th>Bedrooms</th>     <th>Price</th>   </tr>   <tr>     <td>RANCH</td>     <td>1250</td>     <td>2</td>     <td>$64,000</td>   </tr>   <tr>     <td>SPLIT</td>     <td>1190</td>     <td>1</td>     <td>$65,850</td>   </tr>   <tr>     <td>CONDO</td>     <td>1400</td>     <td>2</td>     <td>$80,050</td>   </tr>   <tr>     <td>TWOSTORY</td>     <td>1810</td>     <td>4</td>     <td>$107,250</td>   </tr>   <tr>     <td>RANCH</td>     <td>1500</td>     <td>3</td>     <td>$86,650</td>   </tr>   <tr>     <td>SPLIT</td>     <td>1615</td>     <td>4</td>     <td>$94,450</td>   </tr>   <tr>     <td>SPLIT</td>     <td>1305</td>     <td>3</td>     <td>$73,650</td>   </tr>   <tr>     <td>CONDO</td>     <td>1390</td>     <td>3</td>     <td>$79,350</td>   </tr>   <tr>     <td>TWOSTORY</td>     <td>1040</td>     <td>2</td>     <td>$55,850</td>   </tr>   <tr>     <td>CONDO</td>     <td>2105</td>     <td>4</td>     <td>$127,150</td>   </tr>   <tr>     <td>RANCH</td>     <td>1535</td>     <td>3</td>     <td>$89,100</td>   </tr>   <tr>     <td>TWOSTORY</td>     <td>1240</td>     <td>2</td>     <td>$69,250</td>   </tr>   <tr>     <td>RANCH</td>     <td>720</td>     <td>1</td>     <td>$34,550</td>   </tr>   <tr>     <td>TWOSTORY</td>     <td>1745</td>     <td>4</td>     <td>$102,950</td>   </tr>   <tr>     <td>CONDO</td>     <td>1860</td>     <td>2</td>     <td>$110,700</td>   </tr> </table>",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "This program creates a summary report, which consolidates into one row all observations from the data set that have a unique combination of values for the variable Style.",
     "subject": "base_sas"
   },
@@ -1579,7 +1579,7 @@ var jsonQuestions = [
     "option3": "PROC REPORT displays only the first occurrence of each order variable value in a set of rows that have the same value for all order variables.",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Order variables do order rows according to the formatted values of the order variable, and PROC REPORT suppresses repetitious printing of order values. However, you can not use order variables in a summary report.",
     "subject": "base_sas"
   },
@@ -1591,7 +1591,7 @@ var jsonQuestions = [
     "option3": "SPACING= only",
     "option4": "CENTER, FORMAT=, and HEADLINE",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The HEADLINE option underlines the headings, and the HEADSKIP option skips a line between the headings and the rows in the report. Also, Style is centered, and the column for Price is wider than the default.",
     "subject": "base_sas"
   },
@@ -1603,7 +1603,7 @@ var jsonQuestions = [
     "option3": "define bedrooms / mean 'Average/Bedrooms';<br/> define baths / max 'Maximum/Baths';<br/> define style / group;",
     "option4": "define bedrooms / 'Average/Bedrooms';<br/> define baths / 'Maximum/Baths'",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To create a summary report, you must define a group variable. To produce the statistics that you want, you must specify the MEAN and MAX statistics for Bedrooms and Baths.",
     "subject": "base_sas"
   },
@@ -1615,7 +1615,7 @@ var jsonQuestions = [
     "option3": "proc report data=sasuser.houses nowd;<br/> column style bedrooms baths BedBathRatio;<br/> define style / order;<br/> define bedbathratio / computed format=4.2;<br/> compute bedbathratio;<br/> bedbathratio = baths.sum / bedrooms.sum;<br/> endcomp;<br/> run;",
     "option4": "proc report data=sasuser.houses nowd;<br/> column style bedrooms baths BedBathRatio;<br/> define style / order;<br/> define bedbathratio / computed format=4.2;<br/> compute bedbathratio;<br/> bedbathratio = baths / bedrooms;<br/> endcomp;<br/> run;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Program c correctly specifies a computed variable in the COLUMN statement, defines the variable in a DEFINE statement, and computes values using the form variable-name.statistic in a compute block.",
     "subject": "base_sas"
   },
@@ -1627,7 +1627,7 @@ var jsonQuestions = [
     "option3": "a list report that displays a row for each observation in the input data set and which calculates the SUM statistic for numeric variables",
     "option4": "a list report that calculates the N (frequency) statistic for character variables",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "By default, PROC REPORT displays character variables as display variables. A report that contains one or more display variables has a detail row for each observation in the data set. By default, PROC REPORT displays numeric variables as analysis variables, which are used to calculate the default statistic SUM.",
     "subject": "base_sas"
   },
@@ -1639,7 +1639,7 @@ var jsonQuestions = [
     "option3": "proc report data=sasuser.houses nowd;<br/> column style price;<br/> define style / across;<br/> define price / mean 'Average Price';<br/> run;",
     "option4": "proc report data=sasuser.houses nowd;<br/> column style price;<br/> define style / across 'CONDO' 'RANCH' 'SPLIT' 'TWOSTORY';<br/> define price / mean 'Average Price';<br/> run;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "In this output, the table cells contain a frequency count for each unique value of an across variable, Style. You do not have to specify across variable values in your PROC REPORT step.",
     "subject": "base_sas"
   },
@@ -1651,7 +1651,7 @@ var jsonQuestions = [
     "option3": "both of the above",
     "option4": "neither of the above",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "In nonwindowing mode, your PROC REPORT output appears as HTML and/or as SAS listing output, depending on your option settings.",
     "subject": "base_sas"
   },
@@ -1663,7 +1663,7 @@ var jsonQuestions = [
     "option3": "You must specify either the WIDTH= or the SPACING= attribute in DEFINE statements",
     "option4": "These headings split this way by default",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "By default, columns for character variables are the same as the variable's length, and columns for numeric variables have a width of 9. So these headings split this way by default.",
     "subject": "base_sas"
   },
@@ -1675,7 +1675,7 @@ var jsonQuestions = [
     "option3": "you can order rows by specifying options in the PROC REPORT statement",
     "option4": "you can produce only summary reports",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Unless you use DEFINE statements to define order variables or group variables, you can not order rows or produce summary reports. However, DEFINE statements are not required in all PROC REPORT steps.",
     "subject": "base_sas"
   },
@@ -1687,7 +1687,7 @@ var jsonQuestions = [
     "option3": "standard deviation",
     "option4": "standard error of the mean",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "By default, the MEANS procedure produces the n-count, mean, minimum, and standard deviation.",
     "subject": "base_sas"
   },
@@ -1699,7 +1699,7 @@ var jsonQuestions = [
     "option3": "output boarded transfer deplane;",
     "option4": "var boarded transfer deplane;",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To specify the variables that PROC MEANS analyzes, add a VAR statement and list the variable names.",
     "subject": "base_sas"
   },
@@ -1711,7 +1711,7 @@ var jsonQuestions = [
     "option3": "Height",
     "option4": "Weight",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Unlike Age, Height, or Weight, the values of IDnum are unlikely to yield any useful statistics.",
     "subject": "base_sas"
   },
@@ -1723,7 +1723,7 @@ var jsonQuestions = [
     "option3": "BY-group processing is preferred when you are categorizing data that contains few variables",
     "option4": "BY-group processing overwrites your data set with the newly grouped observations",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Unlike CLASS processing, BY-group processing requires that your data already be indexed or sorted in the order of the BY variables. You might need to run the SORT procedure before using PROC MEANS with a BY group.",
     "subject": "base_sas"
   },
@@ -1735,7 +1735,7 @@ var jsonQuestions = [
     "option3": "by sex survive;",
     "option4": "by survive sex;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "A CLASS statement produces a single large table, whereas BY-group processing creates a series of small tables. The order of the variables in the CLASS statement determines their order in the output table.",
     "subject": "base_sas"
   },
@@ -1747,7 +1747,7 @@ var jsonQuestions = [
     "option3": "proc means data = clinic.diabetes noprint;<br/> var age height weight;<br/> class sex;<br/> output out = work.sum_gender<br/> mean = AvgAge AvgHeight AvgWeight;<br/> run;",
     "option4": "Both a and b",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You can use either PROC MEANS or PROC SUMMARY to create the table. Adding a PRINT option to the PROC SUMMARY statement produces the same reports as if you used PROC MEANS.",
     "subject": "base_sas"
   },
@@ -1759,7 +1759,7 @@ var jsonQuestions = [
     "option3": "both character and numeric variables",
     "option4": "none: variables must always be specified",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "By default, the PROC FREQ creates a table for all variables in a data set.",
     "subject": "base_sas"
   },
@@ -1771,7 +1771,7 @@ var jsonQuestions = [
     "option3": "categorical values",
     "option4": "unique values",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Both continuous values and many unique values can result in lengthy and meaningless tables. Frequency distributors work best with categorical values.",
     "subject": "base_sas"
   },
@@ -1783,7 +1783,7 @@ var jsonQuestions = [
     "option3": "proc freq data = clinic.diabetes;<br/> tables height * weight;<br/> format height htfmt. weight wtfmt.;<br/> run;",
     "option4": "proc freq data = clinic.diabetes;<br/> tables weight * height;<br/> format weight wtfmt. height htfmt.;<br/> run;",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "An asterisk is used to join the variables in a two-way TABLES statement. The first variable forms the table rows, and the second variable forms the table columns.",
     "subject": "base_sas"
   },
@@ -1795,7 +1795,7 @@ var jsonQuestions = [
     "option3": "proc freq data = clinic.diabetes;<br/> tables sex weight / norow nocol;,br/> format weight wtfmt.;<br/> run;",
     "option4": "proc freq data = clinic.diabetes;<br/> tables sex * weight / nofreq norow nocol;<br/> format weight wtfmt.;<br/> run;",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "An asterisk is used to join the variables in crosstabulation tables. The only results that are shown in this table are cell percentages. The NOFREQ option suppresses cell frequencies, the NOROW option suppresses row percentages, and the NOCOL option suppresses column percentages.",
     "subject": "base_sas"
   },
@@ -1807,7 +1807,7 @@ var jsonQuestions = [
     "option3": "3",
     "option4": "as many as you want",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You can generate any number of output types as long as you open the ODS destination for each type of output that you want to create.",
     "subject": "base_sas"
   },
@@ -1819,7 +1819,7 @@ var jsonQuestions = [
     "option3": "HTML, PDF, and listing",
     "option4": "No output is created because ODS is closed by default",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Listing output is created by default, so these statements create HTML, PDF, and listing output.",
     "subject": "base_sas"
   },
@@ -1831,7 +1831,7 @@ var jsonQuestions = [
     "option3": "It makes your program compatible with other hardware platforms",
     "option4": "It makes your program compatible with previous versions of SAS software",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "By default, SAS programs produce listing output. If you want only HTML output, it's a good idea to close the Listing destination before creating HTML output, because an open destination uses system resources.",
     "subject": "base_sas"
   },
@@ -1843,7 +1843,7 @@ var jsonQuestions = [
     "option3": "The PROC PRINT output for both Work.Alpha and Work.Beta",
     "option4": "Nothing. No output will be written to D:\\Output\\body.html",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "When multiple procedures are run while HTML output is open, procedure output is appended to the same body file.",
     "subject": "base_sas"
   },
@@ -1855,7 +1855,7 @@ var jsonQuestions = [
     "option3": "D:\\Output\\frame.html",
     "option4": "There are no links from the file D:\\Output\\contents.html",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The CONTENTS= option creates a table of contents containing links to the body file, D:\\Output\\body.html.",
     "subject": "base_sas"
   },
@@ -1867,7 +1867,7 @@ var jsonQuestions = [
     "option3": "each procedure and DATA step",
     "option4": "each HTML file created by your program",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The table of contents contains a numbered heading for each procedure that creates output.",
     "subject": "base_sas"
   },
@@ -1879,7 +1879,7 @@ var jsonQuestions = [
     "option3": "The files D:\\Output\\contents.html and D:\\Output\\body.html",
     "option4": "It displays no other files",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The FRAME= option creates an HTML file that integrates the table of contents and the body file.",
     "subject": "base_sas"
   },
@@ -1891,7 +1891,7 @@ var jsonQuestions = [
     "option3": "To allow HTML files to be loaded from a local drive",
     "option4": "To send HTML output to two locations",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Specifying the URL= suboption in the file specification provides a URL that ODS uses in the links it creates. Specifying a simple (one name) URL creates a relative link address to the file.",
     "subject": "base_sas"
   },
@@ -1903,7 +1903,7 @@ var jsonQuestions = [
     "option3": "style=brown",
     "option4": "style='brown'",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You can change the appearance of HTML output by using the STYLE= option in the ODS HTML statement. The style name does not need quotation marks.",
     "subject": "base_sas"
   },
@@ -1915,7 +1915,7 @@ var jsonQuestions = [
     "option3": "It allows HTML files to be loaded from a local drive",
     "option4": "It specifies the location of HTML file output",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You use the PATH= option to specify the location for HTML output. When you use the PATH= option, you do not need to specify the full pathname for the body, contents, or frame files.",
     "subject": "base_sas"
   },
@@ -1927,7 +1927,7 @@ var jsonQuestions = [
     "option3": "data test2(drop=price);<br/> infile furnture;<br/> input StockNum $ 1-3 Finish $ 5-9 Style $ 11-18 Item $ 20-24 Price 26-31;<br/> if finish = 'oak' and price < 200 then delete;<br/> TotalPrice + price;<br/> run;<br/><br/> proc print data=test2 noobs;<br/> run;",
     "option4": "data test2;<br/> infile furnture; input StockNum $ 1-3 Finish $ 5-9 Style $ 11-18 Item $ 20-24 Price 26-31;<br/> if finish = oak and price < 200 then delete price;<br/> TotalPrice + price;<br/> run;<br/><br/> proc print data=test2 noobs;<br/> run;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Program c correctly deletes the observation in which the value of Finish is oak and the value of Price is less than 200. It also creates TotalPrice by summing the variable Price down observations, then drops Price by using the DROP= data set option in the DATA statement.",
     "subject": "base_sas"
   },
@@ -1939,7 +1939,7 @@ var jsonQuestions = [
     "option3": "label Amount, default format",
     "option4": "The PROC PRINT step does not execute because two labels and two formats are assigned to the same variable",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The PROC PRINT output displays the label Total Amount Loaned for the variable Amount and formats this variable using the COMMA10. format. Temporary labels or formats that are assigned in a PROC step override permanent labels or formats that are assigned in a DATA step.",
     "subject": "base_sas"
   },
@@ -1951,7 +1951,7 @@ var jsonQuestions = [
     "option3": "project='A' and present='A'",
     "option4": "research='A' or (project='A' and present='A')",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Logical comparisons that are enclosed in parentheses are evaluated as true or false before they are compared to other expressions. In the example above, the AND comparison within the nested parentheses is evaluated before being compared to the OR comparison.",
     "subject": "base_sas"
   },
@@ -1963,7 +1963,7 @@ var jsonQuestions = [
     "option3": "30",
     "option4": "70",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The Sum statement adds the result of the expression that is on the right side of the plus sign to the numeric variable that is on the left side. The new value is then retained for subsequent observations. The Sum statement treats the missing value as a 0, so the value of Count in the fourth observation would be 10+20+0+40, or 70.",
     "subject": "base_sas"
   },
@@ -1975,7 +1975,7 @@ var jsonQuestions = [
     "option3": "100",
     "option4": "130",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The RETAIN statement assigns an initial value of 100 to the variable Count, so the value of Count in the third observation would be 100+10+20+0, or 130.",
     "subject": "base_sas"
   },
@@ -1987,7 +1987,7 @@ var jsonQuestions = [
     "option3": "Count = 12 Control = Stop",
     "option4": "Count = 13 Control = Go",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You must enclose character values in quotation marks, and you must specify them in the same case in which they appear in the data set. The value ok is not identical to OK, so the value of Count is not changed by the IF-THEN statement.",
     "subject": "base_sas"
   },
@@ -1999,7 +1999,7 @@ var jsonQuestions = [
     "option3": "the LENGTH statement",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The length of a variable is determined by its first reference in the DATA step. When creating a new character variable, SAS allocates as many bytes of storage space as there are characters in the first value that it encounters for that variable. The first reference to a new variable can also be made with a LENGTH statement or an assignment statement. The length of the variable's first value does not matter once the variable has been referenced in your program.",
     "subject": "base_sas"
   },
@@ -2011,7 +2011,7 @@ var jsonQuestions = [
     "option3": "if code='1' then type='Fixed';<br/> else code='2' and type='Variable';<br/> else type='Unknown';",
     "option4": "if code='1' and type='Fixed';<br/> then code='2' and type='Variable';<br/> else type='Unknown';",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Answer a is the most efficient. You can write multiple ELSE statements to specify a series of mutually exclusive conditions. The ELSE statement must immediately follow the IF-THEN statement in your program. An ELSE statement executes only if the previous IF-THEN/ELSE statement is false.",
     "subject": "base_sas"
   },
@@ -2023,7 +2023,7 @@ var jsonQuestions = [
     "option3": "10",
     "option4": "It depends on the first value of Type",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The length of a new variable is determined by the first reference in the DATA step, not by data values. In this case, the length of Type is determined by the value Fixed. The LENGTH statement is in the wrong place; it must be read before any other reference to the variable in the DATA step. The LENGTH statement cannot change the length of an existing variable.",
     "subject": "base_sas"
   },
@@ -2035,7 +2035,7 @@ var jsonQuestions = [
     "option3": "Age, Group",
     "option4": "Age, Weight, Group",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The variables Age, Weight, and Group are specified using the KEEP= option in the SET statement. After processing, Age and Group are dropped in the DATA statement.",
     "subject": "base_sas"
   },
@@ -2047,7 +2047,7 @@ var jsonQuestions = [
     "option3": "data catalog.fastordr(drop = ordrtime);<br/> set july.orders(keep = product units price ordrtime);<br/> if ordrtime < 4;<br/> Total = units * price;<br/> run;",
     "option4": "none of the above",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You specify the data set to be created in the DATA statement. The DROP= data set option prevents variables from being written to the data set. Because you use the variable OrdrTime when processing your data, you cannot drop OrdrTime in the SET statement. If you use the KEEP= option in the SET statement, then you must list OrdrTime as one of the variables to be kept.",
     "subject": "base_sas"
   },
@@ -2059,7 +2059,7 @@ var jsonQuestions = [
     "option3": "FIRST. and LAST. identify the first and last observation in each BY group, in that order",
     "option4": "FIRST. and LAST. are stored in the data set",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "When you use the BY statement with the SET statement, the DATA step creates the temporary variables FIRST. and LAST. They are not stored in the data set.",
     "subject": "base_sas"
   },
@@ -2071,7 +2071,7 @@ var jsonQuestions = [
     "option3": "a continuous loop",
     "option4": "a data set that contains one observation",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The DATA step writes observations to output at the end of the DATA step. However, in this program, the STOP statement stops processing before the end of the DATA step. An explicit OUTPUT statement is needed in order to produce observations.",
     "subject": "base_sas"
   },
@@ -2083,7 +2083,7 @@ var jsonQuestions = [
     "option3": "Do not use an END= variable",
     "option4": "Include an OUTPUT statement",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To avoid a continuous loop when using direct access, either include a STOP statement or use programming logic that checks for an invalid value of the POINT= variable. If SAS reads an invalid value of the POINT= variable, it sets the automatic variable _ERROR_ to 1. You can use this information to check for conditions that cause continuous processing.",
     "subject": "base_sas"
   },
@@ -2095,7 +2095,7 @@ var jsonQuestions = [
     "option3": "a continuous loop",
     "option4": "a data set that contains one observation",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "By combining the POINT= option with the OUTPUT and STOP statements, your program can write a single observation to output.",
     "subject": "base_sas"
   },
@@ -2107,7 +2107,7 @@ var jsonQuestions = [
     "option3": "You cannot specify STOP with END=",
     "option4": "You cannot specify FIRST. with LAST.",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The END= option and POINT= option are incompatible in the same SET statement. Use one or the other in your program.",
     "subject": "base_sas"
   },
@@ -2119,7 +2119,7 @@ var jsonQuestions = [
     "option3": "a continuous loop",
     "option4": "a data set that contains one observation",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "This program uses the END= option to name a temporary variable that contains an end-of-file marker. That variable, LAST, is set to 1 when the SET statement reads the last observation of the data set.",
     "subject": "base_sas"
   },
@@ -2131,7 +2131,7 @@ var jsonQuestions = [
     "option3": "0",
     "option4": "there are no observations",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "At the bottom of the DATA step, the compilation phase is complete, and the descriptor portion of the new SAS data set is created. There are no observations because the DATA step has not yet executed.",
     "subject": "base_sas"
   },
@@ -2143,7 +2143,7 @@ var jsonQuestions = [
     "option3": "once for each observation in the input data set",
     "option4": "until it encounters an OUTPUT statement",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The DATA step executes once for each observation in the input data set. You use the POINT= option with the STOP statement to prevent continuous looping.",
     "subject": "base_sas"
   },
@@ -2155,7 +2155,7 @@ var jsonQuestions = [
     "option3": "mean(of var1,var4)",
     "option4": "mean(of var1-var4)",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Use a variable list to specify a range of variables as the function argument. When specifying a variable list, be sure to precede the list with the word OF. If you omit the word OF, the function argument might not be interpreted as expected.",
     "subject": "base_sas"
   },
@@ -2167,7 +2167,7 @@ var jsonQuestions = [
     "option3": "SAS converts the values of Hours to character values. No message is written to the log",
     "option4": "SAS converts the values of Hours to character values. A message is written to the log",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "When this DATA step is executed, SAS automatically converts the character values of PayRate to numeric values so that the calculation can occur. Whenever data is automatically converted, a message is written to the SAS log stating that the conversion has occurred.",
     "subject": "base_sas"
   },
@@ -2179,7 +2179,7 @@ var jsonQuestions = [
     "option3": "TargetNo = put(target,comma6.);",
     "option4": "TargetNo = put(target,comma7.);",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You explicitly convert character values to numeric values by using the INPUT function. Be sure to select an informat that can read the form of the values.",
     "subject": "base_sas"
   },
@@ -2191,7 +2191,7 @@ var jsonQuestions = [
     "option3": "Location=dept || '/' || put(sitenum,3.1);",
     "option4": "Location=dept || '/' || put(sitenum,4.1);",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You explicitly convert numeric values to character values by using the PUT function. Be sure to select a format that can read the form of the values.",
     "subject": "base_sas"
   },
@@ -2203,7 +2203,7 @@ var jsonQuestions = [
     "option3": "MDY(1,3,2020)",
     "option4": "MDY(3,1,2020)",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Because the YEARCUTOFF= system option is set to 1920, SAS sees the two-digit year value 20 as 1920. Four-digit year values are always read correctly.",
     "subject": "base_sas"
   },
@@ -2215,7 +2215,7 @@ var jsonQuestions = [
     "option3": "State=substr(address2,2);",
     "option4": "State=substr(address2,13,2);",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The SCAN function is used to extract words from a character value when you know the order of the words, when their position varies, and when the words are marked by some delimiter. In this case, you do not need to specify delimiters, because the blank and the comma are default delimiters.",
     "subject": "base_sas"
   },
@@ -2227,7 +2227,7 @@ var jsonQuestions = [
     "option3": "Sex=substr(idcode,4);",
     "option4": "Sex=substr(idcode,4,1);",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The SUBSTR function is best used when you know the exact position of the substring to extract from the character value. You specify the position to start from and the number of characters to extract.",
     "subject": "base_sas"
   },
@@ -2239,7 +2239,7 @@ var jsonQuestions = [
     "option3": "data work.piedmont(drop = areacode exchange);<br/> set clients.piedmont;<br/> Areacode=substr(phone,1,3);<br/> Exchange=substr(phone,5,3);<br/> if areacode='919' and exchange='555' then substr(phone,1,3)='920';<br/> run;",
     "option4": "data work.piedmont(drop = areacode exchange);<br/> set clients.piedmont;<br/> Areacode=substr(phone,1,3);<br/> Exchange=substr(phone,5,3);<br/> if areacode='919' and exchange='555' then phone=substr('920',1,3);<br/> run;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The SUBSTR function replaces variable values if it is placed on the left side of an assignment statement. When placed on the right side (as in Question 7), the function extracts a substring.",
     "subject": "base_sas"
   },
@@ -2251,7 +2251,7 @@ var jsonQuestions = [
     "option3": "data work.maillist;<br/> set retail.maillist;<br/> length FullName $ 40;<br/> fullname = trim(firstname)||' '||trim(lastname);<br/> run;",
     "option4": "data work.maillist;<br/> set retail.maillist;<br/> length FullName $ 40;<br/> fullname = trim(firstname||' '||lastname);<br/> run;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The TRIM function removes trailing blanks from character values. In this case, extra blanks must be removed from the values of FirstName. Although answer c also works, the extra TRIM function for the variable LastName is unnecessary. Because of the LENGTH statement, all values of FullName are padded to 40 characters.",
     "subject": "base_sas"
   },
@@ -2263,7 +2263,7 @@ var jsonQuestions = [
     "option3": "data work.bookcase;<br/> set furnitur.bookcase; <br/> if index(lowcase(finish),walnut) = 0;<br/> run;",
     "option4": "data work.bookcase;<br/> set furnitur.bookcase;<br/> if index(lowcase(finish),'walnut') > 0;<br/> run;",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Use the INDEX function in a subsetting IF statement, enclosing the character string in quotation marks. Only those observations in which the function locates the string and returns a value greater than 0 are written to the data set.",
     "subject": "base_sas"
   },
@@ -2275,7 +2275,7 @@ var jsonQuestions = [
     "option3": "They can be used to combine DATA and PROC steps",
     "option4": "They can be used to read data",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "DO loops are DATA step statements and cannot be used in conjunction with PROC steps.",
     "subject": "base_sas"
   },
@@ -2287,7 +2287,7 @@ var jsonQuestions = [
     "option3": "12",
     "option4": "13",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The number of iterations is determined by the DO statement?s stop value, which in this case is 12.",
     "subject": "base_sas"
   },
@@ -2299,7 +2299,7 @@ var jsonQuestions = [
     "option3": "do count=1 to capital;",
     "option4": "do count=capital to (capital*.10);",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Use a DO loop to perform repetitive calculations starting at 1 and looping 15 times.",
     "subject": "base_sas"
   },
@@ -2311,7 +2311,7 @@ var jsonQuestions = [
     "option3": "2004",
     "option4": "2005",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "At the end of the fifteenth iteration of the DO loop, the value for Year is incremented to 2005. Because this value exceeds the stop value, the DO loop ends. At the bottom of the DATA step, the current values are written to the data set.",
     "subject": "base_sas"
   },
@@ -2323,7 +2323,7 @@ var jsonQuestions = [
     "option3": "The OUTPUT statement overrides the automatic output at the end of the DATA step",
     "option4": "The DO loop performs 15 iterations",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The OUTPUT statement overrides the automatic output at the end of the DATA step. On the last iteration of the DO loop, the value of Year, 2004, is written to the data set.",
     "subject": "base_sas"
   },
@@ -2335,7 +2335,7 @@ var jsonQuestions = [
     "option3": "19",
     "option4": "20",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The number of observations is based on the number of times the OUTPUT statement executes. The new data set has 20 observations, one for each iteration of the DO loop.",
     "subject": "base_sas"
   },
@@ -2347,7 +2347,7 @@ var jsonQuestions = [
     "option3": "DO UNTIL statement",
     "option4": "a DO group",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Place the monthly calculation in a DO loop within a DO loop that iterates once for each year. The DO WHILE and DO UNTIL statements are not used here because the number of required iterations is fixed. A non-iterative DO group would not be useful.",
     "subject": "base_sas"
   },
@@ -2359,7 +2359,7 @@ var jsonQuestions = [
     "option3": "SAS statements in the DO loop are executed until the specified condition is true",
     "option4": "The DO loop must have a closing END statement",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The DO UNTIL condition is evaluated at the bottom of the loop, so the enclosed statements are always executed at least once.",
     "subject": "base_sas"
   },
@@ -2371,7 +2371,7 @@ var jsonQuestions = [
     "option3": "do while(Capital le 500000);",
     "option4": "do while(Capital<500000);",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Because the DO WHILE loop is evaluated at the top of the loop, you specify the condition that must exist in order to execute the enclosed statements.",
     "subject": "base_sas"
   },
@@ -2383,7 +2383,7 @@ var jsonQuestions = [
     "option3": "over(Distance le 250)",
     "option4": "until(Distance=250)",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The WHILE expression causes the DO loop to stop executing when the value of Distance becomes equal to or greater than 250.",
     "subject": "base_sas"
   },
@@ -2395,7 +2395,7 @@ var jsonQuestions = [
     "option3": "It must contain either all numeric or all character elements",
     "option4": "It must be used to define an array before the array name can be referenced",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "An ARRAY statement is not an executable statement; it merely defines an array",
     "subject": "base_sas"
   },
@@ -2407,7 +2407,7 @@ var jsonQuestions = [
     "option3": "1-4",
     "option4": "4",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The value in braces indicates the number of elements in the array. In this case, there are four elements.",
     "subject": "base_sas"
   },
@@ -2419,7 +2419,7 @@ var jsonQuestions = [
     "option3": "do until i=4;",
     "option4": "do while i le 4;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "In the DO statement, you specify the index variable that represents the values of the array elements. Then specify the start and stop positions of the array elements.",
     "subject": "base_sas"
   },
@@ -2431,7 +2431,7 @@ var jsonQuestions = [
     "option3": "3",
     "option4": "4",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The index value represents the position of the array element. In this case, the third element is Jul.",
     "subject": "base_sas"
   },
@@ -2443,7 +2443,7 @@ var jsonQuestions = [
     "option3": "do i=1,2,3,4;",
     "option4": "do i=1 to 4;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To process all the elements in an array, you can either specify the array dimension or use the DIM function with the array name as the argument.",
     "subject": "base_sas"
   },
@@ -2455,7 +2455,7 @@ var jsonQuestions = [
     "option3": "By default, all character variables are assigned a length of eight",
     "option4": "Only character variables can be created",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Either numeric or character variables can be created by an ARRAY statement.",
     "subject": "base_sas"
   },
@@ -2467,7 +2467,7 @@ var jsonQuestions = [
     "option3": "8",
     "option4": "-7",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "At the end of the second iteration, diff{i} resolves as follows:<br/> diff{2} = wt{2+1}-wt{2};<br/> diff{2} = 215-200<br/>",
     "subject": "base_sas"
   },
@@ -2479,7 +2479,7 @@ var jsonQuestions = [
     "option3": "_temporary_ 9000 9300 9600 9900",
     "option4": "(temporary) 9000 9300 9600 9900",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To create temporary array elements, specify _TEMPORARY_ after the array name and dimension. Specify an initial value for each element, separated by either blanks or commas, and enclose the values in parentheses.",
     "subject": "base_sas"
   },
@@ -2491,7 +2491,7 @@ var jsonQuestions = [
     "option3": "ques{2,25}",
     "option4": "ques{3,0}",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "This two-dimensional array would consist of three rows of 25 elements. The first row would contain q1 through q25, the second row would start with q26 and end with q50, and the third row would start with q51 and end with q75.",
     "subject": "base_sas"
   },
@@ -2503,7 +2503,7 @@ var jsonQuestions = [
     "option3": "array compare{3,2} high1-high3 low1-low3;",
     "option4": "array compare{3,3} high1-high3 low1-low3;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The nested DO loops indicate that the array is named compare and is a two-dimensional array that has two rows and three columns.",
     "subject": "base_sas"
   },
@@ -2515,7 +2515,7 @@ var jsonQuestions = [
     "option3": "input Address $ 15-29 SquareFeet 8-11 Style $ 1-6 Bedrooms 13;",
     "option4": "input Address 15-29 $ SquareFeet 8-11 Style 1-6 $ Bedrooms 13;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Column input specifies the variable?s name, followed by a dollar ($) sign if the values are character values, and the beginning and ending column locations of the raw data values.",
     "subject": "base_sas"
   },
@@ -2527,7 +2527,7 @@ var jsonQuestions = [
     "option3": "Standard as well as nonstandard data values can be read",
     "option4": "Fields do not have to be separated by blanks or other delimiters",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Column input is useful for reading standard values only.",
     "subject": "base_sas"
   },
@@ -2539,7 +2539,7 @@ var jsonQuestions = [
     "option3": "1/2",
     "option4": "50%",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "A standard numeric value can contain numbers, scientific notation, decimal points, and plus and minus signs. Non standard numeric data includes values that contain fractions or special characters such as commas, dollar signs, and percent signs.",
     "subject": "base_sas"
   },
@@ -2551,7 +2551,7 @@ var jsonQuestions = [
     "option3": "nonstandard data in fixed fields",
     "option4": "both standard and nonstandard data in fixed fields",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Formatted input can be used to read both standard and nonstandard data in fixed fields.",
     "subject": "base_sas"
   },
@@ -2563,7 +2563,7 @@ var jsonQuestions = [
     "option3": "w.d",
     "option4": "COMMAw.d",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The $w. informat enables you to read character data. The w represents the field width of the data value or the total number of columns that contain the raw data field.",
     "subject": "base_sas"
   },
@@ -2575,7 +2575,7 @@ var jsonQuestions = [
     "option3": "18 %",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The COMMAw.d informat strips out special characters such as commas, dollar signs, and percent signs from numeric data, and stores only numeric values in a SAS data set.",
     "subject": "base_sas"
   },
@@ -2587,7 +2587,7 @@ var jsonQuestions = [
     "option3": "input @7 Item $9. +1 ModelNumber $5.;",
     "option4": "input @7 Item $9 @1 ModelNumber 5.;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The +6 pointer control moves the input pointer to the beginning column of Item, and the values are read. Then the @1 pointer control returns to column 1, where the values for ModelNumber are located.",
     "subject": "base_sas"
   },
@@ -2599,7 +2599,7 @@ var jsonQuestions = [
     "option3": "input @17 Cost comma7.;",
     "option4": "input @17 Cost comma9.;",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The values for Cost contain dollar signs and commas, so you must use the COMMAw.d informat. Counting the numbers, dollar sign, comma, and decimal point, the field width is 9 columns. Because the data value contains decimal places, a d value is not needed.",
     "subject": "base_sas"
   },
@@ -2611,7 +2611,7 @@ var jsonQuestions = [
     "option3": "input Item $9. +1 UnitCost comma6. @18 Quantity 3.;",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The default location of the column pointer control is column 1, so a column pointer control is optional for reading the first field. You can use the @n or +n pointer controls to specify the beginning column of the other fields. You can use the $w. informat to read the values for Item, the COMMAw.d informat for UnitCost, and the w.d informat for Quantity.",
     "subject": "base_sas"
   },
@@ -2623,7 +2623,7 @@ var jsonQuestions = [
     "option3": "<table>   <tr>     <td colspan=\"4\">1---+----10----+----20----+</td>   </tr>   <tr>     <td>JONES</td>     <td>M</td>     <td>48</td>     <td>128.6</td>   </tr>   <tr>     <td>LAVERNE</td>     <td>M</td>     <td>58</td>     <td>&nbsp;&nbsp;158</td>   </tr>   <tr>     <td>JAFFE</td>     <td>F</td>     <td>33</td>     <td>115.5</td>   </tr>   <tr>     <td>WILSON</td>     <td>M</td>     <td>28</td>     <td>&nbsp;&nbsp;130</td>   </tr> </table>",
     "option4": "<table>   <tr>     <td colspan=\"4\">1---+----10----+----20----+</td>   </tr>   <tr>     <td>&nbsp;&nbsp;JONES</td>     <td>M</td>     <td>48</td>     <td>128.6</td>   </tr>   <tr>     <td>LAVERNE</td>     <td>M</td>     <td>58</td>     <td>158.0</td>   </tr>   <tr>     <td>&nbsp;&nbsp;JAFFE</td>     <td>F</td>     <td>33</td>     <td>115.5</td>   </tr>   <tr>     <td>&nbsp;WILSON</td>     <td>M</td>     <td>28</td>     <td>130.0</td>   </tr> </table>",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Use the PAD option in the INFILE statement to read variable-length records that contain fixed-field data. The PAD option pads each record with blanks so that all data lines have the same length.",
     "subject": "base_sas"
   },
@@ -2635,7 +2635,7 @@ var jsonQuestions = [
     "option3": "January 1, 1960",
     "option4": "January 1, 1970",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "A SAS date value is the number of days from January 1, 1960, to the given date.",
     "subject": "base_sas"
   },
@@ -2647,7 +2647,7 @@ var jsonQuestions = [
     "option3": "they can be used in text strings like other character values",
     "option4": "they can be used in calculations like other numeric values",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "In addition to tracking time intervals, SAS date and time values can be used in calculations like other numeric values. This lets you calculate values that involve dates much more easily than in other programming languages.",
     "subject": "base_sas"
   },
@@ -2659,7 +2659,7 @@ var jsonQuestions = [
     "option3": "Julian dates",
     "option4": "time zones",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "SAS automatically makes adjustments for leap years.",
     "subject": "base_sas"
   },
@@ -2671,7 +2671,7 @@ var jsonQuestions = [
     "option3": "MMDDYY6.",
     "option4": "MMDDYY8.",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The SAS informat MMDDYYw. reads dates such as 10222001, 10/22/01, or 10-22-01. In this case, the field width is eight.",
     "subject": "base_sas"
   },
@@ -2683,7 +2683,7 @@ var jsonQuestions = [
     "option3": "6",
     "option4": "7",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The minimum acceptable field width for the TIMEw. informat is five. If you specify a w value less than five, you will receive an error message in the SAS log.",
     "subject": "base_sas"
   },
@@ -2695,7 +2695,7 @@ var jsonQuestions = [
     "option3": "30May2000/10:03 DATETIME15.",
     "option4": "30May2000/1003 DATETIME14.",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "In the time value of a date and time expression, you must use delimiters to separate the values for hour, minutes, and seconds.",
     "subject": "base_sas"
   },
@@ -2707,7 +2707,7 @@ var jsonQuestions = [
     "option3": "1900",
     "option4": "1930",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The default value of YEARCUTOFF= is 1920. This enables you to read two-digit years from 00-19 as the years 2000 through 2019.",
     "subject": "base_sas"
   },
@@ -2719,7 +2719,7 @@ var jsonQuestions = [
     "option3": "13APR2009",
     "option4": "13APR2020",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The value of the YEARCUTOFF= system option does not affect four-digit year values. Fourdigit values are always read correctly.",
     "subject": "base_sas"
   },
@@ -2731,7 +2731,7 @@ var jsonQuestions = [
     "option3": "08DEC2019",
     "option4": "08DEC2025",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The w value of the informat MMDDYY8. is too small to read the entire value, so the last two digits of the year are truncated. The last two digits thus become 19 instead of 25. Because the YEARCUTOFF= system option is set to 1920, SAS interprets this year as 2019. To avoid such errors, be sure to specify an informat that is wide enough for your date expressions.",
     "subject": "base_sas"
   },
@@ -2743,7 +2743,7 @@ var jsonQuestions = [
     "option3": "TotDays=lastday/firstday;",
     "option4": "You cannot use date values in calculations",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To find the number of days spanned by two dates, subtract the first day from the last day and add one. Because SAS date values are numeric values, they can easily be used in calculations.",
     "subject": "base_sas"
   },
@@ -2755,7 +2755,7 @@ var jsonQuestions = [
     "option3": "line pointer controls",
     "option4": "line hold specifiers",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Information for one observation can be spread out over several records. You can write one INPUT statement that contains line pointer controls to specify the records from which values are read.",
     "subject": "base_sas"
   },
@@ -2767,7 +2767,7 @@ var jsonQuestions = [
     "option3": "/",
     "option4": "all of the above",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The forward slash (/) line pointer control is used to read multiple records sequentially. Each time a / pointer is encountered, the input pointer advances to the next line. @n and +n are column pointer controls.",
     "subject": "base_sas"
   },
@@ -2779,7 +2779,7 @@ var jsonQuestions = [
     "option3": "+n",
     "option4": "/",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The #n line pointer control is used to read records non-sequentially. The #n specifies the absolute number of the line to which you want to move the pointer.",
     "subject": "base_sas"
   },
@@ -2791,7 +2791,7 @@ var jsonQuestions = [
     "option3": "input / Fname $ Lname $<br/> / Address $20.<br/> City $ State $ Zip $;",
     "option4": "input / Fname $ Lname $;<br/>  / Address $20.;<br/>  City $ State $ Zip $;",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The INPUT statement uses the / line pointer control to move the input pointer forward from the first record to the second record, and from the second record to the third record. The / line pointer control only moves the input pointer forward and must be specified after the instructions for reading the values in the current record. You should place a semicolon only at the end of a complete INPUT statement.",
     "subject": "base_sas"
   },
@@ -2803,7 +2803,7 @@ var jsonQuestions = [
     "option3": "input #4 ID $<br/> #1 Fname $ Lname $;",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The first #n line pointer control enables you to read the values for ID from the fourth record. The second #n line pointer control moves back to the first record and reads the values for Fname and Lname. You can use formatted input, column input, or list input to read the values for ID.",
     "subject": "base_sas"
   },
@@ -2815,7 +2815,7 @@ var jsonQuestions = [
     "option3": "three",
     "option4": "four",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The first time the DATA step executes, the first three records are read, and an observation is written to the data set. During the second iteration, the next three records are read, and the second observation is written to the data set. During the third iteration, the last three records are read, and the final observation is written to the data set.",
     "subject": "base_sas"
   },
@@ -2827,7 +2827,7 @@ var jsonQuestions = [
     "option3": "input #3 City $11. +2 State $2. + 2 Zip $5.;",
     "option4": "all of the above",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "A combination of modified and simple list input can be used to read the values for City, State, and Zip. You need to use modified list input to read the values for City, because one of the values is longer than eight characters and contains an embedded blank. You cannot use formatted input, because the values do not begin and end in the same column in each record.",
     "subject": "base_sas"
   },
@@ -2839,7 +2839,7 @@ var jsonQuestions = [
     "option3": "data perm.supplies;<br/> infile instock pad;<br/> input #1 Item & $16.<br/> Inventory 2. Type $8.;<br/> run;",
     "option4": "data perm.supplies;<br/> infile instock pad;<br/> input Item & $16.<br/> #2 Inventory 2. Type $8.;<br/> run;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The values for Item in the first record are read, then the following / or #n line pointer control advances the input pointer to the second record to read the values for Inventory and Type.",
     "subject": "base_sas"
   },
@@ -2851,7 +2851,7 @@ var jsonQuestions = [
     "option3": "input #1 Lname $ Fname $ <br/> #2 Department : $12. Salary : comma.;",
     "option4": "both b and c",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You can use either the / or #n line pointer control to advance the input pointer to the second line, in order to read the values for Department and Salary. The colon (:) modifier is used to read the character values that are longer than eight characters (Department) and the nonstandard data values (Salary).",
     "subject": "base_sas"
   },
@@ -2863,7 +2863,7 @@ var jsonQuestions = [
     "option3": "<table>   <tr>     <td>1---+----10----+----20----+</td>   </tr>   <tr>     <td>MARCUS JONES</td>   </tr>   <tr>     <td>SR01 $26,134.00</td>   </tr>   <tr>     <td>SR01 $26,134.00</td>   </tr>   <tr>     <td>MARY ROBERTSON</td>   </tr>   <tr>     <td>COURTNEY NEILS</td>   </tr>   <tr>     <td>TWO1 $28,342.00</td>   </tr> </table>",
     "option4": "<table>   <tr>     <td>1---+----10----+----20----+</td>   </tr>   <tr>     <td>CROCUS MIX</td>   </tr>   <tr>     <td>10 CASES</td>   </tr>   <tr>     <td>DAFFODIL</td>   </tr>   <tr>     <td>12 CASES</td>   </tr>   <tr>     <td>HYACINTH BLUE</td>   </tr>   <tr>     <td>8 BAGS</td>   </tr> </table>",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The third raw data file does not contain the same number of records for each observation, so the output from this data set will show invalid data for the ID and salary information in the fourth line.",
     "subject": "base_sas"
   },
@@ -2875,7 +2875,7 @@ var jsonQuestions = [
     "option3": "It is released when the input pointer moves past the end of the record",
     "option4": "All of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The double trailing at sign (@@) enables the next INPUT statement to read from the current record across multiple iterations of the DATA step. It must be the last item that is specified in the INPUT statement. A record that is being held by the double trailing at sign (@@) is not released until the input pointer moves past the end of the record, or until an INPUT statement that has no line-hold specifier executes.",
     "subject": "base_sas"
   },
@@ -2887,7 +2887,7 @@ var jsonQuestions = [
     "option3": "another INPUT statement that has a single trailing at sign (@) executes",
     "option4": "another value is read from the observation",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Unlike the double trailing at sign (@@), the single trailing at sign (@) is automatically released when control returns to the top of the DATA step for the next iteration. The trailing @ does not toggle on and off. If another INPUT statement that has a trailing @ executes, the holding effect is still on.",
     "subject": "base_sas"
   },
@@ -2899,7 +2899,7 @@ var jsonQuestions = [
     "option3": "data perm.produce;<br/> infile fruit;<br/> input Item $ Variety : $10. @@;<br/> run;",
     "option4": "data perm.produce;<br/> infile fruit @@;<br/> input Item $4. Variety : $10.;<br/> run;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Each record in this file contains three repeating blocks of data values for Item and Variety. The INPUT statement reads a block of values for Item and Variety, and then holds the current record by using the double trailing at sign (@@). The values in the program data vector are written to the data set as the first observation. In the next iteration, the INPUT statement reads the next block of values for Item and Variety from the same record.",
     "subject": "base_sas"
   },
@@ -2911,7 +2911,7 @@ var jsonQuestions = [
     "option3": "data work.sales;<br/> infile unitsold;<br/> input ID $ @;<br/> do week=1 to 3;<br/> input Quantity : comma.;<br/> output;<br/> end;<br/> run;",
     "option4": "data work.sales;<br/> infile unitsold;<br/> input ID $ @;<br/> do week=1 to 3;<br/> input Quantity : comma. @;<br/> output;<br/> end;<br/> run;",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "This raw data file contains an ID fieldthat is followed by repeating fields. The first INPUT statement reads the values for ID and uses the @ line-hold specifier to hold the current record for the next INPUT statement in the DATA step. The second INPUT statement reads the values for Quantity. When all of the repeating fields have been read, control returns to the top of the DATA step, and the record is released.",
     "subject": "base_sas"
   },
@@ -2923,7 +2923,7 @@ var jsonQuestions = [
     "option3": "do count=1 to 50 + 5;",
     "option4": "do while (count=1 to 50 + 5);",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The iterative DO statement begins the execution of a loop based on the value of an index variable. Here, the loop executes when the value of Count ranges from 1 to 50, incremented by 5.",
     "subject": "base_sas"
   },
@@ -2935,7 +2935,7 @@ var jsonQuestions = [
     "option3": "do choice=1 to 3;<br/> input Activity : $10. @;<br/> end;<br/> run;",
     "option4": "a and b",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The OUTPUT statement must be included in the loop so that each time a value for Activity is read, an observation is immediately written to the data set.",
     "subject": "base_sas"
   },
@@ -2947,7 +2947,7 @@ var jsonQuestions = [
     "option3": "do while (cholesterol > 200);",
     "option4": "do while cholesterol > 200;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The DO WHILE statement checks for the condition that Cholesterol is greater than 200. The expression must be enclosed in parentheses. The expression is evaluated at the top of the loop, before any statements are executed. If the condition is true, the DO WHILE loop executes. If the expression is false the first time it is evaluated, then the loop never executes.",
     "subject": "base_sas"
   },
@@ -2959,7 +2959,7 @@ var jsonQuestions = [
     "option3": "totalpay*1;",
     "option4": "totalpay by 1;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The Sum statement adds the result of an expression to a counter variable. So the + sign is an essential part of the Sum statement. Here, the value of TotalPay is incremented by 1.",
     "subject": "base_sas"
   },
@@ -2971,7 +2971,7 @@ var jsonQuestions = [
     "option3": "data perm.topstores;<br/> infile sales98 missover;<br/> input Store Sales : comma. Month @;<br/> do while (sales ne .);<br/> month + 1;<br/> input sales : comma. @;<br/> end;<br/> output;<br/> run;",
     "option4": "data perm.topstores;<br/> infile sales98 missover;<br/> input Store Sales : comma. @;<br/> Month=0;<br/> do while (sales ne .);<br/> month + 1;<br/> output;<br/> input sales : comma. @;<br/> end;<br/> run;",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The assignment statement that precedes the DO WHILE loop creates the counter variable Month and assigns an initial value of zero to it. Each time the DO WHILE loop executes, the Sum statement increments the value of Month by 1.",
     "subject": "base_sas"
   },
@@ -2983,7 +2983,7 @@ var jsonQuestions = [
     "option3": "12",
     "option4": "15",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "This DATA step produces one observation for each repeating field. The MISSOVER option in the INFILE statement prevents SAS from reading the next record when missing values occur at the end of a record. Every observation contains one value for Flavor, paired with the corresponding value for ID. Because there are 12 values for Flavor, there are 12 observations in the data set.",
     "subject": "base_sas"
   },
@@ -2995,7 +2995,7 @@ var jsonQuestions = [
     "option3": "data brothers.three;<br/> set brothers.one brothers.two;<br/> by varx;<br/> run;",
     "option4": "data brothers.three;<br/> merge brothers.one brothers.two;<br/> by varx;<br/> run;",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "This is a case of one-to-one reading, which requires multiple SET statements. Notice that where same named variables occur, the values that are read in from the second data set replace those that are read in from the first one. Also, the number of observations in the new data set is the number of observations in the smallest original data set.",
     "subject": "base_sas"
   },
@@ -3007,7 +3007,7 @@ var jsonQuestions = [
     "option3": "data actors.props3;<br/> set actors.props1 actors.props2;<br/> by actor;<br/> run;",
     "option4": "data actors.props3;<br/> merge actors.props1 actors.props2;<br/> by actor;<br/> run;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "This is a case of interleaving, which requires a list of data set names in the SET statement and one or more BY variables in the BY statement. Notice that observations in each BY group are read sequentially, in the order in which the data sets and BY variables are listed. The new data set contains all the variables from all the input data sets, as well as the total number of records from all input data sets.",
     "subject": "base_sas"
   },
@@ -3019,7 +3019,7 @@ var jsonQuestions = [
     "option3": "<table>   <tr>     <th>Career</th>     <th>Supervis</th>     <th>Finance</th>   </tr>   <tr>     <td>72</td>     <td>26</td>     <td>9</td>   </tr>   <tr>     <td>63</td>     <td>76</td>     <td>7</td>   </tr>   <tr>     <td>96</td>     <td>31</td>     <td>7</td>   </tr>   <tr>     <td>96</td>     <td>31</td>     <td>7</td>   </tr>   <tr>     <td>96</td>     <td>98</td>     <td>6</td>   </tr>   <tr>     <td>84</td>     <td>94</td>     <td>6</td>   </tr>   <tr>     <td>10</td>     <td>11</td>     <td>70</td>   </tr>   <tr>     <td>85</td>     <td>22</td>     <td>93</td>   </tr>   <tr>     <td>83</td>     <td>63</td>     <td>73</td>   </tr>   <tr>     <td>82</td>     <td>75</td>     <td>97</td>   </tr>   <tr>     <td>36</td>     <td>77</td>     <td>97</td>   </tr> </table>",
     "option4": "none of the above",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Concatenating appends the observations from one data set to another data set. The new data set contains the total number of records from all input data sets, so b is incorrect. All the variables from all the input data sets appear in the new data set, so c is incorrect.",
     "subject": "base_sas"
   },
@@ -3031,7 +3031,7 @@ var jsonQuestions = [
     "option3": "$40,000",
     "option4": "you cannot concatenate these data sets",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The concatenated data sets are read sequentially, in the order in which they are listed in the SET statement. The second observation in Sales.Reps does not contain a value for Sale, so a missing value appears for this variable. (Note that if you merge the data sets, the value of Sale for the second observation is ($30,000.)",
     "subject": "base_sas"
   },
@@ -3043,7 +3043,7 @@ var jsonQuestions = [
     "option3": "The DATA step fails because the two data sets contain same-named variables that have different values",
     "option4": "The values of Age in the 2nd data set are set to missing",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "If you have variables with the same name in more than one input data set, then values of the same-named variable in the first data set in which it appears are overwritten by values of the same-named variable in subsequent data sets.",
     "subject": "base_sas"
   },
@@ -3055,7 +3055,7 @@ var jsonQuestions = [
     "option3": "<table>   <tr>     <th>Obs</th>     <th>ID</th>     <th>Sex</th>     <th>Age</th>     <th>Height</th>     <th>Weight</th>   </tr>   <tr>     <td>1</td>     <td>1129</td>     <td>F</td>     <td>48</td>     <td>61</td>     <td>137</td>      </tr>   <tr>     <td>2</td>     <td>1387</td>     <td>F</td>     <td>57</td>     <td>64</td>     <td>142</td>      </tr>   <tr>     <td>3</td>     <td>2304</td>     <td>F</td>     <td>16</td>     <td>61</td>     <td>102</td>      </tr>   <tr>     <td>4</td>     <td>5438</td>     <td>F</td>     <td>42</td>     <td>62</td>     <td>168</td>      </tr>   <tr>     <td>5</td>     <td>6488</td>     <td>F</td>     <td>59</td>     <td>64</td>     <td>154</td>      </tr>   <tr>     <td>6</td>     <td>9012</td>     <td>F</td>     <td>39</td>     <td>63</td>     <td>157</td>      </tr>   <tr>     <td>7</td>     <td>9125</td>     <td>F</td>     <td>56</td>     <td>64</td>     <td>159</td>      </tr> </table>",
     "option4": "none of the above",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The DATA step uses the IN= data set option and the subsetting IF statement to exclude unmatched observations from the output data set. So a and b, which contain unmatched observations, are incorrect.",
     "subject": "base_sas"
   },
@@ -3067,7 +3067,7 @@ var jsonQuestions = [
     "option3": "data ensemble.merged;<br/> merge ensemble.spring(blue=navy) ensemble.summer;<br/> by fabric;<br/> run;",
     "option4": "data ensemble.merged;<br/> merge ensemble.spring(rename=(blue=navy)) ensemble.summer;<br/> by fabric;<br/> run;",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Match-merging overwrites same-named variables in the first data set with same-named variables in subsequent data sets. To prevent overwriting, rename variables by using the RENAME= data set option in the MERGE statement.",
     "subject": "base_sas"
   },
@@ -3079,7 +3079,7 @@ var jsonQuestions = [
     "option3": "The DATA step produces errors",
     "option4": "Values for Units in Blood.Donors2 overwrite values for Units in Blood.Donors1",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The two input data sets are not sorted by values of the BY variable, so the DATA step produces errors and stops processing.",
     "subject": "base_sas"
   },
@@ -3091,7 +3091,7 @@ var jsonQuestions = [
     "option3": "6",
     "option4": "9",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3103,7 +3103,7 @@ var jsonQuestions = [
     "option3": "missing",
     "option4": "cannot tell from the information given",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "In the new data set, the third observation is the second observation for ID number 2 (Kelly Windsor). The value for Bonus is retained from the previous observation because the BY variable value didn't change.  <br/>  <table>   <tr>     <th>ID</th>     <th>Name</th>     <th>Sale</th>     <th>Bonus</th>   </tr>   <tr>     <td>1</td>     <td>Nay Rong</td>     <td>$28,000</td>     <td>$2,000</td>   </tr>   <tr>     <td>2</td>     <td>Kelly Windsor</td>     <td>$30,000</td>     <td>$4,000</td>   </tr>   <tr>     <td>2</td>     <td>Kelly Windsor</td>     <td>$40,000</td>     <td>$4,000</td>   </tr>   <tr>     <td>3</td>     <td>Julio Meraz</td>     <td>$15,000</td>     <td>$3,000</td>   </tr>   <tr>     <td>3</td>     <td>Julio Meraz</td>     <td>$20,000</td>     <td>$3,000</td>   </tr>   <tr>     <td>3</td>     <td>Julio Meraz</td>     <td>$25,000</td>     <td>$3,000</td>   </tr>   <tr>     <td>4</td>     <td>Richard Krabill</td>     <td>$35,000</td>     <td>$2,500</td>   </tr>  </table>",
     "subject": "base_sas"
   },
@@ -3115,7 +3115,7 @@ var jsonQuestions = [
     "option3": "<table>   <tr>     <th>Name</th>     <th>Age</th>   </tr>   <tr>     <td>(missing value)</td>     <td>(missing value)</td>   </tr> </table>",
     "option4": "The Data step fails execution due to data errors",
     "answer": "A",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3127,7 +3127,7 @@ var jsonQuestions = [
     "option3": "<table>   <tr>     <th>Id</th>     <th>Char1</th>     <th>Char2</th>   </tr>   <tr>     <td>182</td>     <td>M</td>     <td>Q</td>   </tr> </table>",
     "option4": "<table>   <tr>     <th>Id</th>     <th>Char1</th>     <th>Char2</th>   </tr>   <tr>     <td>720</td>     <td>P</td>     <td>S</td>   </tr> </table>",
     "answer": "C",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": "",
     "subject": "base_sas"
   },
@@ -3139,7 +3139,7 @@ var jsonQuestions = [
     "option3": "<table>   <tr>     <th>Var1</th>     <th>Var2</th>     <th>Var3</th>     <th>Var4</th>   </tr>   <tr>     <td>RED</td>     <td>ORANGE</td>     <td>YELLOW</td>     <td>GREEN</td>   </tr>   <tr>     <td>BLUE</td>     <td>INDIGO</td>     <td>PURPLE</td>     <td>VIOLET</td>   </tr> </table>",
     "option4": "<table>   <tr>     <th>Var1</th>     <th>Var2</th>     <th>Var3</th>     <th>Var4</th>   </tr>   <tr>     <td>RED</td>     <td>ORANGE</td>     <td>YELLOW</td>     <td>GREEN</td>   </tr>   <tr>     <td>BLUE</td>     <td>INDIGO</td>     <td>PURPLE</td>     <td>VIOLET</td>   </tr>   <tr>     <td>CYAN</td>     <td>WHITE</td>     <td>FUCSIA</td>     <td>BLACK</td>   </tr>   <tr>     <td>GRAY</td>     <td>BROWN</td>     <td>PINK</td>     <td>MAGENTA</td>   </tr> </table>",
     "answer": "A",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3151,7 +3151,7 @@ var jsonQuestions = [
     "option3": "8",
     "option4": "1",
     "answer": "C",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3163,7 +3163,7 @@ var jsonQuestions = [
     "option3": "X = 5, Index = 6 ",
     "option4": "X = 5, Index = 7 ",
     "answer": "D",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3175,7 +3175,7 @@ var jsonQuestions = [
     "option3": "proc print data = SASUSER.CLASS format = score;<br/>    var test;<br/> run;",
     "option4": "proc print data = SASUSER.CLASS format = score.;<br/>    var test;<br/> run;",
     "answer": "B",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3187,7 +3187,7 @@ var jsonQuestions = [
     "option3": "Total = 0;",
     "option4": "If _N_= 1 then Total = 0;",
     "answer": "B",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3199,7 +3199,7 @@ var jsonQuestions = [
     "option3": "Qtr1 = sum(of month{*}); ",
     "option4": "Qtr1 = sum(of month{3}); ",
     "answer": "C",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3211,7 +3211,7 @@ var jsonQuestions = [
     "option3": "Change bmi to BMI in the WHERE statement ",
     "option4": "Add a (Keep=BMI) option to the SET statement ",
     "answer": "A",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3223,7 +3223,7 @@ var jsonQuestions = [
     "option3": "345",
     "option4": "2345",
     "answer": "D",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3235,7 +3235,7 @@ var jsonQuestions = [
     "option3": "mixed format",
     "option4": "arranged in columns",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The raw data file contains data that is free format, meaning that the data is not arranged in columns or fixed fields.",
     "subject": "base_sas"
   },
@@ -3247,7 +3247,7 @@ var jsonQuestions = [
     "option3": "list",
     "option4": "mixed",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "List input should be used to read data that is free format because you do not need to specify the column locations of the data.",
     "subject": "base_sas"
   },
@@ -3259,7 +3259,7 @@ var jsonQuestions = [
     "option3": "data _null_;<br/> set work.scores;<br/> file 'c:\\data\\teamdat' dsd;<br/> put name highscore team;<br/> run;",
     "option4": "data _null_;<br/> set work.scores;<br/> file 'c:\\data\\teamdat';<br/> put name highscore team;<br/> run;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You can use the DSD option in the FILE statement to specify that data values containing commas should be enclosed in quotation marks. The DSD option uses a comma as the delimiter by default.",
     "subject": "base_sas"
   },
@@ -3271,7 +3271,7 @@ var jsonQuestions = [
     "option3": "input FirstName $ 1-4 LastName $ 6-12 Age 14-15 School $ 17-19 Class 21;",
     "option4": "input FirstName 1-4 LastName 6-12 Age 14-15 School 17-19 Class 21;",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Because the data is free format, list input is used to read the values. With list input, you simply name each variable and identify its type.",
     "subject": "base_sas"
   },
@@ -3283,7 +3283,7 @@ var jsonQuestions = [
     "option3": "infile salesrep dlm;",
     "option4": "infile salesrep dlm=':';",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The INFILE statement identifies the location of the external data file. The DLM= option specifies the colon (:) as the delimiter that separates each field.",
     "subject": "base_sas"
   },
@@ -3295,7 +3295,7 @@ var jsonQuestions = [
     "option3": "<table>   <tr>     <td>1---+----10----+----20----+----30</td>   </tr>   <tr>     <td>ORANGE SUNNYDALE 20 10</td>   </tr>   <tr>     <td>PINEAPPLE ALOHA 7 10</td>   </tr>   <tr>     <td>GRAPE&nbsp;<span style=\"background-color:red;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;3 17</td>   </tr>   <tr>     <td>APPLE FARMFRESH 16 5</td>   </tr>   <tr>     <td>GRAPEFRUIT SUNNYDALE 12 8</td>   </tr> </table>",
     "option4": "<table>   <tr> <td>1---+----10----+----20----+----30</td>   </tr>   <tr>     <td>ORANGE SUNNYDALE 20 10</td>   </tr>   <tr>     <td>PINEAPPLE ALOHA 7 10</td>   </tr>   <tr>     <td><span style=\"background-color:red;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;FARMFRESH 3</td>   </tr>   <tr>     <td>APPLE FARMFRESH 16 5</td>   </tr>   <tr>     <td>GRAPEFRUIT SUNNYDALE 12 8</td>   </tr> </table>",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You can use the MISSOVER option in the INFILE statement to read the missing values at the end of a record. The MISSOVER option prevents SAS from moving to the next record if values are missing in the current record.",
     "subject": "base_sas"
   },
@@ -3307,7 +3307,7 @@ var jsonQuestions = [
     "option3": "data perm.contest;<br/> infile volunteer;<br/> input FirstName $ lastname $ Age School $ Class;<br/> length LastName $ 11;<br/> run;",
     "option4": "data perm.contest;<br/> infile volunteer;<br/> input FirstName $ LastName $ 11. Age School $ Class;<br/> run;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The LENGTH statement extends the length of the character variable LastName so that it is large enough to accommodate the data. Variable attributes such as length are defined the first time a variable is named in a DATA step. The LENGTH statement should precede the INPUT statement so that the correct length is defined.",
     "subject": "base_sas"
   },
@@ -3319,7 +3319,7 @@ var jsonQuestions = [
     "option3": "list",
     "option4": "modified list",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Notice that the values for School contain embedded blanks, and the values for Enrolled are nonstandard numeric values. Modified list input can be used to read the values that contain embedded blanks and nonstandard values.",
     "subject": "base_sas"
   },
@@ -3331,7 +3331,7 @@ var jsonQuestions = [
     "option3": "input Flavor : $14. Quantity & comma.;",
     "option4": "input Flavor $14. Quantity : comma.;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The INPUT statement uses list input with format modifiers and informats to read the values for each variable. The ampersand (&) modifier enables you to read character values that contain single embedded blanks. The colon (:) modifier enables you to read nonstandard data values and character values that are longer than eight characters, and that contain no embedded blanks.",
     "subject": "base_sas"
   },
@@ -3343,7 +3343,7 @@ var jsonQuestions = [
     "option3": "input @1 Year 4. +1 School & $27. Enrolled : comma.;",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The values for Year can be read with column, formatted, or list input. However, the values for School and Enrolled are free-format data that contain embedded blanks or nonstandard values. Therefore, these last two variables must be read with modified list input.",
     "subject": "base_sas"
   },
@@ -3355,7 +3355,7 @@ var jsonQuestions = [
     "option3": "100",
     "option4": "500",
     "answer": "A",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3367,7 +3367,7 @@ var jsonQuestions = [
     "option3": "retain grandtot 0;<br/> grandtot = sum(grandtot, cost);",
     "option4": "grandtot - sum(grandtot, cost);<br/> output grandtot;",
     "answer": "C",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3379,7 +3379,7 @@ var jsonQuestions = [
     "option3": "totquantity 0;<br/> sum totquantity;",
     "option4": "retain totquantity 0;<br/> totquantity = totquantity + quantity;",
     "answer": "A",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3391,7 +3391,7 @@ var jsonQuestions = [
     "option3": "It has no effect on variables read with the SET, MERGE and UPDATE statements",
     "option4": "It adds the value of an expression to an accumulator variable and ignores missing values",
     "answer": "C",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3403,7 +3403,7 @@ var jsonQuestions = [
     "option3": "Ipswich, 'England'",
     "option4": "Ipswich , England",
     "answer": "D",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3415,7 +3415,7 @@ var jsonQuestions = [
     "option3": "17",
     "option4": "25",
     "answer": "D",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3427,7 +3427,7 @@ var jsonQuestions = [
     "option3": "Dickens",
     "option4": "''(missing character value)",
     "answer": "B",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3439,7 +3439,7 @@ var jsonQuestions = [
     "option3": "Agatha",
     "option4": "''(missing character value)",
     "answer": "A",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3451,7 +3451,7 @@ var jsonQuestions = [
     "option3": "15",
     "option4": "200",
     "answer": "D",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3463,7 +3463,7 @@ var jsonQuestions = [
     "option3": "average = mean(of num1 to num4);",
     "option4": "average = mean(num1 num2 num3 num4);",
     "answer": "B",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3475,7 +3475,7 @@ var jsonQuestions = [
     "option3": ".(missing numeric value)",
     "option4": "''(missing character value)",
     "answer": "A",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3487,7 +3487,7 @@ var jsonQuestions = [
     "option3": ".(missing numeric value)",
     "option4": "The value can not be determined as the program fails to execute due to errors",
     "answer": "B",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3499,7 +3499,7 @@ var jsonQuestions = [
     "option3": "character, 8 bytes",
     "option4": "character, 9 bytes",
     "answer": "A",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3511,7 +3511,7 @@ var jsonQuestions = [
     "option3": "character, 8 bytes",
     "option4": "character, 10 bytes",
     "answer": "D",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3523,7 +3523,7 @@ var jsonQuestions = [
     "option3": "department = trim(dept) || put(number, 3.);",
     "option4": "department = input(dept,11.) || input(number,3.);",
     "answer": "C",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3535,7 +3535,7 @@ var jsonQuestions = [
     "option3": "duration = today() - input(date, ddmmyy10.);",
     "option4": "duration = today() - input(date, yymmdd10.);",
     "answer": "D",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3547,7 +3547,7 @@ var jsonQuestions = [
     "option3": "5",
     "option4": "60",
     "answer": "B",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3559,7 +3559,7 @@ var jsonQuestions = [
     "option3": "6",
     "option4": "7",
     "answer": "C",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3571,7 +3571,7 @@ var jsonQuestions = [
     "option3": "6",
     "option4": "7",
     "answer": "D",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3583,7 +3583,7 @@ var jsonQuestions = [
     "option3": "3 observations and 3 variables",
     "option4": "9 observation and 2 variables",
     "answer": "B",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3595,7 +3595,7 @@ var jsonQuestions = [
     "option3": "proc print data = sasuser.houses label;<br/> label price = \"Sale Price\";<br/> run;",
     "option4": "proc print data = sasuser.houses label = \"Sale Price\";<br/> run;",
     "answer": "C",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3607,7 +3607,7 @@ var jsonQuestions = [
     "option3": "dollar8.2",
     "option4": "dollar11.2",
     "answer": "D",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3619,7 +3619,7 @@ var jsonQuestions = [
     "option3": "proc print data = sasuser.houses;<br/> where price lt 60000 and price gt 100000;<br/> run;",
     "option4": "proc print data = sasuser.houses;<br/> where price lt 60000 or where price gt 100000;<br/> run;",
     "answer": "B",
-    "set_num": 2,
+    "isexamquestion": 2,
     "explanation": null,
     "subject": "base_sas"
   },
@@ -3631,7 +3631,7 @@ var jsonQuestions = [
     "option3": "WHERE",
     "option4": "both and c",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The SELECT clause in the program is written incorrectly. Columns that are listed in the clause must be separated by commas, not just blanks.",
     "subject": "advance_sas"
   },
@@ -3643,7 +3643,7 @@ var jsonQuestions = [
     "option3": "four",
     "option4": "five",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "There are two statements, the PROC SQL statement and the SELECT statement. The SELECT statement contains three clauses.",
     "subject": "advance_sas"
   },
@@ -3655,7 +3655,7 @@ var jsonQuestions = [
     "option3": "select price.address,sqfeet,price",
     "option4": "either b or c",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The SELECT clause lists the columns from both tables to be queried. You must use a prefix with the Address column because it appears in both tables. The prefix specifies the table from which you want the column to be read",
     "subject": "advance_sas"
   },
@@ -3667,7 +3667,7 @@ var jsonQuestions = [
     "option3": "sort by price sqfeet",
     "option4": "sort price sqfeet",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The ORDER BY clause specifies how the rows are to be sorted. You follow the keywords ORDER BY by one or more column names or numbers, separated by commas.",
     "subject": "advance_sas"
   },
@@ -3679,7 +3679,7 @@ var jsonQuestions = [
     "option3": "from sales.produce,sales.hardware",
     "option4": "where sales.produce, sales.hardware",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "In the FROM clause, you list the names of the tables to be queried, separated by commas.",
     "subject": "advance_sas"
   },
@@ -3691,7 +3691,7 @@ var jsonQuestions = [
     "option3": "profit=price-cost",
     "option4": "Profit as price-cost",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To create a new column and assign a column alias to the column, you specify the following in the SELECT clause, in the order shown here: an expression, (optionally) the keyword AS, and a column alias. The case that you use when you create the column name is the one that will be displayed in the output.",
     "subject": "advance_sas"
   },
@@ -3703,7 +3703,7 @@ var jsonQuestions = [
     "option3": "The GROUP BY clause is changed to an ORDER BY clause",
     "option4": "The step executes but does not group or sort data",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The GROUP BY clause is used in queries that include one or more summary functions. If you specify a GROUP BY clause in a query that does not contain a summary function, your clause is changed to an ORDER BY clause.",
     "subject": "advance_sas"
   },
@@ -3715,7 +3715,7 @@ var jsonQuestions = [
     "option3": "a new table is created, but no report is displayed",
     "option4": "results are grouped by the value of the summarized column",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The CREATE TABLE statement enables you to store your results in a SAS table instead of displaying the query results as a report.",
     "subject": "advance_sas"
   },
@@ -3727,7 +3727,7 @@ var jsonQuestions = [
     "option3": "The tables that are being joined must be from the same type of data source",
     "option4": "If two tables that are being joined contain a same-named column, then you must specify the table from which you want the column to be read",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "If you are joining two tables that contain a same-named column, then you must use a prefix to specify the table(s) from which you want the column to be read. Remember that if you join tables that don't contain columns that have matching data values, you can produce a huge amount of output. Be sure to specify a WHERE clause to select only the rows that you want.",
     "subject": "advance_sas"
   },
@@ -3739,7 +3739,7 @@ var jsonQuestions = [
     "option3": "WHERE",
     "option4": "GROUP BY",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The table names that are specified in the FROM clause must be separated by commas. Note that you can specify columns in the WHERE clause that are not specified in the SELECT clause.",
     "subject": "advance_sas"
   },
@@ -3751,7 +3751,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> select unique membertype<br/> from sasuser.frequentflyers<br/> group by membertype;",
     "option4": "proc sql;<br/> select distinct membertype<br/> from sasuser.frequentflyers;<br/>",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To remove duplicate values from PROC SQL output, you specify the DISTINCT keyword before the column name in the SELECT clause.",
     "subject": "advance_sas"
   },
@@ -3763,7 +3763,7 @@ var jsonQuestions = [
     "option3": "WHERE address is null",
     "option4": "both a and c",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To list rows that have no data (that is, missing data), you can use either of these other conditional operators: IS MISSING or IS NULL. The NOT EXISTS operator is used specifically with a subquery, and resolves to true if the subquery returns no values to the outer query.",
     "subject": "advance_sas"
   },
@@ -3775,7 +3775,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> select name, spent,<br/> 120-spent as Balance<br/> from Company.Absences<br/> where balance <= 0;",
     "option4": "proc sql;<br/> select name, spent,<br/> 120-spent as calculated Balance<br/> from Company.Absences<br/> where calculated balance <= 0;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "When a WHERE clause references a new column that was defined in the SELECT clause, the WHERE clause must specify the keyword CALCULATED before the column name.",
     "subject": "advance_sas"
   },
@@ -3787,7 +3787,7 @@ var jsonQuestions = [
     "option3": "4",
     "option4": "1",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To determine how PROC SQL calculates and displays output from summary functions, consider the key factors. This PROC SQL query has a GROUP BY clause, and it does not specify any columns that are outside of summary functions. Therefore, PROC SQL calculates and displays the summary function for each group. There are 7 unique values of FlightNumber, but the HAVING clause specifies only the flights that have an average number of boarded passengers greater than 150. Because 4 of the 7 flight numbers meet this condition, the output will contain 4 rows.",
     "subject": "advance_sas"
   },
@@ -3799,7 +3799,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> select name<br/> from library.volunteers<br/> where name, checkedout in<br/> (select name, checkedout<br/> from library.circulation);",
     "option4": "proc sql;<br/> select name, checkedout<br/> from library.circulation<br/> where name in<br/> (select name<br/> from library.volunteers;);",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Your PROC SQL query needs to use data from both tables. The outer query reads the name and number of books checked out from Library.Circulation. The multiple-value noncorrelated subquery selects the names of volunteers from Library.Volunteers and passes these names back to the outer query. The outer query then selects data for only the volunteers whose names match names returned by the subquery. The subquery is indented under the outer query's WHERE clause, is enclosed in parentheses, and does not require a semicolon inside the closing parenthesis.",
     "subject": "advance_sas"
   },
@@ -3811,7 +3811,7 @@ var jsonQuestions = [
     "option3": "executes independently of the outer query",
     "option4": "requires only a single value to be passed to it by the outer query",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "A noncorrelated subquery is a nested query that executes independently of the outer query. The outer query passes no values to the subquery.",
     "subject": "advance_sas"
   },
@@ -3823,7 +3823,7 @@ var jsonQuestions = [
     "option3": "PROC SQL will not execute this query when it is submitted",
     "option4": "After the query is submitted, the SAS log will indicate whether the query has valid syntax",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The syntax in this PROC SQL query is valid, so the first statement is false. The query contains a correlated subquery, so the second statement is true. The VALIDATE keyword is used after the PROC SQL statement, so the third statement is true. And the last statement correctly indicates that the VALIDATE keyword causes the SAS log to display a special message if the query syntax is valid, or standard error messages if the syntax is not valid.",
     "subject": "advance_sas"
   },
@@ -3835,7 +3835,7 @@ var jsonQuestions = [
     "option3": "all donors who did not make a contribution in the current year",
     "option4": "all donors whose current year's donation in Charity.Current has not yet been added to Total in Charity.Donors",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "In this PROC SQL query, the outer query uses the operator NOT EXISTS with a correlated subquery. The outer query selects all rows from Charity.Donors whose names do not appear in Charity.Current. In other words, this PROC SQL query output lists all donors who did not make a contribution in the current year.",
     "subject": "advance_sas"
   },
@@ -3847,7 +3847,7 @@ var jsonQuestions = [
     "option3": "When PROC SQL remerges data, it displays a related message in the SAS log",
     "option4": "PROC SQL does not attempt to remerge data unless a subquery is used",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The third statement about data remerging is correct",
     "subject": "advance_sas"
   },
@@ -3859,7 +3859,7 @@ var jsonQuestions = [
     "option3": "No. Because there is no GROUP BY clause, the HAVING clause treats the entire table as one group",
     "option4": "Yes",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "PROC SQL can execute this query, but the query will not produce the results that you want. If you omit the GROUP BY clause in a query that contains a HAVING clause, then the HAVING clause and any summary functions treat the entire table as one group. Without a GROUP BY clause, the HAVING clause in this example calculates the average circulation for the table as a whole (all books in the library), not for each group (each category of books). The output contains either all the rows in the table (if the average circulation for the entire table is less than 2500) or none of the rows in the table (if the average circulation for the entire table is greater than 2500).",
     "subject": "advance_sas"
   },
@@ -3871,7 +3871,7 @@ var jsonQuestions = [
     "option3": "more than two tables are specified in a PROC SQL join",
     "option4": "the keyword ALL is used with the OUTER UNION operator",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "A Cartesian product is returned when join conditions are not specified in a PROC SQL join. In a Cartesian product, each row from the first table is combined with every row from the second table.",
     "subject": "advance_sas"
   },
@@ -3883,7 +3883,7 @@ var jsonQuestions = [
     "option3": "<table border=\"1\">   <tr>     <th>Wk</th>     <th>Sales</th>   </tr>   <tr>     <td>1</td>     <td>$515.07</td>   </tr>   <tr>     <td>2</td>     <td>$772.29</td>   </tr>   <tr>     <td>3</td>     <td>$888.88</td>   </tr>   <tr>     <td>4</td>     <td>$1000.01</td>   </tr> </table>",
     "option4": "<table border=\"1\">   <tr>     <th>Wk</th>     <th>Sales</th>   </tr>   <tr>     <td>1</td>     <td>$515.07</td>   </tr>   <tr>     <td>2</td>     <td>$772.29</td>   </tr>   <tr>     <td>3</td>     <td>$888.88</td>   </tr>   <tr>     <td>4</td>     <td>$1000.01</td>   </tr>   <tr>     <td>1</td>     <td>$1368.99</td>   </tr>   <tr>     <td>2</td>     <td>$1506.23</td>   </tr>   <tr>     <td>3</td>     <td>$1200.57</td>   </tr>   <tr>     <td>4</td>     <td>$1784.11</td>   </tr> </table>",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "This PROC SQL query is an inner join. It combines the rows from the first table that match rows from the second table, based on the matching criteria specified in the WHERE clause. Columns are not overlaid, so all columns from the referenced tables (including any columns with duplicate names) are displayed. Any unmatched rows from either table are not displayed.",
     "subject": "advance_sas"
   },
@@ -3895,7 +3895,7 @@ var jsonQuestions = [
     "option3": "<table border=\"1\">   <tr>     <th>Id</th>     <th>Salary</th>     <th>Bonus</th>   </tr>   <tr>     <td>123</td>     <td>70000</td>     <td>5000</td>   </tr>   <tr>     <td>456</td>     <td>80000</td>     <td>7000</td>   </tr>   <tr>     <td>744</td>     <td>55000</td>     <td>3500</td>   </tr> </table>",
     "option4": "<table border=\"1\">   <tr>     <th>Id</th>     <th>Salary</th>     <th>Bonus</th>   </tr>   <tr>     <td>123</td>     <td>70000</td>     <td>5000</td>   </tr>   <tr>     <td>456</td>     <td>80000</td>     <td>7000</td>   </tr>   <tr>     <td>978</td>     <td>55000</td>     <td>.</td>   </tr> </table>",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "This PROC SQL query is a right outer join, which retrieves all rows that match across tables, based on the join conditions in the ON clause, plus nonmatching rows from the right (second) table.",
     "subject": "advance_sas"
   },
@@ -3907,7 +3907,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> select a.*, duration<br/> from groupa as a<br/> left join<br/> groupb as b<br/> where a.obs=b.obs;",
     "option4": "proc sql;<br/> select a.*, duration<br/> from groupa as a<br/> inner join<br/> groupb as b<br/> on a.obs=b.obs;",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "There are two valid formats for writing a PROC SQL inner join. The PROC SQL query shown at the top of this question uses the first inner join format, which does not use a keyword to indicate the type of join. The alternate format is similar to an outer join and uses the keyword INNER JOIN.",
     "subject": "advance_sas"
   },
@@ -3919,7 +3919,7 @@ var jsonQuestions = [
     "option3": "<table>   <tr>     <th>G3</th>     <th>Z</th>   </tr>   <tr>     <td>46</td>     <td>UI</td>   </tr> </table>",
     "option4": "<table>   <tr>     <th>G3</th>     <th>Z</th>     <th>G3</th>     <th>R</th>   </tr>   <tr>     <td>46</td>     <td>UI</td>     <td>46</td>     <td>BC</td>   </tr> </table>",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "This PROC SQL query is a left outer join, which retrieves all rows that match across tables (based on the join conditions in the ON clause), plus nonmatching rows from the left (first) table. No columns are overlaid, so all columns from both tables are displayed.",
     "subject": "advance_sas"
   },
@@ -3931,7 +3931,7 @@ var jsonQuestions = [
     "option3": "the columns that are specified in a join condition in the WHERE clause must have the same data type",
     "option4": "the columns that are specified in a join condition in the WHERE clause must have the same name",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Inner joins combine the rows from the first table that match rows from the second table, based on one or more join conditions in the WHERE clause. The columns being matched must have the same data type, but they are not required to have the same name. For joins, the tables being joined can have different numbers of columns, and the rows do not need to be sorted.",
     "subject": "advance_sas"
   },
@@ -3943,7 +3943,7 @@ var jsonQuestions = [
     "option3": "In-line views can be combined with tables in PROC SQL joins and set operations",
     "option4": "This PROC SQL query contains an in-line view that uses valid syntax:  <br/><br/>  proc sql;<br/> select name, numvisits<br/> from (select name, sum(checkin)<br/> as numvisits<br/> from facility as f, members as m<br/> where area='POOL' and<br/> f.id=m.id<br/> group by name)<br/> where numvisits<=10<br/> order by 1;",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Unlike a table, an in-line view exists only during query execution. Because it is temporary, an in-line view can be referenced only in the query in which it is defined.",
     "subject": "advance_sas"
   },
@@ -3955,7 +3955,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> title 'Merged';<br/> select coalesce(a.g3, b.g3)<br/> label='G3', z, r<br/> from table1 as a<br/> full join<br/> table2 as b<br/> on a.g3 = b.g3<br/> order by 1;",
     "option4": "proc sql;<br/> title 'Merged';<br/> select g3, z, r<br/> from table1 as a<br/> full join<br/> table2 as b<br/> on a.g3 = b.g3<br/> order by 1;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "In order to generate the same output as the DATA step and PRINT steps, the PROC SQL full outer join must use the COALESCE function with the duplicate columns specified as arguments.",
     "subject": "advance_sas"
   },
@@ -3967,7 +3967,7 @@ var jsonQuestions = [
     "option3": "a maximum of 32 tables, which includes any tables referenced by an in-line view",
     "option4": "a maximum of 2 tables and 32 columns",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "A maximum of 32 tables can be combined in a single inner join. If the join involves views (either in-line views or PROC SQL views), it is the number of tables that underlie the views, not the number of views, that counts towards the limit of 32.",
     "subject": "advance_sas"
   },
@@ -3979,7 +3979,7 @@ var jsonQuestions = [
     "option3": "Table aliases (or full table names) must be used when referencing a column name that is the same in two or more tables",
     "option4": "Table aliases must be used when using summary functions",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The use of summary functions does not require the use of table aliases. All of the other statements about table aliases that are shown here are true.",
     "subject": "advance_sas"
   },
@@ -3991,7 +3991,7 @@ var jsonQuestions = [
     "option3": "To be overlaid, columns must have the same name",
     "option4": "By default, only unique rows are displayed in the result set",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "In set operations that use the operator EXCEPT, INTERSECT, or UNION, and no keyword, columns are overlaid based on their position in the SELECT clause. It does not matter whether the overlaid columns have the same name. When columns are overlaid, the column name is taken from the first table that is specified in the SELECT clause.",
     "subject": "advance_sas"
   },
@@ -4003,7 +4003,7 @@ var jsonQuestions = [
     "option3": "UNION",
     "option4": "OUTER UNION",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "By default, when processing a set operation that contains the EXCEPT, INTERSECT, and UNION set operators, PROC SQL makes an extra pass through the data to eliminate duplicate rows. The keyword ALL is used to suppress that additional pass through the tables, allowing duplicate rows to appear in the result set. Because the OUTER UNION set operator displays all rows, the keyword ALL is invalid and cannot be used with OUTER UNION.",
     "subject": "advance_sas"
   },
@@ -4015,7 +4015,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> select *<br/> from summer<br/> union corr<br/> select *<br/> from winter;",
     "option4": "proc sql;<br/> select *<br/> from summer<br/> union<br/> select *<br/> from winter;",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The output shown above contains all rows that are unique in the combined set of rows from both tables, and the columns have been overlaid by position. This output is generated by a set operation that uses the set operator UNION without keywords.",
     "subject": "advance_sas"
   },
@@ -4027,7 +4027,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> select coalesce(a.obs, b.obs)<br/> label='Obs', med, duration<br/> from groupa as a<br/> full join<br/> groupb as b<br/> on a.obs=b.obs;",
     "option4": "proc sql;<br/> select *<br/> from groupa as a<br/> intersect<br/> select *<br/> from groupb as b;",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The PROC SQL set operation that uses the set operator OUTER UNION without a keyword is the only code shown that does not overlay any columns in output.",
     "subject": "advance_sas"
   },
@@ -4039,7 +4039,7 @@ var jsonQuestions = [
     "option3": "When used in EXCEPT, INTERSECT, and UNION set operations, it removes any columns not found in both tables",
     "option4": "When used in OUTER UNION set operations, it causes same-named columns to be overlaid",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The keyword CORRESPONDING (CORR) can be used alone or together with the keyword ALL.",
     "subject": "advance_sas"
   },
@@ -4051,7 +4051,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> select name, price<br/> from pets<br/> except corr all<br/> select *<br/> from dogs;",
     "option4": "proc sql;<br/> select *<br/> from dogs<br/> except corr<br/> select name, price<br/> from pets;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "This PROC SQL output includes all rows from the table Pets that do not appear in the table Dogs. No duplicates are displayed. A PROC SQL set operation that contains the set operator EXCEPT without keywords produces these results.",
     "subject": "advance_sas"
   },
@@ -4063,7 +4063,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> select *<br/> from prog2<br/> intersect corr<br/> select *<br/> from prog1;",
     "option4": "proc sql;<br/> select *<br/> from prog2<br/> union<br/> select *<br/> from prog1;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The set operator EXCEPT returns all the rows in the first table that do not appear in the second table. The keyword ALL suppresses the extra pass that PROC SQL makes through the data to eliminate duplicate rows. The EXCEPT operator when used alone will also produce the output specified in the question.",
     "subject": "advance_sas"
   },
@@ -4075,7 +4075,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> select fname, lname<br/> from prog1<br/> union<br/> select fname, lname<br/> from prog2;",
     "option4": "proc sql;<br/> select fname, lname<br/> from prog1<br/> except corr<br/> select fname, lname<br/> from prog2;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The set operator UNION returns all rows that are unique in the combined set of rows from both tables.",
     "subject": "advance_sas"
   },
@@ -4087,7 +4087,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> select fname, lname<br/> from prog1<br/> intersect all<br/> select fname, lname<br/> from prog2;",
     "option4": "proc sql;<br/> select fname, lname<br/> from prog1<br/> union corr<br/> select fname, lname<br/> from prog2;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The set operator INTERSECT returns all rows that are common to both tables. Specifying the keyword ALL suppresses PROC SQL's additional pass through the data to eliminate duplicate rows.",
     "subject": "advance_sas"
   },
@@ -4099,7 +4099,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> select fname, lname<br/> from prog2<br/> outer union<br/> select fname, lname<br/> from prog1<br/> order by lname;",
     "option4": "proc sql;<br/> select fname, lname<br/> from prog2<br/> union corr<br/> select fname, lname<br/> from prog1<br/> order by lname;<br/>",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The DATA step returns all rows from the first table along with all rows from the second table, maintaining the order specified in the BY statement. Same - named columns are overlaid by default. The set operator OUTER UNION returns all rows from both tables. The CORR keyword causes same-named columns to be overlaid. The ORDER BY clause causes the result rows to be ordered by values of the specified column (LName).",
     "subject": "advance_sas"
   },
@@ -4111,7 +4111,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> create table work.newpayroll<br/> copy sasuser.payrollmaster;",
     "option4": "proc sql;<br/> create table work.newpayroll<br/> describe sasuser.payrollmaster;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The CREATE TABLE statement that includes a LIKE clause copies the column names and attributes from an existing table into a new table. No rows of data are inserted.",
     "subject": "advance_sas"
   },
@@ -4123,7 +4123,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> create table work.newpayroll<br/> copy sasuser.payrollmaster<br/> where jobcode='FA1';",
     "option4": "proc sql;<br/> create table work.newpayroll as<br/> sasuser.payrollmaster<br/> where jobcode='FA1';",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The CREATE TABLE statement that includes the AS keyword and query clauses creates a table and loads the results of the query into the new table. The WHERE clause selects only the rows for the level-1 flight attendants.",
     "subject": "advance_sas"
   },
@@ -4135,7 +4135,7 @@ var jsonQuestions = [
     "option3": "It restores your table to its original state if any of the rows that you try to insert or update do not meet the specified integrity constraint criteria",
     "option4": "It allows rows that meet the specified integrity constraint criteria to be inserted or updated, but rejects rows that do not meet the integrity constraint criteria",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "UNDO POLICY = REQUIRED is the default setting for PROC SQL. This setting undoes all inserts or updates if 1 or more rows violate the integrity constraint criteria, and restores the table to its original state before the inserts or updates",
     "subject": "advance_sas"
   },
@@ -4147,7 +4147,7 @@ var jsonQuestions = [
     "option3": "UNIQUE",
     "option4": "PRIMARY KEY",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The NOT NULL integrity constraint specifies that data is required and cannot have a null (missing) value.",
     "subject": "advance_sas"
   },
@@ -4159,7 +4159,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> drop table<br/> from work.frequentflyers<br/> where milestraveled < 10000;",
     "option4": "proc sql;<br/> delete<br/> from work.frequentflyers<br/> where milestraveled < 10000;",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The DELETE statement deletes rows that are specified in the WHERE clause from the table. If no WHERE clause is specified, all rows are deleted. The DROP TABLE statement drops (deletes) an entire table; the syntax shown in option c is not valid.",
     "subject": "advance_sas"
   },
@@ -4171,7 +4171,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> update work.frequentflyers<br/> set pointsearned=pointsearned*<br/> case if milestraveled < 10000<br/> then pointsearned*1.5<br/> if milestraveled >= 10000<br/> then pointsearned*2<br/> else 1<br/> end;",
     "option4": "proc sql;<br/> update work.frequentflyers<br/> set pointsearned=pointsearned*<br/> case if milestraveled < 10000<br/> then pointsearned*1.5<br/> if milestraveled >= 10000<br/> then pointsearned*2<br/> else pointsearned*1<br/> end;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The UPDATE statement that includes a SET clause is used to modify rows in a table. WHEN-THEN clauses in the CASE expression enable you to update a column value based on specified criteria.",
     "subject": "advance_sas"
   },
@@ -4183,7 +4183,7 @@ var jsonQuestions = [
     "option3": "VALUES",
     "option4": "CREATE TABLE",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The INSERT statement is used to insert new rows into a new or existing table. There is no LOAD statement in PROC SQL, VALUES is a clause, and the CREATE TABLE statement is used to create a table.",
     "subject": "advance_sas"
   },
@@ -4195,7 +4195,7 @@ var jsonQuestions = [
     "option3": "It allows you to drop columns in your table",
     "option4": "It allows you to change a character column to a numeric column",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The ALTER TABLE statement is used to modify attributes of existing columns (include the MODIFY clause), add new column definitions (include the ADD clause), or delete existing columns (include the DROP clause).",
     "subject": "advance_sas"
   },
@@ -4207,7 +4207,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> describe table sasuser.payrollmaster;",
     "option4": "proc sql;<br/> describe * from sasuser.payrollmaster;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The DESCRIBE TABLE statement lists the column attributes for a specified table.",
     "subject": "advance_sas"
   },
@@ -4219,7 +4219,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> create work.names<br/> (FullName char(25), Age num);",
     "option4": "proc sql;<br/> create table work.names<br/> set (FullName char(25), Age num);",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The CREATE TABLE statement can include column specifications to create an empty table. The entire group of column specifications must be enclosed in a single set of parentheses. You must list each column's name, data type, and (for character columns) length. The length is specified as an integer in parentheses. Multiple column specifications must be separated by commas.",
     "subject": "advance_sas"
   },
@@ -4231,7 +4231,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> create simple index<br/> on empid from sasuser.staffmaster;",
     "option4": "proc sql;<br/> create index empid<br/> on sasuser.staffmaster(empid);",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The index specified above is based on one column, so it is a simple index. In the CREATE INDEX statement, you specify the index name after the keywords CREATE INDEX. You do not include a keyword to specify that this is a simple index. The name of the key column is specified in parentheses after the table name. The name of a simple index must be the same as the name of the key column.",
     "subject": "advance_sas"
   },
@@ -4243,7 +4243,7 @@ var jsonQuestions = [
     "option3": "NODUPS",
     "option4": "NODUPKEY",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To create a unique index, the UNIQUE keyword is added to the CREATE INDEX statement, between the keywords CREATE and INDEX.",
     "subject": "advance_sas"
   },
@@ -4255,7 +4255,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> create index on flightnumber, destination<br/> from sasuser.flightdelays (places);",
     "option4": "proc sql;<br/> create index places<br/> on sasuser.flightdelays (flightnumber,<br/> destination);",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "A composite index is based on two or more columns. In the CREATE INDEX statement, you specify the index name after the keywords CREATE INDEX. You do not include a keyword to specify that this is a composite index. The names of the key columns are specified in parentheses after the table name. The name of a composite index cannot be the same as the name of any columns in the table.",
     "subject": "advance_sas"
   },
@@ -4267,7 +4267,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> select * (idxwhere=yes)<br/> from sasuser.internationalflights<br/> where date between '01mar2000'd<br/> and '07mar2000'd;",
     "option4": "proc sql;<br/> select * (msglevel=i)<br/> from sasuser.internationalflights<br/> where date between '01mar2000'd<br/> and '07mar2000'd;",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Specifying the option MSGLEVEL=I causes informational messages about index usage to be written to the SAS log.",
     "subject": "advance_sas"
   },
@@ -4279,7 +4279,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> drop index flights<br/> from sasuser.marchflights;",
     "option4": "proc sql;<br/> delete index<br/> on sasuser.marchflights( flightnumber,<br/> flightdate);",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The DROP INDEX statement drops one or more specified indexes from a table. You specify the name of each index to be dropped after the keywords DROP INDEX. The table name is specified after the keyword FROM. The type of index and the names of the indexed columns are not specified in the statement.",
     "subject": "advance_sas"
   },
@@ -4291,7 +4291,7 @@ var jsonQuestions = [
     "option3": "SELECT",
     "option4": "IDXNAME",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The DESCRIBE TABLE statement lists all indexes for one or more tables that you specify, along with other information about the table(s).",
     "subject": "advance_sas"
   },
@@ -4303,7 +4303,7 @@ var jsonQuestions = [
     "option3": "It writes messages about index usage to the SAS log",
     "option4": "It stops SAS from using any index",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The IDXWHERE=YES data set option tells SAS to use the best available index, even if the index does not optimize performance.",
     "subject": "advance_sas"
   },
@@ -4315,7 +4315,7 @@ var jsonQuestions = [
     "option3": "Indexes can be created for numeric columns only",
     "option4": "Indexes can enforce uniqueness",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Indexes can be created on either character or numeric columns.",
     "subject": "advance_sas"
   },
@@ -4327,7 +4327,7 @@ var jsonQuestions = [
     "option3": "The query is an equijoin, and all the columns in the join expression are indexed in one of the tables being joined",
     "option4": "The key column is specified only in a SELECT clause",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Using an index will optimize specific classes of PROC SQL queries. A query in which the key column is specified only in a SELECT clause is not one of these queries.",
     "subject": "advance_sas"
   },
@@ -4339,7 +4339,7 @@ var jsonQuestions = [
     "option3": "The option allows you to create and name an index on the table",
     "option4": "The option directs SAS to use an index that you specify",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The IDXNAME= data set option directs PROC SQL to use an index that you specify. The specified index must exist and must be suitable by having at least its first or only column match the condition in the WHERE expression.",
     "subject": "advance_sas"
   },
@@ -4351,7 +4351,7 @@ var jsonQuestions = [
     "option3": "A view follows the same naming conventions as a table",
     "option4": "A view can be used in SAS programs in place of an actual SAS data file",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "A PROC SQL view accesses the most current underlying data and can be joined with tables or other views. In addition, a PROC SQL view can <ul>   <li>be used in SAS programs in place of an actual SAS data file</li>   <li>be derived from one or more tables, PROC SQL views, or DATA step views</li> </ul>",
     "subject": "advance_sas"
   },
@@ -4363,7 +4363,7 @@ var jsonQuestions = [
     "option3": "Views hide complex joins or queries from users",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "PROC SQL views are useful because they <ul>   <li>often save space (a view is usually quite small compared with the data that it accesses)</li>   <li>prevent users from continually submitting queries to omit unwanted columns or rows</li>   <li>hide complex joins or queries from users</li> </ul>  <br/>  In addition, PROC SQL views  <ul>   <li>ensure that input data sets are always current, because data is derived from tables at execution time</li>   <li>can be used to shield sensitive or confidential columns from users while enabling the same users to view other columns in the same table</li> </ul>",
     "subject": "advance_sas"
   },
@@ -4375,7 +4375,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> create view sasuser.newview as<br/> select * from sasuser.payrollmaster;",
     "option4": "proc sql;<br/> select * from sasuser.payrollmaster<br/> into view sasuser.newview;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You use the CREATE VIEW statement to create a view. The keywords CREATE VIEW are followed by the name of the view and the keyword AS.",
     "subject": "advance_sas"
   },
@@ -4387,7 +4387,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> list sasuser.payrollmasterv;",
     "option4": "proc sql;<br/> contents view=sasuser.payrollmasterv;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The DESCRIBE VIEW statement displays the view definition in the SAS log.",
     "subject": "advance_sas"
   },
@@ -4399,7 +4399,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> select view *<br/> from data.empview;",
     "option4": "proc sql;<br/> select *<br/> from data<br/> where view='empview';",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "A view can be used in a PROC SQL step just as you would use an actual SAS table.",
     "subject": "advance_sas"
   },
@@ -4411,7 +4411,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> using airline 'c:\\mysql';<br/> insert into sasuser.newview<br/> select * from airline.supervisors;",
     "option4": "proc sql;<br/> create view sasuser.newview as<br/> select * from airline.supervisors<br/> using libname airline 'c:\\mysql';",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The USING clause enables you to embed a LIBNAME statement in your view definition. The USING clause must be the last clause in the CREATE VIEW statement.",
     "subject": "advance_sas"
   },
@@ -4423,7 +4423,7 @@ var jsonQuestions = [
     "option3": "a relational database table",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "PROC SQL views can access data from a SAS data file, a DATA step view, a PROC SQL view, or a relational database table.",
     "subject": "advance_sas"
   },
@@ -4435,7 +4435,7 @@ var jsonQuestions = [
     "option3": "specify a one-level name in the FROM clause if the view resides in the same SAS data library as the contributing table(s)",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "When you are working with PROC SQL views, it is best to  <ul>   <li>avoid using an ORDER BY clause in a view. If you specify an ORDER BY clause, the data must be sorted each time the view is referenced</li>   <li>avoid creating views that are based on tables whose structure might change. A view is no longer valid when it references a nonexistent column</li>   <li>specify a one-level name in the FROM clause if the view resides in the same SAS data library as the contributing table(s). Using a one-level name in the FROM clause prevents you from having to change the view if you assign a different libref to the SAS data library that contains the view and its contributing table or tables</li> </ul>",
     "subject": "advance_sas"
   },
@@ -4447,7 +4447,7 @@ var jsonQuestions = [
     "option3": "The view contains a WHERE clause",
     "option4": "all of the above",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You can update a PROC SQL view provided that the view does not join or link to another table, the view does not have a subquery, or you try to update a derived column. You can update a view that contains a WHERE clause. The WHERE clause can be in the UPDATE clause or in the view. You cannot update a view that contains any other clause such as an ORDER BY or a HAVING clause.",
     "subject": "advance_sas"
   },
@@ -4459,7 +4459,7 @@ var jsonQuestions = [
     "option3": "proc sql; erase view sasuser.newview;",
     "option4": "proc sql; remove newview from sasuser;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The DROP VIEW statement drops a view from the specified library.",
     "subject": "advance_sas"
   },
@@ -4471,7 +4471,7 @@ var jsonQuestions = [
     "option3": "a SELECT statement",
     "option4": "the OPTIONS procedure",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "PROC SQL options are specified in the PROC SQL statement. After you specify an option, it remains in effect until you change it or you re-invoke PROC SQL.",
     "subject": "advance_sas"
   },
@@ -4483,7 +4483,7 @@ var jsonQuestions = [
     "option3": "OBS=",
     "option4": "none of the above",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The INOBS= option restricts the number of rows that PROC SQL takes as input from any single source. The INOBS= option is similar to the SAS system option OBS= and is useful for debugging queries on large tables. The OUTOBS= option restricts the number of rows that PROC SQL displays or writes to a table.",
     "subject": "advance_sas"
   },
@@ -4495,7 +4495,7 @@ var jsonQuestions = [
     "option3": "proc sql nonumber;<br/> select *<br/> from sasuser.flightattendants<br/> where jobcode='FA1';<br/> reset number outobs=10;<br/> select *<br/> from sasuser.flightattendants<br/> where jobcode='FA2';",
     "option4": "proc sql;<br/> select *<br/> from sasuser.flightattendants<br/> where jobcode='FA1';<br/> reset outobs=10;<br/> select *<br/> from sasuser.flightattendants<br/> where jobcode='FA2';",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "After you specify an option, it remains in effect until you change it or you re-invoke PROC SQL. You can use the RESET statement to add, drop, or change PROC SQL options without re-invoking the SQL procedure. In the correct answer, the RESET statement adds the NUMBER option and the OUTOBS= option. The resulting output lists the first 10 rows in the table Sasuser.Flightattendants where the value of Jobcode equals FA2 and includes a column named Row.",
     "subject": "advance_sas"
   },
@@ -4507,7 +4507,7 @@ var jsonQuestions = [
     "option3": "FLOW | NOFLOW | FLOW=n | FLOW=n m",
     "option4": "b and c",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The DOUBLE | NODOUBLE option specifies whether PROC SQL output is double-spaced in listing output. The FLOW | NOFLOW | FLOW=n | FLOW=n m option controls the appearance of wide character columns in listing output. Neither option affects the appearance of HTML output.",
     "subject": "advance_sas"
   },
@@ -4519,7 +4519,7 @@ var jsonQuestions = [
     "option3": "When using the STIMER option in PROC SQL, the SAS system option STIMER must also be in effect",
     "option4": "a and c",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The STIMER | NOSTIMER option in PROC SQL specifies whether PROC SQL writes timing information for each statement to the SAS log, instead of as a cumulative value for the entire procedure. NOSTIMER is the default. In order to use the STIMER option in PROC SQL, the SAS system option STIMER (the default) must also be in effect. If you use the system option alone, you will receive timing information for the entire procedure, not on a statement-by-statement basis.",
     "subject": "advance_sas"
   },
@@ -4531,7 +4531,7 @@ var jsonQuestions = [
     "option3": "information about SAS macros",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "A Dictionary table is a special, read-only SAS data view that contains information about SAS data libraries, SAS data sets, SAS macros, and external files that are in use or available in the current SAS session. A Dictionary table also contains the settings for SAS system options that are currently in effect.",
     "subject": "advance_sas"
   },
@@ -4543,7 +4543,7 @@ var jsonQuestions = [
     "option3": "limited to read-only access",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Dictionary tables are created each time they are referenced in a SAS program, updated automatically, and limited to read-only access. Accessing a Dictionary table causes SAS to determine the current state of the SAS session and return the information that you want.",
     "subject": "advance_sas"
   },
@@ -4555,7 +4555,7 @@ var jsonQuestions = [
     "option3": "by referring to the PROC SQL view of the table that is stored in the Sasuser library",
     "option4": "a and b",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Dictionary tables can be accessed by running a PROC SQL query against the table, using the Dictionary libref. Though SAS librefs are usually limited to eight characters, Dictionary is an automatically assigned, reserved word. You can also access a Dictionary table by referring to the PROC SQL view of the table that is stored in the Sashelp library.",
     "subject": "advance_sas"
   },
@@ -4567,7 +4567,7 @@ var jsonQuestions = [
     "option3": "proc sql describe table dictionary.titles;",
     "option4": "proc sql describe dictionary titles;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To see how a Dictionary table is defined, submit a DESCRIBE TABLE statement. The DESCRIBE TABLE statement writes a CREATE TABLE statement to the SAS log for the table specified in the DESCRIBE TABLE statement.",
     "subject": "advance_sas"
   },
@@ -4579,7 +4579,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> select memname, modate, nvar, nobs<br/> from 'SASUSER'<br/> where table=dictionary.tables;",
     "option4": "proc sql;<br/> select SASUSER<br/> from dictionary.tables<br/> where cols= 'memname, modate, nvar, nobs';",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To display information about the files in a specific library, specify the column names in a SELECT statement and the Dictionary table name in the FROM clause. The library name in the WHERE clause must be specified in uppercase letters because that is how it is stored in SAS and it must be enclosed in quotation marks.",
     "subject": "advance_sas"
   },
@@ -4591,7 +4591,7 @@ var jsonQuestions = [
     "option3": "Macro variables are text strings that are independent of SAS data sets",
     "option4": "The values of macro variables can be up to 65,534 characters long",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Macro variables are always text strings that are independent of SAS data sets. The value of a macro variable can be up to 65,534 characters long, and the name of a macro variable can be up to 32 characters long. A macro variable can be defined or referenced anywhere in a SAS program except within data lines. There are two types of macro variables: automatic and user-defined.",
     "subject": "advance_sas"
   },
@@ -4603,7 +4603,7 @@ var jsonQuestions = [
     "option3": "title \"Total Sales for &month\";",
     "option4": "title Total Sales for \"&month\";",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To reference a macro variable, you precede the name with an ampersand. You do not to need enclose the macro variable reference in quotation marks.",
     "subject": "advance_sas"
   },
@@ -4615,7 +4615,7 @@ var jsonQuestions = [
     "option3": "options symbolgen;",
     "option4": "%PUT the macro variable MONTH has the value &month.;",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "There are two ways to display the value of a macro variable in the SAS log: you can turn on the SYMBOLGEN system option to list the values of all macro variables that are used, or you can use the %PUT statement to write specific text, including macro variable values, to the log.",
     "subject": "advance_sas"
   },
@@ -4627,7 +4627,7 @@ var jsonQuestions = [
     "option3": "%let location = \"storage\";",
     "option4": "%let location = storage;",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You use the %LET statement to define a macro variable. You do not need to enclose the value in quotation marks. If you do include quotation marks in the assigned value for a macro variable, the quotation marks will be stored as part of the value.",
     "subject": "advance_sas"
   },
@@ -4639,7 +4639,7 @@ var jsonQuestions = [
     "option3": "*Sales Report for \"Southeast\" Area*",
     "option4": "* Sales Report for \"Southeast\" Area *",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Macro variables are stored as character strings. Quotation marks and most special characters are stored exactly as they are assigned, but leading blanks are stripped from assigned values. You can also include references to other macro variables within %LET statements.",
     "subject": "advance_sas"
   },
@@ -4651,7 +4651,7 @@ var jsonQuestions = [
     "option3": "%let currdate = %sysfunc(date());",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "SYSDATE9 is an automatic macro variable that stores the date that your SAS session began in ddmmmyyyy format. You can use the %SYSFUNC function along with any DATA step function, so both the TODAY() function and the DATE() function will result in the current date.",
     "subject": null
   },
@@ -4663,7 +4663,7 @@ var jsonQuestions = [
     "option3": "all of the above",
     "option4": "none of the above",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Macro character functions such as %UPCASE and %SUBSTR enable you to perform character manipulations on your macro variable values.",
     "subject": "advance_sas"
   },
@@ -4675,7 +4675,7 @@ var jsonQuestions = [
     "option3": "expressions, names, numbers, and special characters",
     "option4": "expressions, literals, numbers, and special characters",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The word scanner recognizes four types of tokens. Expressions are not a type of token.",
     "subject": "advance_sas"
   },
@@ -4687,7 +4687,7 @@ var jsonQuestions = [
     "option3": "<br/> month1 June<br/> month2 July<br/> period1 JuneJuly<br/> period2 MayJune<br/> period3 JulyAug",
     "option4": "<br/> month1 June<br/> month2 July<br/> period1 junejuly<br/> period2 Mayjune<br/> period3 julyaug",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You can combine macro variable references with text to create new text strings. If you precede a macro variable with text, the ampersand at the beginning of the macro variable name signals the end of the text and the beginning of a macro variable name. If you want text to follow the macro variable value, you must signal the end of the macro variable name with a period.",
     "subject": "advance_sas"
   },
@@ -4699,7 +4699,7 @@ var jsonQuestions = [
     "option3": "title \"Report for %sysfunc(left(%qsysfunc(today(), worddate.)))\";",
     "option4": "title \"Report for %left(today(), worddate.))\";",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You use the %QSYSFUNC function in this case, in order to mask the comma that results from the worddate. format. You must mask this comma since the LEFT() function expects only one argument.",
     "subject": "advance_sas"
   },
@@ -4711,7 +4711,7 @@ var jsonQuestions = [
     "option3": "Macro functions are always processed during the execution of the DATA step",
     "option4": "Macro variable references in a DATA step are always resolved prior to DATA step execution",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Most macro functions are handled by the macro processor before any SAS language statements in the DATA step are executed. For example, the %LET statement and any macro variable references (&macvar) are passed to the macro processor before the program is compiled. In order to create or update macro variables during DATA step execution, you use the SYMPUT routine.",
     "subject": "advance_sas"
   },
@@ -4723,7 +4723,7 @@ var jsonQuestions = [
     "option3": "data new;<br/> set sasuser.all;<br/> if location='Boston' then do;<br/> call symput(region, \"East\");<br/> end;<br/> else<br/> call symput(region, \"West\");<br/> end;<br/> run;",
     "option4": "data new;<br/> set sasuser.all;<br/> if location='Boston' then do;<br/> symput(region, East);<br/> end;<br/> else<br/> symput(region, West);<br/> end;<br/> run;",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To create a macro variable and assign to it a value that is based on the value of a DATA step variable, you use the SYMPUT routine. In the SYMPUT routine, to assign a literal string as a macro variable name, you enclose the literal in quotation marks. To assign a literal string as a value of the macro variable, you enclose the literal in quotation marks.",
     "subject": "advance_sas"
   },
@@ -4735,7 +4735,7 @@ var jsonQuestions = [
     "option3": "automatically convert a numeric value to a character value when used to assign a value to a macro variable in a DATA step",
     "option4": "be used to assign a numeric value to a macro variable in an SCL program",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The SYMPUT routine enables you to assign a data set variable as the value of a macro variable. You can also use the SYMPUT routine to create a series of related macro variables. Because all macro variable values are character strings, SYMPUT automatically converts any numeric value that you attempt to assign as a value for a macro variable. In an SCL program, you must use SYMPUTN rather than SYMPUT if you are attempting to assign a numeric value to a macro variable.",
     "subject": "advance_sas"
   },
@@ -4747,7 +4747,7 @@ var jsonQuestions = [
     "option3": "data _null_;<br/> set sasuser.courses;<br/> call symput('course_code', trim(course_title));<br/> run;<br/> %let crsid=C005;<br/> proc print data=sasuser.schedule noobs label;<br/> where course_code=\"&crsid\";<br/> var location begin_date teacher;<br/> title1 \"Schedule for &&&crsid\";<br/> run;",
     "option4": "data _null_;<br/> set sasuser.courses;<br/> call symget(course_code, trim(course_title));<br/> run;  <br/><br/>  %let crsid=C005;<br/> proc print data=sasuser.schedule noobs label;<br/> where course_code=\"&crsid\";<br/> var location begin_date teacher;<br/> title1 \"Schedule for &&&crsid\";<br/> run;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You can use multiple ampersands to create an indirect reference when the value of one macro variable is the name of another. If you enclose the DATA step variable name in quotation marks in the SYMPUT routine, the new macro variable will have the same name as the DATA step variable rather than having the DATA step variable's value as a name. Use the SYMGET function to obtain the value of a macro variable during the execution of a DATA step.",
     "subject": "advance_sas"
   },
@@ -4759,7 +4759,7 @@ var jsonQuestions = [
     "option3": "Re-scanning continues until there are no remaining macro triggers that the macro processor can resolve",
     "option4": "The macro processor always re-scans a name token that is preceded by multiple ampersands or by multiple percent signs",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "If more than four consecutive ampersands precede a name token, rescanning continues from left to right until no more triggers can be resolved. The Forward Re-scan rule describes how the macro processor resolves macro variable references that start with multiple ampersands or with multiple percent signs.",
     "subject": "advance_sas"
   },
@@ -4771,7 +4771,7 @@ var jsonQuestions = [
     "option3": "to access the value of a macro variable during the execution of an SCL program",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "A macro variable reference (&macvar) is resolved before any SAS language statements are sent to the compiler. The SYMGET function enables you to obtain the value of a macro variable during the execution of a DATA step or a PROC SQL step. The SYMGET function can also be used to obtain the value of a macro variable during the execution of an SCL program.",
     "subject": "advance_sas"
   },
@@ -4783,7 +4783,7 @@ var jsonQuestions = [
     "option3": "select fee/days format=dollar8.<br/> into :daily_fee from sasuser.all;",
     "option4": "select fee/days format=dollar8.<br/> into daily_fee from sasuser.all;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To create a macro variable during the execution of a PROC SQL step, use the INTO clause of the SELECT statement. In the INTO clause, you precede the name of the macro variable with a colon.",
     "subject": "advance_sas"
   },
@@ -4795,7 +4795,7 @@ var jsonQuestions = [
     "option3": "Forest, Mr. Peter",
     "option4": "none of the above",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You can use multiple ampersands to delay the resolution of a macro variable reference. You can also combine macro variable references in order to create new tokens. In this example, the reference &&teach&crs resolves to &teach3 on the first scan. On the next scan, &teach3 resolves to Forest, Mr. Peter.",
     "subject": "advance_sas"
   },
@@ -4807,7 +4807,7 @@ var jsonQuestions = [
     "option3": "price = symget(&daily_fee);",
     "option4": "price=symget(\"daily_fee\");",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You can use the SYMGET function in an assignment statement to obtain the current value of a macro variable and to assign that value to a DATA step variable. The SYMGET function enables you to obtain the value of a macro variable during execution of a DATA step, a PROC SQL step, or an SCL program.",
     "subject": "advance_sas"
   },
@@ -4819,7 +4819,7 @@ var jsonQuestions = [
     "option3": "PROC SQL automatically converts to a numeric value any macro variable value that you attempt to compare to a numeric value",
     "option4": "In an SCL program, the SYMPUTN routine can be used to assign a numeric value to a macro variable",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The SYMPUT routine can be used in either the DATA step or in an SCL program. In the DATA step, the SYMPUT routine will perform automatic conversion on numeric values that you attempt to assign as values for macro variables, using the BEST12. format. In an SCL program, you should use the SYMPUTN routine if you want to assign a numeric value as a value for a macro variable. In a PROC SQL step, you need to use the INPUT function in order to convert macro variable values to numeric before you compare them to other numeric values.",
     "subject": "advance_sas"
   },
@@ -4831,7 +4831,7 @@ var jsonQuestions = [
     "option3": "Only macro language statements are checked for syntax errors when the macro is compiled",
     "option4": "Compiled macros are stored in a temporary SAS catalog by default",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "A macro definition must begin with a %MACRO statement and must end with a %MEND statement. The macro definition can include macro language statements as well as SAS language statements. When the macro is compiled, macro language statements are checked for syntax errors. The compiled macro is stored in a temporary SAS catalog by default.",
     "subject": "advance_sas"
   },
@@ -4843,7 +4843,7 @@ var jsonQuestions = [
     "option3": "%macro print(vars, total);<br/> proc print data=classes;<br/> var &vars;<br/> sum &total;<br/> run;<br/> %mend print;",
     "option4": "%macro print(vars, total);<br/> proc print data=classes;<br/> var :vars;<br/> sum :total;<br/> run;<br/> %mend print;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To include positional parameters in a macro definition, you list the parameters in parentheses and separate them with commas. When the macro is executed, macro variables will be created in the local symbol table and will have the same names as the parameters. You can then use these macro variables within the macro.",
     "subject": "advance_sas"
   },
@@ -4855,7 +4855,7 @@ var jsonQuestions = [
     "option3": "%printdsn(sasuser.courses, course_title days)",
     "option4": "%printdsn(sasuser.courses, course_title, days)",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To call a macro that includes positional parameters, you precede the macro name with a percent sign. You list the values for the macro variables that are defined by the parameters in parentheses. List values in the same order in which the parameters are listed, and separate them with commas. Remember that a macro call is not a SAS language statement and does not require a semicolon.",
     "subject": "advance_sas"
   },
@@ -4867,7 +4867,7 @@ var jsonQuestions = [
     "option3": "Default values for keyword parameters are the values that are assigned in the macro definition, whereas positional parameters have a default value of null",
     "option4": "You can assign a null value to a keyword parameter in a call to the macro by omitting the parameter from the call",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "In a mixed parameter list, positional parameters must be listed before any keyword parameters. Both positional and keyword parameters create macro variables in the local symbol table. To assign a null value to a keyword parameter, you list the parameter without a value in the macro call.",
     "subject": "advance_sas"
   },
@@ -4879,7 +4879,7 @@ var jsonQuestions = [
     "option3": "A macro program is stored in a SAS catalog entry only after it is executed",
     "option4": "A macro program is available for execution throughout the SAS session in which it is compiled",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "When you submit a macro definition, the macro is compiled and is stored in a SAS catalog. Then when you call the macro, the macro is executed. The macro is available for execution anytime throughout the current SAS session.",
     "subject": null
   },
@@ -4891,7 +4891,7 @@ var jsonQuestions = [
     "option3": "you cannot refer to DATA step variables in the logical expression of the %IF statement",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You can use %IF-%THEN statements to conditionally process code. Within a %IF-%THEN statement, you must use %DO and %END statements to enclose multiple statements. %IF-%THEN statements are similar to IF THEN statements in the DATA step, but they are part of the macro language.",
     "subject": "advance_sas"
   },
@@ -4903,7 +4903,7 @@ var jsonQuestions = [
     "option3": "only whole statements or pieces of text within a statement",
     "option4": "whole steps, whole statements, or pieces of text within statements",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "By using %IF-%THEN statements, you can place whole steps, individual statements, or parts of statements onto the input stack.",
     "subject": "advance_sas"
   },
@@ -4915,7 +4915,7 @@ var jsonQuestions = [
     "option3": "%macro sample(dsn);<br/> %local class;<br/> %let class=course_title;<br/> data_null_;<br/> set &dsn;<br/> run;<br/> %mend;",
     "option4": "%global class;<br/> %macro sample(dsn);<br/> %let class=course_title;<br/> data _null_;<br/> set &dsn;<br/> run;<br/> %mend;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "There are several ways to create macro variables in the local symbol table. Macro variables that are created by parameters in a macro definition or by a %LOCAL statement are always created in the local table. Macro variables that are created by a %LET statement or by the SYMPUT routine inside a macro definition might be created in the local table as well.",
     "subject": "advance_sas"
   },
@@ -4927,7 +4927,7 @@ var jsonQuestions = [
     "option3": "%macro hex(start=1, stop=10, incr=1);<br/> %local i;<br/> data _null_;<br/> %do i=&start to &stop by &incr;<br/> value=&i;<br/> put \"Hexadecimal form of &i is \" value hex6.;<br/> run;<br/> %mend hex;",
     "option4": "%macro hex(start=1, stop=10, incr=1);<br/> %local i;<br/> data _null_;<br/> %do i=&start to &stop by &incr;<br/> value=&i;<br/> put \"Hexadeciaml form of &i is \" value hex6.;<br/> %end<br/> run;<br/> %mend hex;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To define macros with %DO loops you use a %DO statement and a %END statement. Be sure to precede all keywords in the statements with percent signs since the %DO and %END statements are macro language statements. Also, be sure to end these statements with semicolons",
     "subject": "advance_sas"
   },
@@ -4939,7 +4939,7 @@ var jsonQuestions = [
     "option3": "First, all compiled macro programming statements are executed by the macro processor<br/> After all macro statements have been processed, any SAS language statements are passed back to the input stack in order to be passed to the compiler and then executed",
     "option4": "The macro processor executes compiled macro statements<br/> If any SAS language statements are encountered, they are passed back to the input stack<br/> The macro processor pauses while those statements are passed to the compiler and then executed<br/> Then the macro processor continues to repeat these steps until it reaches the %MEND statement",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "When you submit a call to a compiled macro, the macro is executed. Specifically, the macro processor executes compiled macro language statements first. When any SAS language statements are encountered, the macro processor places these statements onto the input stack and pauses while they are passed to the compiler and then executed. Then the macro processor continues to repeat these steps until the %MEND statement is reached.",
     "subject": "advance_sas"
   },
@@ -4951,7 +4951,7 @@ var jsonQuestions = [
     "option3": "can be specified with the SOURCE2 option in order to write the contents of the external file that is inserted into a program to the SAS log",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The %INCLUDE statement can be used to insert the contents of an external file into a SAS program. If a macro definition is stored in an external file, the %INCLUDE statement causes the macro definition to be compiled when it is inserted into the SAS program. The contents of the macro definition will be written to the SAS log only if the SOURCE2 option is specified.",
     "subject": "advance_sas"
   },
@@ -4963,7 +4963,7 @@ var jsonQuestions = [
     "option3": "the SOURCE entry will be deleted at the end of the session",
     "option4": "you do not need to compile the macro before you invoke it in a program",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "When a macro definition is stored as a catalog SOURCE entry, you must compile it before you can call it from a SAS program. You compile a macro that is stored as a catalog SOURCE entry by using the CATALOG access method. This creates a session-compiled macro that will be deleted at the end of the SAS session. The PROC CATALOG statement enables you to view a list of the contents of a SAS catalog.",
     "subject": "advance_sas"
   },
@@ -4975,7 +4975,7 @@ var jsonQuestions = [
     "option3": "libname mylib 'c:\\mylib';<br/> filename macsrc 'mylib.macsrc';<br/> options mautosource sasautos=(macsrc, sasautos);<br/> %prtlast",
     "option4": "libname mylib 'c:\\mylib';<br/> options mautosource sasautos=mylib;<br/> %prtlast",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To call a macro that is stored in an autocall library, you must specify both the MAUTOSOURCE system option and the SASAUTOS system option. The SASAUTOS system option can be set to include multiple pathnames or filerefs. Once these two system options are set, you call the macro by preceding the macro name with a percent sign.",
     "subject": "advance_sas"
   },
@@ -4987,7 +4987,7 @@ var jsonQuestions = [
     "option3": "you need to specify the MSTORED and SASMSTORE system options",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The Stored Compiled Macro Facility enables you to store compiled macros permanently so that you can reuse them in later SAS sessions without compiling them again. Compiled macros must be stored in a catalog named Sasmacr, and both the MSTORED system option and the SASMSTORE system option must be specified.",
     "subject": "advance_sas"
   },
@@ -4999,7 +4999,7 @@ var jsonQuestions = [
     "option3": "libname macrolib 'c:\\mylib';<br/> options mstored sasmstore=macrolib;<br/> %macro prtlast;<br/> proc print data=&syslast (obs=5);<br/> title \"Listing of &syslast data set\";<br/> run;<br/> %mend;",
     "option4": "libname macrolib 'c:\\mylib';<br/> %macro prtlast / store;<br/> proc print data=&syslast (obs=5);<br/> title \"Listing of &syslast data set\";<br/> run;<br/> %mend;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "In order to create a permanently stored compiled macro, you must specify the MSTORED system option. The SASMSTORE system option must be specified to point to the library in which you want your macros to be stored. You must also use the STORE option in the %MACRO statement.",
     "subject": "advance_sas"
   },
@@ -5011,7 +5011,7 @@ var jsonQuestions = [
     "option3": "The Prtlast macro is stored as a stored compiled macro",
     "option4": "The Prtlast macro is stored as a SOURCE entry in a permanent SAS catalog",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "When you submit a macro definition, SAS creates a session-compiled macro and stores it in the temporary SAS catalog Work.Sasmacr. This macro will be deleted at the end of the SAS session.",
     "subject": "advance_sas"
   },
@@ -5023,7 +5023,7 @@ var jsonQuestions = [
     "option3": "Your macros would be available for use in later SAS sessions",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "If you store your macro definitions in external files, you can easily share these files with others. Also, you can edit a macro definition that is stored in an external file with any text editor, and you can reuse the macro in other SAS sessions.",
     "subject": "advance_sas"
   },
@@ -5035,7 +5035,7 @@ var jsonQuestions = [
     "option3": "Copy the contents of the output window to the Sasmacr catalog",
     "option4": "none of the above",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The PROC CATALOG step enables you to view a list of the contents of a SAS catalog. This might be especially useful if you store your macro definitions as SOURCE entries in permanent SAS catalogs. You might also use the PROC CATALOG step to see a list of the session-compiled macros that are stored in Work.Sasmacr.",
     "subject": "advance_sas"
   },
@@ -5047,7 +5047,7 @@ var jsonQuestions = [
     "option3": "You do not need to specify any system options in order to use the Stored Compiled Macro Facility",
     "option4": "You cannot move a stored compiled macro to another operating system",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "In order to use the Stored Compiled Macro Facility, you need to specify the MSTORED and SASMSTORE system options. The Stored Compiled Macro Facility saves the compiled macro in a permanent SAS catalog, but it does not save the macro definition. You cannot move a compiled macro across operating systems. Since you cannot re-create the macro definition from a compiled macro, it is a good idea to save your source program permanently as well.",
     "subject": "advance_sas"
   },
@@ -5059,7 +5059,7 @@ var jsonQuestions = [
     "option3": "One disadvantage of the autocall facility is that the first time you call an autocall macro in a SAS session, the macro processor must use system resources to compile it",
     "option4": "The autocall facility can be used in conjunction with the Stored Compiled Macro Facility",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The autocall macro facility stores macro definitions — not compiled macros — permanently. The first time an autocall macro is called during a SAS session, the macro is compiled and a session-compiled macro is created in Work.Sasmacr. You can have multiple autocall libraries that are concatenated, and you can use the autocall facility in conjunction with the Stored Compiled Macro Facility.",
     "subject": "advance_sas"
   },
@@ -5071,7 +5071,7 @@ var jsonQuestions = [
     "option3": "during compilation of the DATA step, by program statements",
     "option4": "during execution of the DATA step, by program statements",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The POINT= option in the SET statement names a variable. You must use program statements to assign a value to this variable during execution of the DATA step, before execution of the SET statement. Also, the value of the POINT= variable should be a number that corresponds to an observation number in the input data set, and it should be different each time the SET statement executes.",
     "subject": "advance_sas"
   },
@@ -5083,7 +5083,7 @@ var jsonQuestions = [
     "option3": "data sample;<br/> do thisone = 100 to 1000 by 100;<br/> set sasuser.sale2000 point = thisone;<br/> output;<br/> end;<br/> stop;<br/> run;",
     "option4": "data sample;<br/> do thisone = 100 to totnum by 100;<br/> set sasuser.sale2000 point = thisone nobs = totnum;<br/> end;<br/> run;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To create a systematic sample from a data set that has an unknown number of observations, you use the NOBS= option in conjunction with the POINT= option in the SET statement. The NOBS= variable is automatically assigned a value of the total number of observations in the input data set, and you must assign a value to the POINT= variable before the SET statement executes.",
     "subject": "advance_sas"
   },
@@ -5095,7 +5095,7 @@ var jsonQuestions = [
     "option3": "ceil(ranuni(0)*50)",
     "option4": "ceil(ranuni(0))*50",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "In order to create a random sample of a data set, you need to generate a random integer. You can use the RANUNI function in conjunction with the CEIL function to create a random integer. You can use a multiplier with the RANUNI function to increase the range from which the random number is chosen to include as many numbers as you need.",
     "subject": "advance_sas"
   },
@@ -5107,7 +5107,7 @@ var jsonQuestions = [
     "option3": "can be classified as simple or composite, either of which can consist of unique values",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "An index is a separate file from a data set that contains information about observations within the data set. Specifically, an index contains value/identifier pairs that indicate the location of observations within the data set and the value of one or more key variables in that observation.",
     "subject": "advance_sas"
   },
@@ -5119,7 +5119,7 @@ var jsonQuestions = [
     "option3": "options msglevel=i;<br/> data flights (index=(Fromto=(origin dest)));<br/> set sasuser.revenue;<br/> run;",
     "option4": "options msglevel=n;<br/> data flights (index=Fromto);<br/> set sasuser.revenue;<br/> run;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To create an index at the same time that you create a data set, you use the INDEX= option in the DATA statement. You must assign a unique name to a composite index, while a simple index is automatically assigned the name of the key variable as its name. You can set the value of the MSGLEVEL= system option to I in order to see messages about indexes in the SAS log.",
     "subject": "advance_sas"
   },
@@ -5131,7 +5131,7 @@ var jsonQuestions = [
     "option3": "When you delete a data set, the index file remains until you delete it as well",
     "option4": "When you copy a data set with the COPY statement, you must also copy the index file in another step",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "For many maintenance tasks that you perform on a data set, SAS automatically performs corresponding tasks to the index file. For example, if you delete a data set, the index file is deleted as well. If you rename a data set with the CHANGE statement in the DATASETS procedure, SAS automatically renames the index file. If you copy a data set to a new location with the COPY statement in the DATASETS procedure, SAS automatically reconstructs the index file in the new location.",
     "subject": "advance_sas"
   },
@@ -5143,7 +5143,7 @@ var jsonQuestions = [
     "option3": "the DATA step with the INDEX= option, to rebuild the data set",
     "option4": "any of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You can use the DATASETS procedure or the SQL procedure to create an index on or delete an index from an existing data set. You can also rebuild the index with a DATA step and use the INDEX= option to create an index on the rebuilt data set. However, rebuilding a data set uses more system resources than adding an index to an existing data set with either the DATASETS or the SQL procedure.",
     "subject": "advance_sas"
   },
@@ -5155,7 +5155,7 @@ var jsonQuestions = [
     "option3": "proc sql data=revenue;<br/> create index origin;<br/> quit;",
     "option4": "proc sql;<br/> index=origin on revenue;<br/> quit;",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You use the CREATE INDEX statement of the SQL procedure to create an index on an existing data set. In the SQL procedure, you must name the index in the CREATE INDEX statement; for a simple index, the index name must match the name of the key variable.",
     "subject": "advance_sas"
   },
@@ -5167,7 +5167,7 @@ var jsonQuestions = [
     "option3": "the MSGLEVEL= system option and a PROC PRINT step",
     "option4": "any of the above",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You can use either the CONTENTS procedure or the CONTENTS statement in the DATASETS procedure to generate a list of information about a data set, including a list of existing indexes. All indexes for a data set are stored in a single file that is separate from but has the same name as the data set.",
     "subject": "advance_sas"
   },
@@ -5179,7 +5179,7 @@ var jsonQuestions = [
     "option3": "data someflights;<br/> set sasuser.revenue;<br/> if flightid > 'IA11200';<br/> run;",
     "option4": "proc print data=sasuser.revenue;<br/> where origin='RDU' or flightid='IA03400';<br/> run;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "An index can improve the efficiency with which SAS is able to access certain observations in a data set. However, an index is not always useful. SAS will not use an index to process subsetting IF statements, or other statements that SAS determines might be more efficiently processed without an index.",
     "subject": "advance_sas"
   },
@@ -5191,7 +5191,7 @@ var jsonQuestions = [
     "option3": "filename onsale ('c:\\routes\\new\\london.dat'<br/> 'c:\\routes\\new\\paris.dat'<br/> 'c:\\routes\\new\\zurich.dat');",
     "option4": "filename onsale 'c:\\routes\\new\\london.dat<br/> c:\\routes\\new\\paris.dat<br/> c:\\routes\\new\\zurich.dat';",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "When a FILENAME statement is used to assign a fileref to multiple raw data files, the list of files must be enclosed in a single set of parentheses. Each filename specified must be enclosed in quotation marks.",
     "subject": "advance_sas"
   },
@@ -5203,7 +5203,7 @@ var jsonQuestions = [
     "option3": "The FILEVAR= variable must contain a character string that is a physical filename",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The FILEVAR= option enables you to dynamically change the currently opened input file to a new input file. The FILEVAR= variable must contain a character string that is a physical filename. Like automatic variables, the FILEVAR= variable is not written to the data set.",
     "subject": "advance_sas"
   },
@@ -5215,7 +5215,7 @@ var jsonQuestions = [
     "option3": "<table>   <tr>     <th>When x=</th>     <th>readfile=</th>   </tr>   <tr>     <td>8</td>     <td>c:\\data\\month 8.dat</td>   </tr>   <tr>     <td>9</td>     <td>c:\\data\\month 9.dat</td>   </tr>   <tr>     <td>10</td>     <td>c:\\data\\month10.dat</td>   </tr> </table>",
     "option4": "<table>   <tr>     <th>When x=</th>     <th>readfile=</th>   </tr>   <tr>     <td>8</td>     <td>month8</td>   </tr>   <tr>     <td>9</td>     <td>month9</td>   </tr>   <tr>     <td>10</td>     <td>month10</td>   </tr> </table>",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The DO statement creates the index variable x and assigns it the values of 8, 9, and 10. The assignment statement assigns the name of a raw data file to readfile using the current value of x and the PUT function, which concatenates the values of x with the text strings c:\\data\\month and .dat. The COMPRESS function removes blank spaces from the values of readfile.",
     "subject": "advance_sas"
   },
@@ -5227,7 +5227,7 @@ var jsonQuestions = [
     "option3": "<table>   <tr>     <th>When i=</th>     <th>nextfile=</th>   </tr>   <tr>     <td>y1</td>     <td>c:\\data\\Y2003.dat</td>   </tr>   <tr>     <td>y2</td>     <td>c:\\data\\Y2002.dat</td>   </tr>   <tr>     <td>y3</td>     <td>C:\\data\\Y2001.dat</td>   </tr> </table>",
     "option4": "<table>   <tr>     <th>When i=</th>     <th>nextfile=</th>   </tr>   <tr>     <td>y1</td>     <td>c:\\data\\Y3.dat</td>   </tr>   <tr>     <td>y2</td>     <td>c:\\data\\Y2.dat</td>   </tr>   <tr>     <td>y3</td>     <td>c:\\data\\Y1.dat</td>   </tr> </table>",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The TODAY function returns the current date from the system clock as a SAS date value. The year number is then extracted from the current date using the YEAR function. The value of the current year, 2003, is assigned to y3. The year values 2002 and 2001 are assigned to y2 and y1, respectively. The PUT function concatenates the text string c:\\data\\Y with the year values and the text string .dat.",
     "subject": "advance_sas"
   },
@@ -5239,7 +5239,7 @@ var jsonQuestions = [
     "option3": "The END= variable is not written to the data set",
     "option4": "a and c",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The END= option enables you to name a variable whose value is controlled by SAS. The value of the variable is 0 when you are not reading the last record in an input file and 1 when you are reading the last record in an input file. You can test the value of the END= variable to determine if the DATA step should continue processing. Like automatic variables, the END= variable is not written to the SAS data set.",
     "subject": "advance_sas"
   },
@@ -5251,7 +5251,7 @@ var jsonQuestions = [
     "option3": "proc append data=work.london work.flights;<br/> run;",
     "option4": "proc append data=work.flights work.london;<br/> run;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "PROC APPEND uses the BASE= and DATA= arguments. BASE=SAS-data-set names the data set to which you want to add observations. DATA=SAS-data-set names the SAS data set containing observations that you want to append to the end of the SAS data set specified in the BASE= argument.",
     "subject": "advance_sas"
   },
@@ -5263,7 +5263,7 @@ var jsonQuestions = [
     "option3": "Missing values are assigned to LastName observations that are read in from Staff.Sales",
     "option4": "Some of the values of LastName may be truncated in the observations that are read in from Staff.Sales",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "If a DATA= data set contains variables that are longer than the corresponding variables in the BASE= data set, the FORCE option must be used with PROC APPEND. Using the FORCE option enables you to append the data sets. However, some of the variable values may be truncated in the observations that are read in from the DATA= data set.",
     "subject": "advance_sas"
   },
@@ -5275,7 +5275,7 @@ var jsonQuestions = [
     "option3": "proc append base=work.y2003<br/> data=work.april force;<br/> run;",
     "option4": "proc append base=work.april<br/> data=work.y2003;<br/> run;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You must use the FORCE option with PROC APPEND when the DATA= data set contains a variable that does not have the same type as the corresponding variable in the BASE= data set.",
     "subject": "advance_sas"
   },
@@ -5287,7 +5287,7 @@ var jsonQuestions = [
     "option3": "Room is dropped from Work.Employees",
     "option4": "The values of Name are truncated in the observations that are read in from Work.NewHires",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "PROC APPEND reads only the data in the DATA= SAS data set, not the BASE= SAS data set. When the BASE= data set contains more variables than the DATA= data set, missing values for the additional variables are assigned to the observations that are read in from the DATA= data set.",
     "subject": "advance_sas"
   },
@@ -5299,7 +5299,7 @@ var jsonQuestions = [
     "option3": "the variables in the DATA= data set are longer than the corresponding variables in the BASE= data set",
     "option4": "the variables in the DATA= data set have a different type than the corresponding variables in the BASE= data set",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The FORCE option does not need to be used if the BASE= data set contains variables that are not in the DATA= data set. The FORCE option must be used if  <ul>   <li>the DATA= data set contains variables that are not in the BASE= data set</li>   <li>the variables in the DATA= data set are longer than the corresponding variables in the BASE= data set</li>   <li>the variables in the DATA= data set have a different type than the corresponding variables in the BASE= data set</li> </ul>",
     "subject": "advance_sas"
   },
@@ -5311,7 +5311,7 @@ var jsonQuestions = [
     "option3": "Manager and IDnum",
     "option4": "There are no variables that are common to both of these data sets",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Remember that common variables might not have the same names. Manager and IDnum are the only two variables listed that match according to type and description. You can use the RENAME= option to rename one of these variables so that they can be used as BY variables in the MERGE statement of the DATA step.",
     "subject": "advance_sas"
   },
@@ -5323,7 +5323,7 @@ var jsonQuestions = [
     "option3": "You can merge these data sets only with a PROC SQL step",
     "option4": "You cannot merge these three data sets at all because they do not have a common variable",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "In order to merge multiple data sets in a DATA step, the data sets must have a common variable. However, if there are variables that are common to at least two of the input data sets, and if each input data set contains at least one of these variables, then you can use subsequent DATA steps to merge the data sets. You can also use a PROC SQL step to merge data sets that do not have common variables.",
     "subject": "advance_sas"
   },
@@ -5335,7 +5335,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> create table usesql as;<br/> select newsals.empcode, allemps.lastname,<br/> newsals.salary, contrib.amount;<br/> from sasuser.allemps, sasuser.contrib,<br/> sasuser.newsals;<br/> where empcode=allemps.empid<br/> and empcode=contrib.empid;<br/> quit;",
     "option4": "proc sql;<br/> create table usesql as<br/> select newsals.empcode, allemps.lastname,<br/> newsals.salary, contrib.amount<br/> from sasuser.allemps, sasuser.contrib,<br/> sasuser.newsals<br/> where empcode=allemps.empid<br/> and empcode=contrib.empid;<br/> quit;",
     "answer": "d",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You can use PROC SQL to join data from data sets that do not have a single common variable among them. If you create a new table with the result of an inner join in a PROC SQL step, the resulting data set can be similar or identical to the result of a DATA step match-merge.",
     "subject": "advance_sas"
   },
@@ -5347,7 +5347,7 @@ var jsonQuestions = [
     "option3": "Next, SAS creates a Cartesian product of all possible combinations of observations and writes them to the PDV, then to the new data set. Then SAS goes through the new data set and eliminates all observations that do not have matching values of the BY variable",
     "option4": "Next, SAS creates a Cartesian product of all possible combinations of observations and writes them to the PDV, then to the new data set. The new data set is then ordered by values of the BY variable",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "In a DATA step match-merge, SAS reads observations from the input data sets sequentially and match-merges them with observations from other input data sets. Combined observations are created when SAS writes values from all input data sets to the variables in the PDV. These observations, as well as any observations that contain missing or nonmatched values, are then written to the new data set. A PROC SQL join creates a Cartesian product of matches and then eliminates nonmatching data.",
     "subject": "advance_sas"
   },
@@ -5359,7 +5359,7 @@ var jsonQuestions = [
     "option3": "You can use multiple SET statements in one DATA step only if the data sets in each SET statement have a common variable",
     "option4": "The variables in the PDV are not reinitialized when a second SET statement is executed",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You can use multiple SET statements in one DATA step to combine observations from several data sets, and the data sets do not need to have a common variable. When you use multiple SET statements, you need to keep in mind the process that SAS uses to combine data from the input data sets. Otherwise, you might achieve unexpected results.",
     "subject": "advance_sas"
   },
@@ -5371,7 +5371,7 @@ var jsonQuestions = [
     "option3": "proc sum data = sasuser.empdata noprint;<br/> var salary;<br/> output out = sasuser.summary sum = Salarysum;<br/> run;",
     "option4": "proc means data = sasuser.empdata noprint;<br/> output = sasuser.summary sum = Salarysum;<br/> run;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You can use the MEANS procedure to create a new data set that contains a summary statistic. You use the NOPRINT option to suppress the default report and the OUTPUT statement to route the results from the MEANS procedure to a new data set. You use the VAR statement to focus the procedure on one or more specific variables from the input data set.",
     "subject": "advance_sas"
   },
@@ -5383,7 +5383,7 @@ var jsonQuestions = [
     "option3": "The value is missing",
     "option4": "The value cannot be determined without seeing the data that is in Sasuser.Summary",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The _N_ variable records how many times the DATA step has iterated. In the example shown above, _N_ is used to ensure that only the first observation is read from Sasuser.Summary. Since the values in the PDV are not reinitialized after each DATA step iteration, this value will be retained as long as the DATA step continues to iterate. Therefore, if the value of Cargosum is $1000 in the first iteration, it will be $1000 in each subsequent iteration as well.",
     "subject": "advance_sas"
   },
@@ -5395,7 +5395,7 @@ var jsonQuestions = [
     "option3": "$520.00",
     "option4": "$1100.00",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Totalrev is the accumulator variable of the sum statement, which is automatically initialized with a value of 0. If the expression in a sum statement produces a missing value, SAS replaces the missing value with a value of 0. As the DATA step iterates, the sum statement retains the accumulator variable so that it will accumulate a total.",
     "subject": "advance_sas"
   },
@@ -5407,7 +5407,7 @@ var jsonQuestions = [
     "option3": "data work.profit;<br/> set sasuser.dnunder;,br/> set sasuser.sale2000(keep=routeid flightid date rev1st revbusiness revecon revcargo);<br/> key = flightdate;<br/> Profit = sum(rev1st, revbusiness, revecon, revcargo, -expenses);<br/> run;",
     "option4": "data work.profit;<br/> set sasuser.dnunder;<br/> set sasuser.sale2000(keep=routeid flightid date rev1st revbusiness revecon revcargo) key=flightdate;<br/> Profit = sum(rev1st, revbusiness, revecon, revcargo, -expenses);<br/> run;",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You use the KEY= option in a SET statement to cause SAS to use an index to combine data from multiple data sets. When the SET statement with the KEY= option executes, the program data vector must already contain a value for the indexed variable. You cannot use WHERE processing on a data set that has been read with the KEY= option within the same DATA step.",
     "subject": "advance_sas"
   },
@@ -5419,7 +5419,7 @@ var jsonQuestions = [
     "option3": "A value of zero for _IORC_ means that the most recent SET statement with the KEY= option (or MODIFY statement with the KEY= option) executed successfully",
     "option4": "You can use the _IORC_ variable to prevent nonmatching data from being included when you use an index to combine data from multiple data sets",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "When you use the KEY= option, SAS creates an automatic variable named _IORC_, which stands for INPUT/OUTPUT Return Code. If the value of _IORC_ is zero, the index search was successful. The _IORC_ variable is also created automatically when you use a MODIFY statement in a DATA step.",
     "subject": "advance_sas"
   },
@@ -5431,7 +5431,7 @@ var jsonQuestions = [
     "option3": "array {3,4} Sales m1-m12;",
     "option4": "array {4,12} Sales m1-m12;",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "An array is specified using the keyword ARRAY followed by the name of the array and the dimensions of the array. In a two-dimensional array, the two dimensions can be thought of as a table of rows and columns. The first dimension in the ARRAY statement specifies the number of rows. The second dimension specifies the number of columns.",
     "subject": "advance_sas"
   },
@@ -5443,7 +5443,7 @@ var jsonQuestions = [
     "option3": "array new {*} _temporary_ Jan Feb Mar Apr May Jun;",
     "option4": "array _temporary_ new {6} Jan Feb Mar Apr May Jun;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To create temporary array elements, specify the keyword _TEMPORARY_ after the array name and dimension. Remember that if you use an asterisk to count the array elements, you must list the array elements. You cannot use the asterisk and the _TEMPORARY_ keyword together in an ARRAY statement.",
     "subject": "advance_sas"
   },
@@ -5455,7 +5455,7 @@ var jsonQuestions = [
     "option3": "do i=Jan to Dec;",
     "option4": "a and b",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To process all of the elements in an array, you can use either the DIM function with the array name as the argument or specify the array dimension.",
     "subject": "advance_sas"
   },
@@ -5467,7 +5467,7 @@ var jsonQuestions = [
     "option3": "60",
     "option4": "70",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The ARRAY statement creates the two-dimensional array score and specifies the dimensions of the array: two rows and four columns. The value of Points for each observation is determined by referencing the array based on the values of Week and Finish in the Work.Contest data set. The row number for the array reference is determined by the value of Week. The column number for the array reference is determined by the value of Finish.",
     "subject": "advance_sas"
   },
@@ -5479,7 +5479,7 @@ var jsonQuestions = [
     "option3": "the same values are used in many programs",
     "option4": "all of the above",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Array values should be stored in a SAS data set when there are too many values to initialize easily in an array, the values change frequently, or the same values are used in many programs.",
     "subject": "advance_sas"
   },
@@ -5491,7 +5491,7 @@ var jsonQuestions = [
     "option3": "After the first iteration of the DO loop, the pointer drops down to the second SET statement",
     "option4": "During the second iteration of the DATA step, the condition _N_=1 is false. So, the DO loop doesn't execute",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The IF-THEN statement specifies that the Targets array is loaded only once, during the first iteration of the DATA step. During the first iteration of the DATA step, the condition _N_=1 is true, so the outer DO loop executes three times; once for each observation in Sasuser.Ctargets. After the third iteration of the DO loop, the pointer drops down to the second SET statement and the values from the first observation in Sasuser.Monthum are read into the program data vector. During the second iteration of the DATA step, the condition _N_=1 is false. So, the DO loop doesn't execute.",
     "subject": "advance_sas"
   },
@@ -5503,7 +5503,7 @@ var jsonQuestions = [
     "option3": "_NAME_, Col1, Col2, Col3",
     "option4": "_NAME_, Jan, Feb, Mar, Apr",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The TRANSPOSE procedure creates an output data set by restructuring the values in a SAS data set. When the data set is restructured, selected variables are transposed into observations. The procedure creates several variable names by default. _NAME_ is the default name of the variable that PROC TRANSPOSE creates to identify the source of the values in each observation in the output data set. The remaining transposed variables are named COL1...COLn by default.",
     "subject": "advance_sas"
   },
@@ -5515,7 +5515,7 @@ var jsonQuestions = [
     "option3": "proc transpose data=work.temp<br/> out=work.temp2<br/> prefix=Month<br/> name=Quarter;<br/> run",
     "option4": "proc transpose data=work.temp<br/> out=work.temp2<br/> prefix=Month<br/> index=Quarter;<br/> run; ",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You can use several options with PROC TRANSPOSE to give the variables in the output data set descriptive names. The NAME= option specifies a name for _NAME_ variable. The PREFIX= option specifies a prefix to use in constructing names for the other variables in the output data set.",
     "subject": "advance_sas"
   },
@@ -5527,7 +5527,7 @@ var jsonQuestions = [
     "option3": "<table border=\"1\">   <tr>     <th>Obs</th>     <th>Week</th>     <th>Almers</th>     <th>Bonnaventure</th>     <th>Johnson</th>     <th>La Mance</th>   </tr>   <tr>     <td>1</td>     <td>Week1</td>     <td>3393.50</td>     <td>5093.75</td>     <td>1813.30</td>     <td>1572.5</td>   </tr>   <tr>     <td>2</td>     <td>Week2</td>     <td>2192.25</td>     <td>2247.50</td>     <td>2028.75</td>     <td>2960.0</td>   </tr> </table>",
     "option4": "<table border=\"1\">   <tr>     <th>Obs</th>     <th>Employee</th>     <th>_NAME_</th>     <th>Week</th>   </tr>   <tr>     <td>1</td>     <td>Almers</td>     <td>Week1</td>     <td>3393.50</td>   </tr>   <tr>     <td>2</td>     <td>Bonnaventure</td>     <td>Week1</td>     <td>5093.75</td>   </tr>   <tr>     <td>3</td>     <td>Johnson</td>     <td>Week1</td>     <td>1813.30</td>   </tr>   <tr>     <td>4</td>     <td>La Mance</td>     <td>Week1</td>     <td>1572.50</td>   </tr>   <tr>     <td>5</td>     <td>Almers</td>     <td>Week2</td>     <td>2192.25</td>   </tr>   <tr>     <td>6</td>     <td>Bonnaventure</td>     <td>Week2</td>     <td>2247.50</td>   </tr>   <tr>     <td>7</td>     <td>Johnson</td>     <td>Week2</td>     <td>2028.75</td>   </tr>   <tr>     <td>8</td>     <td>La Mance</td>     <td>Week2</td>     <td>2960.00</td>   </tr> </table>",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "A BY statement can be used with PROC TRANSPOSE. For each BY group, PROC TRANSPOSE creates one observation for each variable that it transposes. The BY variable itself is not transposed. The original data set must be sorted or indexed prior to using a BY statement with PROC TRANSPOSE.",
     "subject": "advance_sas"
   },
@@ -5539,7 +5539,7 @@ var jsonQuestions = [
     "option3": "proc transpose data=work.fishdata<br/> out=work.fishsize<br/> prefix=Measurement;<br/> by date;<br/> run;",
     "option4": "proc transpose data=work.fishdata<br/> out=work.fishsize<br/> prefix=Measurement;<br/> by location date;<br/> run;",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The observations in Work.Fishsize are grouped by Location and Date. For each BY group, PROC TRANSPOSE creates four observations, one for each variable (Length1, Weight1, Length2, and Weight2) that it is transposing.",
     "subject": "advance_sas"
   },
@@ -5551,7 +5551,7 @@ var jsonQuestions = [
     "option3": "NOFMTERR",
     "option4": "FMTSEARCH=",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "By default, SAS searches for custom formats in the Work and Library libraries. The FMTSEARCH= system option specifies other catalogs to search when a format is referenced.",
     "subject": "advance_sas"
   },
@@ -5563,7 +5563,7 @@ var jsonQuestions = [
     "option3": "70 Senior",
     "option4": "070 Senior",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "A non-inclusive range is used such that the age at the high end of the range is not included. To create the picture format, three zeros are used to create a position for a three-digit numeric value. Because zero is used as a digit selector rather than a nonzero value, leading zeros are not included in the formatted value.",
     "subject": "advance_sas"
   },
@@ -5575,7 +5575,7 @@ var jsonQuestions = [
     "option3": "Stops processing and writes an error message to the log",
     "option4": "Skips processing at that step and continues with the next step and writes a note to the log",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "By default, FMTERR is in effect and SAS stops processing if it cannot find a format that is referenced. When NOFMTERR is in effect, SAS substitutes the $w. or w. format and continues processing.",
     "subject": null
   },
@@ -5587,7 +5587,7 @@ var jsonQuestions = [
     "option3": "Value",
     "option4": "Description",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "A data set that is used to create a format with the CNTLIN= option must have the variables FmtName, Start, and Label. If a range is specified, it must also include the variable End.",
     "subject": null
   },
@@ -5599,7 +5599,7 @@ var jsonQuestions = [
     "option3": "MLF",
     "option4": "MULTIFORMAT",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The format created by this value statement has overlapping ranges, so the MULTILABEL option must be used. A multilabel format can be used by any procedure that supports the MLF option.",
     "subject": "advance_sas"
   },
@@ -5611,7 +5611,7 @@ var jsonQuestions = [
     "option3": "CNTLOUT=",
     "option4": "FMTLIB",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The CNTLOUT= option is used to create a SAS data set from a format.",
     "subject": "advance_sas"
   },
@@ -5623,7 +5623,7 @@ var jsonQuestions = [
     "option3": "Work.Formats -> Abc.Newfmt -> Sasuser.Format",
     "option4": "the default search order",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "SAS will search in the order specified on the FMTSEARCH= option. By default, SAS searches in the Work and Library libraries first unless they are specified on the option. Because Library is not specified here, it is searched after Work.",
     "subject": "advance_sas"
   },
@@ -5635,7 +5635,7 @@ var jsonQuestions = [
     "option3": "CATALOG",
     "option4": "FMTLIB",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The FMTLIB keyword is used to document the formats in a catalog. You can use the SELECT and EXCLUDE statements to process specific formats rather than the entire catalog.",
     "subject": "advance_sas"
   },
@@ -5647,7 +5647,7 @@ var jsonQuestions = [
     "option3": "copy out=work.formats;<br/> select levels.format picks.formatc;",
     "option4": "copy out=work.formats;<br/> select levels.format $picks.format;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "In the COPY statement, OUT= specifies the catalog to which you want to copy the format catalog entry. In the SELECT statement you specify the catalog entries by their entire name. Remember that numeric formats are stored with the extension .FORMAT and character formats are stored with the extension .FORMATC.",
     "subject": "advance_sas"
   },
@@ -5659,7 +5659,7 @@ var jsonQuestions = [
     "option3": "Good",
     "option4": ".",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The value 6.1 falls in the range 6<-9, which is labeled 'Good.' The non-inclusive range does not include the value 6, but it does include everything above 6.",
     "subject": "advance_sas"
   },
@@ -5671,7 +5671,7 @@ var jsonQuestions = [
     "option3": "PRIMARY KEY",
     "option4": "NOT NULL",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The PRIMARY KEY integrity constraint includes both the NOT NULL and UNIQUE constraints.",
     "subject": "advance_sas"
   },
@@ -5683,7 +5683,7 @@ var jsonQuestions = [
     "option3": "proc datasets lib=reports nolist;<br/> initiate audit quarter1;<br/> quit;",
     "option4": "proc datasets lib=reports nolist;<br/> audit quarter1;<br/> initiate;<br/> quit;",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "To initiate an audit on an existing SAS data set with the DATASETS procedure, you specify the data set in the AUDIT statement, and then you specify the INITIATE statement. You specify the library with the LIB= option.",
     "subject": "advance_sas"
   },
@@ -5695,7 +5695,7 @@ var jsonQuestions = [
     "option3": "data records.snowfall;<br/> modify records.snowfall records.overnight;<br/> by accumAmt;<br/> run;",
     "option4": "data records.snowfall;<br/> modify records.snowfall records.overnight;<br/> update accumAmt;<br/> run;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "In the MODIFY statement, you specify the master data set followed by the transaction data set. Then you specify the variable in the BY statement.",
     "subject": "advance_sas"
   },
@@ -5707,7 +5707,7 @@ var jsonQuestions = [
     "option3": "to determine the status of the I/O operation",
     "option4": "to determine the number of observations that could not be updated in the master data set",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The value of _IORC_ is a numeric return code that indicates the status of the most recently executed I/O operation. Checking the value of this variable allows you to detect abnormal I/O conditions and direct execution in particular ways.",
     "subject": "advance_sas"
   },
@@ -5719,7 +5719,7 @@ var jsonQuestions = [
     "option3": "proc datasets nolist;<br/> modify survey;<br/> integrity constraint<br/> val_age = check(where=(age>=18));<br/> quit;",
     "option4": "proc datasets nolist;<br/> modify survey;<br/> ic create val_age=check(where=(age>=18));<br/> quit;",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "In the MODIFY statement, you list the SAS data set that you want to modify. Then you use the IC CREATE statement to create the integrity constraint. This integrity constraint is a CHECK constraint and you use a WHERE clause to specify the condition that the variable values must meet.",
     "subject": "advance_sas"
   },
@@ -5731,7 +5731,7 @@ var jsonQuestions = [
     "option3": "You can use the MODIFY statement to change the name of a variable",
     "option4": "If the system terminates abnormally while a DATA step that is using the WHERE statement is processing, SAS automatically saves a copy of the unaltered data set",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The MODIFY statement in a DATA step can only be used to modify the values in a data set. It cannot be used to modify the descriptor portion of the data set.",
     "subject": "advance_sas"
   },
@@ -5743,7 +5743,7 @@ var jsonQuestions = [
     "option3": "They record information about changes to observations in a data set each time the data is modified in place",
     "option4": "The audit trail file has the same name as the SAS data file it is monitoring, but has #AUDIT at the end of the data set name",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "Audit trails are used to track changes that are made to a data set in place.",
     "subject": "advance_sas"
   },
@@ -5755,7 +5755,7 @@ var jsonQuestions = [
     "option3": "proc datasets lib=sasuser nolist;<br/> modify Amounts (gennum=6);<br/> quit;",
     "option4": "proc datasets lib=sasuser nolist;<br/> modify Amounts (gennum=5);<br/> quit;",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You use the DATASETS procedure and the MODIFY statement to specify a number of generation data sets for a data set. The GENMAX= option is used to specify the number of versions to save. The number you specify includes the base version.",
     "subject": "advance_sas"
   },
@@ -5767,7 +5767,7 @@ var jsonQuestions = [
     "option3": "The KEY= option is used to specify a variable to match for updating observations",
     "option4": "The index named in the KEY= option must be a simple index",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "When you use the KEY= option, you must specify the update that you want to make to the data set.",
     "subject": "advance_sas"
   },
@@ -5779,7 +5779,7 @@ var jsonQuestions = [
     "option3": "proc datasets lib=sasuser nolist;<br/> delete amounts (gennum=0);<br/> quit;",
     "option4": "proc datasets lib=sasuser nolist;<br/> delete amounts;<br/> quit;",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The keyword ALL is used to indicate that you want to delete all generations of the specified data set including the base version. The keyword HIST deletes the generation data sets, but saves the base version.",
     "subject": "advance_sas"
   },
@@ -5791,7 +5791,7 @@ var jsonQuestions = [
     "option3": "Using the BUFNO= option results in permanent changes to the data set",
     "option4": "Using the BUFNO= option to increase the number of buffers results in decreased memory consumption",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You can use the BUFNO= system option or data set option to control how many buffers are available for reading or writing a SAS data set. Using BUFNO= can improve execution time by limiting the number of input/output operations that are required for a particular SAS data set. However, the improvement in I/O comes at the cost of increased memory consumption. The buffer number is not a permanent attribute of the data set and is valid only for the current step or SAS session.",
     "subject": "advance_sas"
   },
@@ -5803,7 +5803,7 @@ var jsonQuestions = [
     "option3": "The size of a page is analogous to buffer size",
     "option4": "The size of a page can be changed at any time",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "A page is fixed in size when the data set is created, either to a default value or a specified value. You can use the BUFSIZE= option to control the page size of an output SAS data set. BUFSIZE= specifies not only the page size (in bytes), but also the size of each buffer that is used for reading or writing the SAS data set. The new buffer size is permanent; after it is specified, it is used whenever the data set is processed.",
     "subject": "advance_sas"
   },
@@ -5815,7 +5815,7 @@ var jsonQuestions = [
     "option3": "the sum of the page size and the number of pages",
     "option4": "the number of pages multiplied by the number of variables",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The total number of bytes occupied by a data set equals the page size multiplied by the number of pages. You can use the CONTENTS procedure to report the page size and the number of pages.",
     "subject": "advance_sas"
   },
@@ -5827,7 +5827,7 @@ var jsonQuestions = [
     "option3": "sasfile work.quarter1 bufno=max;",
     "option4": "sasfile work.quarter1 bufsize=max;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The SASFILE LOAD statement opens the file, allocates the buffers, and reads the data into memory.",
     "subject": "advance_sas"
   },
@@ -5839,7 +5839,7 @@ var jsonQuestions = [
     "option3": "The file is available for subsequent utility or output processing until the program ends",
     "option4": "If the file increases in size during processing, the number of buffers remains the same",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "When a SAS data file is opened using the SASFILE statement, the data is held in memory, and is available to subsequent DATA and PROC steps or applications, until either a SASFILE CLOSE statement is executed or the program ends. Though a file that is opened with the SASFILE statement can be used for subsequent input or update processing, it cannot be used for subsequent utility or output processing. If the file in memory increases in size during processing, the number of buffers also increases.",
     "subject": "advance_sas"
   },
@@ -5851,7 +5851,7 @@ var jsonQuestions = [
     "option3": "Deleted observation space is tracked",
     "option4": "New observations are always added at the end of the data set",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The descriptor portion of an uncompressed data file is always stored at the end of the first data set page. New observations are always added to the end of the data set, and deleted observation space is neither tracked nor reused.",
     "subject": "advance_sas"
   },
@@ -5863,7 +5863,7 @@ var jsonQuestions = [
     "option3": "Compressed SAS data files have a smaller overhead than uncompressed SAS data files",
     "option4": "In a compressed SAS data set, each observation must be the same size",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The descriptor portion of a compressed data file is always stored at the end of the first data set page. If you specify REUSE=YES, SAS tracks and reuses deleted observation space within a compressed data file. Therefore, every observation in a compressed data file can be a different size. Compressed data files do have a larger overhead than uncompressed data files.",
     "subject": "advance_sas"
   },
@@ -5875,7 +5875,7 @@ var jsonQuestions = [
     "option3": "data temp;<br/> length x 4<br/> y 3<br/> z 2;<br/> infile file1;<br/> input x 4.<br/> y 3.<br/> z 2.;<br/> run;",
     "option4": "data temp;<br/> informat x 4.<br/> y 3.<br/> z 2.;<br/> infile file1;<br/> input x 4.<br/> y 3.<br/> z 2.;<br/> run;",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You use the LENGTH statement to assign a reduced length to a numeric variable. If you do not use the LENGTH statement to define a reduced length for numeric variables, their default length is 8 bytes. The FORMAT statement associates a format with a variable, and the INFORMAT statement associates an informat with a variable.",
     "subject": "advance_sas"
   },
@@ -5887,7 +5887,7 @@ var jsonQuestions = [
     "option3": "SAS data views use less CPU resources but more disk space than SAS data files",
     "option4": "SAS data views can be created only in temporary SAS data libraries",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "SAS data views use significantly less disk space than SAS data files. However, SAS data views typically need more CPU resources than SAS data files. You can create a SAS data view in either the temporary SAS data library or in a permanent SAS data library.",
     "subject": "advance_sas"
   },
@@ -5899,7 +5899,7 @@ var jsonQuestions = [
     "option3": "proc print data=company.regular;<br/> run;<br/><br/>  proc print data=company.reduced;<br/> run;",
     "option4": "proc datasets library=company;<br/> contents data=regular compare=reduced;<br/> run;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "You use the COMPARE procedure to detect any differences in the values of two data sets. The COMPARE statement is not valid syntax in either the CONTENTS procedure or the DATASETS procedure. Printing both data sets might not reveal differences in the precise values of the shortened variables, depending on the formats that are used.",
     "subject": "advance_sas"
   },
@@ -5911,7 +5911,7 @@ var jsonQuestions = [
     "option3": "The savings in CPU usage remains constant as the subset grows larger. However, placing the subsetting IF statement near the bottom of a data set is preferable",
     "option4": "The savings in CPU usage decreases as the subset grows larger. However, placing the subsetting IF statement near the bottom of a data set increases the I/O",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "As SAS processes a larger subset of the data, more CPU resources are required. However, positioning of the subsetting IF statement in a DATA step does affect performance and efficiency.",
     "subject": "advance_sas"
   },
@@ -5923,7 +5923,7 @@ var jsonQuestions = [
     "option3": "You can use the DATA step to modify both data values and variable attributes",
     "option4": "You can use the DATA step to modify only variable attributes",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The DATA step is the only technique that can be used to modify both data values and variable attributes. The DATASETS procedure enables you to modify only variable attributes.",
     "subject": "advance_sas"
   },
@@ -5935,7 +5935,7 @@ var jsonQuestions = [
     "option3": "A WHERE statement is more efficient because it loads all observations sequentially into the program data vector",
     "option4": "A WHERE statement is more efficient because it examines what is in the input buffer and selects observations before they are loaded into the program data vector, which results in a savings in CPU operations",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "For selecting observations, a WHERE statement is more efficient than a subsetting IF statement because it examines what is in the input buffer and selects observations before they are loaded into the program data vector, which results in a savings in CPU operations.",
     "subject": "advance_sas"
   },
@@ -5947,7 +5947,7 @@ var jsonQuestions = [
     "option3": "When the data set is needed for more than one SAS session",
     "option4": "When you are converting raw numeric values to SAS data values",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "It is more advantageous to create a temporary SAS data set rather than a permanent SAS data set when the external file on which the data set is based is frequently updated between SAS sessions.",
     "subject": "advance_sas"
   },
@@ -5959,7 +5959,7 @@ var jsonQuestions = [
     "option3": "A one-step DATASETS procedure results in a decrease in CPU usage",
     "option4": "Multiple DATASETS procedures result in a decrease in CPU usage",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "A one-step DATASETS procedure results in a savings of CPU usage and I/O operations. PROC DATASETS supports RUN-group processing, which enables you to process multiple SAS data sets from the same library with one invocation of the procedure.",
     "subject": "advance_sas"
   },
@@ -5971,7 +5971,7 @@ var jsonQuestions = [
     "option3": "0",
     "option4": "Clothes & Shoes",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "First. is a temporary automatic variable that identifies the first observation in each BY group. When an observation is the first in a BY group, SAS sets the value of the FIRST.variable to 1. For all other observations in the BY group, the value of the FIRST.variable is 0.",
     "subject": "advance_sas"
   },
@@ -5983,7 +5983,7 @@ var jsonQuestions = [
     "option3": "TAGSORT",
     "option4": "SORTEDBY=",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The TAGSORT option stores only the BY variables and the observation numbers in temporary files. The BY variables and the observation numbers are called tags. At the completion of the sorting process, PROC SORT uses the tags to retrieve records from the input data set in sorted order.",
     "subject": "advance_sas"
   },
@@ -5995,7 +5995,7 @@ var jsonQuestions = [
     "option3": "It is generally more efficient than reading a sorted data set sequentially",
     "option4": "The data can be sequenced by different variables if multiple indexes are used",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "When BY-group processing is used with an index that is based on the BY variables, the data can be sequenced without using the SORT procedure. The data can be sequenced by different variables if multiple indexes are used. Because indexes are updated automatically, there is no need to re-sort a data set when observations are modified or added. However, BY-group processing with an index is generally less efficient than reading a sorted data set sequentially.",
     "subject": "advance_sas"
   },
@@ -6007,7 +6007,7 @@ var jsonQuestions = [
     "option3": "EQUALS",
     "option4": "NOEQUALS",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The NODUPRECS option compares all of the variable values for each observation to those for the previous observation that was written to the output data set. If an exact match is found, then the observation is not written to the output data set.",
     "subject": "advance_sas"
   },
@@ -6019,7 +6019,7 @@ var jsonQuestions = [
     "option3": "The entire sort can take place in memory",
     "option4": "A temporary utility file is created in the Work directory or in a mainframe temporary area",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The SORTSIZE= system option or procedure option specifies how much memory is available to the SORT procedure. If the required workspace is less than or equal to the value specified in the SORTSIZE= system option or procedure option, then the entire sort can take place in memory, which reduces processing time.",
     "subject": "advance_sas"
   },
@@ -6031,7 +6031,7 @@ var jsonQuestions = [
     "option3": "The number of observations that SAS has to load into the program data vector (PDV) is decreased",
     "option4": "The number of pages that SAS has to load into input buffers is decreased",
     "answer": "D",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "When using an index to select a subset, SAS loads only the pages that contain a qualified observation into input buffers. When accessing observations sequentially, SAS must load all observations into input buffers. Loading more pages requires more I/O operations.",
     "subject": "advance_sas"
   },
@@ -6043,7 +6043,7 @@ var jsonQuestions = [
     "option3": "where rating between 3.5 and 7.5;",
     "option4": "where rating=5.5;",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "SAS considers using an index to process a WHERE condition that contains one of a specific group of operators and functions. However, SAS will not consider using an index for a WHERE condition that contains other elements, such as a function other than TRIM or SUBSTR.",
     "subject": "advance_sas"
   },
@@ -6055,7 +6055,7 @@ var jsonQuestions = [
     "option3": "The data is sorted on the key variable",
     "option4": "The data set is very large",
     "answer": "A",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The size of the subset relative to the size of the data set is an important factor in determining which access method is most efficient. If a subset is large (more than 33% of the data set), it is likely to be more efficient to use sequential access than direct access. Direct access is usually more efficient when you are selecting a small subset (less than 33% of the data set), especially if the data set is large (has a high page count). However, if the data set is very small (less than three pages), using an index is not efficient. The number of key variables specified in a WHERE expression does not determine which access method is most efficient. If the two key variables that are specified are the first two variables in the same index, the WHERE expression is a candidate for compound optimization. Sorting the data also does not determine which access method is most efficient. However, sorting the data before subsetting improves the efficiency of WHERE processing regardless of the access method.",
     "subject": "advance_sas"
   },
@@ -6067,7 +6067,7 @@ var jsonQuestions = [
     "option3": "The SQL procedure is always the least efficient because it is a general-purpose tool",
     "option4": "PROC SQL and the DATA step with PROC SORT have similar resource usage",
     "answer": "C",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "When you are summarizing data for one or more class variables, the tools in each of the following groups are similar in resource usage:  <ul>   <li>PROC MEANS (or PROC SUMMARY), PROC REPORT, and PROC TABULATE</li>   <li>PROC SQL and the DATA step with PROC SORT</li> </ul>  However, the relative efficiency of the two groups of tools varies according to the shape of the data.",
     "subject": "advance_sas"
   },
@@ -6079,7 +6079,7 @@ var jsonQuestions = [
     "option3": "the WHERE= option in a PROC MEANS step",
     "option4": "a basic PROC MEANS step",
     "answer": "B",
-    "set_num": -1,
+    "isexamquestion": -1,
     "explanation": "The TYPES statement in a PROC MEANS step is the most efficient technique for summarizing data for one or more specific combinations of class variables. A program that contains the NWAY option in multiple PROC MEANS steps is usually least efficient because SAS must read the entire data set in each step. A PROC MEANS step that contains the WHERE= option in the OUTPUT statement is also less efficient than the TYPES statement in PROC MEANS because SAS must calculate all possible combinations of class variables, and subsetting does not occur until the results are written to output. A basic PROC MEANS step summarizes data for all possible combinations of class variables instead of for specific combinations.",
     "subject": "advance_sas"
   },
@@ -6091,7 +6091,7 @@ var jsonQuestions = [
     "option3": "The index on STATE is deleted",
     "option4": "The index on STATE is updated as an index on ST",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6103,7 +6103,7 @@ var jsonQuestions = [
     "option3": "A macro variable DATE with the value 12SEP2008 is retrieved from the global symbol table",
     "option4": "A macro variable DATE with the value 31DEC2006 is retrieved from the global symbol table",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6115,7 +6115,7 @@ var jsonQuestions = [
     "option3": "KEY=pointobs",
     "option4": "NOBS=pointobs",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6127,7 +6127,7 @@ var jsonQuestions = [
     "option3": "A variable that represents the total number of observations in the input data set(s)",
     "option4": "A variable that represents the current observation number",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6139,7 +6139,7 @@ var jsonQuestions = [
     "option3": "result is 10.5",
     "option4": "result is 10+0.5",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6151,7 +6151,7 @@ var jsonQuestions = [
     "option3": "6",
     "option4": "3",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6163,7 +6163,7 @@ var jsonQuestions = [
     "option3": "result is 1",
     "option4": "result is 0",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6175,7 +6175,7 @@ var jsonQuestions = [
     "option3": "The data set TEMP is not created because variable A has an invalid length",
     "option4": "The data set TEMP is created and variable X has a length of 8",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6187,7 +6187,7 @@ var jsonQuestions = [
     "option3": "%put the value is \"&&&dept\";",
     "option4": "%put the value is %quote(&&&dept);",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6199,7 +6199,7 @@ var jsonQuestions = [
     "option3": "An ERROR message is written to the SAS log because the program is incomplete",
     "option4": "NO formats are created in this step",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6211,7 +6211,7 @@ var jsonQuestions = [
     "option3": "The program creates a DATA step view called SASUSER.RANCH and places it in the SAS log",
     "option4": "the program retrieves the SAS source code that creates the view and places it in the SAS log",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6223,7 +6223,7 @@ var jsonQuestions = [
     "option3": "KEY=pointobs",
     "option4": "POINT=pointobs",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6235,7 +6235,7 @@ var jsonQuestions = [
     "option3": "FORMAT",
     "option4": "REGISTRY",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6247,7 +6247,7 @@ var jsonQuestions = [
     "option3": "result is 8+0.5",
     "option4": "result is 8",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6259,7 +6259,7 @@ var jsonQuestions = [
     "option3": "5678",
     "option4": "null",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6271,7 +6271,7 @@ var jsonQuestions = [
     "option3": "&&First",
     "option4": "&yourname",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6283,7 +6283,7 @@ var jsonQuestions = [
     "option3": "a is frog",
     "option4": "a is bird",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6295,7 +6295,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> Delete from class<br/> Where age<(select stop_age from threshold);<br/> Quit;",
     "option4": "proc sql;<br/> Alter from class<br/> Delete where age<(select stop_age from threshold);<br/> Quit;",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6307,7 +6307,7 @@ var jsonQuestions = [
     "option3": "A report showing the numeric columns in each table in SASUSER",
     "option4": "A report showing the number of numeric columns in each table in SASUSER",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6319,7 +6319,7 @@ var jsonQuestions = [
     "option3": "MACRO",
     "option4": "MPRINT",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6331,7 +6331,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> Create table combine as<br/> Select one.id,name,salary from one inner join two on one.id=two.id<br/> Quit",
     "option4": "proc sql;<br/> Create table combine as<br/> Select coalesce (one id, two id) as id,<br/> Name,salary from one full join two on one.id=two.id;<br/> Quit;",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6343,7 +6343,7 @@ var jsonQuestions = [
     "option3": "&&First",
     "option4": "Yourname",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6355,7 +6355,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> describe testdata.one;<br/> Quit;",
     "option4": "proc sql;<br/> Contents testdata.one;<br/> Quit;",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6367,7 +6367,7 @@ var jsonQuestions = [
     "option3": "The variables named POINTS1, POINTS2, POINTS3 POINTS4, POINTS5, POINTS6 are created in the PDV",
     "option4": "The variables named POINTS11, POINTS12, POINTS21, POINTS22, POINTS23 are created in the PDV",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6379,7 +6379,7 @@ var jsonQuestions = [
     "option3": "a is cat",
     "option4": "a is pig",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6391,7 +6391,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> Delete table one;<br/> Quit;",
     "option4": "proc sql;<br/> Delete from one;<br/> Quit;",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6403,7 +6403,7 @@ var jsonQuestions = [
     "option3": "COMPANY Only",
     "option4": "COMPANY and COUNTRY only",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6415,7 +6415,7 @@ var jsonQuestions = [
     "option3": "It requests that a SAS data set be opened and loaded into SAS memory one observation at a time",
     "option4": "It requests that a SAS data set be opened and loaded into SAS memory in its entirety",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6427,7 +6427,7 @@ var jsonQuestions = [
     "option3": "INTERSECT ALL",
     "option4": "OUTER UNION ALL",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6439,7 +6439,7 @@ var jsonQuestions = [
     "option3": "To reduce memory usage",
     "option4": "To reduce the amount of data read",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6451,7 +6451,7 @@ var jsonQuestions = [
     "option3": "It allows users to access the same SAS data set concurrently",
     "option4": "It allows updates in place",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6463,7 +6463,7 @@ var jsonQuestions = [
     "option3": "data two;<br/> Set one;<br/> Totrev=sum(price*quantity);<br/> If totrev>1000;<br/> Totcost=sum(fixed,variable);<br/> Profit=sum(totrev,-totcost);<br/> Run;",
     "option4": "data two;<br/> Set one;<br/> Totrev = sum(price*quantity);<br/> Totcost= sum(fixed,variable);<br/> If totrev>1000;<br/> Profit=sum(totrev,-totcost);<br/> Run;",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6475,7 +6475,7 @@ var jsonQuestions = [
     "option3": "COMPANY and DEPT only",
     "option4": "COMPANY,COUNTRY and DEPT",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6487,7 +6487,7 @@ var jsonQuestions = [
     "option3": "by notsorted date;",
     "option4": "by date qtr",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6499,7 +6499,7 @@ var jsonQuestions = [
     "option3": "CHANGE statement only",
     "option4": "MODIFY and RENAME statements",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6511,7 +6511,7 @@ var jsonQuestions = [
     "option3": "The index on STATE is deleted",
     "option4": "The index on STATE is updated as an index on ST",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6523,7 +6523,7 @@ var jsonQuestions = [
     "option3": "A macro variable DATE with the value 12SEP2008 is retrieved from the global symbol table",
     "option4": "A macro variable DATE with the value 31DEC2006 is retrieved from the global symbol table",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6535,7 +6535,7 @@ var jsonQuestions = [
     "option3": "6",
     "option4": "3",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6547,7 +6547,7 @@ var jsonQuestions = [
     "option3": "result is 1",
     "option4": "result is 0",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6559,7 +6559,7 @@ var jsonQuestions = [
     "option3": "The program creates a DATA step view called SASUSER.RANCH and places it in the SAS log",
     "option4": "The program retrieves the SAS source code that creates the view and places it in the SAS log",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6571,7 +6571,7 @@ var jsonQuestions = [
     "option3": "FORMAT",
     "option4": "REGISTRY",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6583,7 +6583,7 @@ var jsonQuestions = [
     "option3": "&&First",
     "option4": "&yourname",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6595,7 +6595,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> Delete from class<br/> Where age<(select stop_age from threshold);<br/> Quit;",
     "option4": "proc sql;<br/> Alter from class<br/> Delete where age<(select stop_age from threshold);<br/> Quit;",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6607,7 +6607,7 @@ var jsonQuestions = [
     "option3": "<table>   <tr>     <th>REP</th>     <th>AVERAGE</th>   </tr>   <tr>     <td>SMITH</td>     <td>320</td>   </tr> </table>",
     "option4": "<table>   <tr>     <th>REP</th>     <th>AVERAGE</th>   </tr>   <tr>     <td>SMITH</td>     <td>500</td>   </tr> </table>",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6619,7 +6619,7 @@ var jsonQuestions = [
     "option3": "%let codenum = %substr(&idcode,%length(&idcode)-2);",
     "option4": "%let codenum = %substr(&idcode,%length(&idcode)-3);",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6631,7 +6631,7 @@ var jsonQuestions = [
     "option3": "BUFSIZE= specifies the size of the output buffer in kilobytes; BUFNO= specifies the number of input buffers",
     "option4": "BUFSIZE= specifies the size of the output buffer in kilobytes; BUFNO= specifies the number of output buffers",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6643,7 +6643,7 @@ var jsonQuestions = [
     "option3": "It works quickly through multiple passes of the data",
     "option4": "It is useful when the underlying data file structure changes",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6655,7 +6655,7 @@ var jsonQuestions = [
     "option3": "1.8",
     "option4": "null",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6667,7 +6667,7 @@ var jsonQuestions = [
     "option3": "a report showing the names of each table in SASUSER",
     "option4": "a report showing the number of columns in each table in SASUSER",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6679,7 +6679,7 @@ var jsonQuestions = [
     "option3": "Macro variable GROUP has a value of 564",
     "option4": "Macro variable GROUP has a value of 1452",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6691,7 +6691,7 @@ var jsonQuestions = [
     "option3": "&amp;SYSRC",
     "option4": "&amp;SYSERR",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6703,7 +6703,7 @@ var jsonQuestions = [
     "option3": "data two;<br/> set one;<br/> set three key = X;<br/> run;",
     "option4": "data two;<br/> set three;<br/> set one (key = X);<br/> run;",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6715,7 +6715,7 @@ var jsonQuestions = [
     "option3": "DISTINCT",
     "option4": "NODUPKEY",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6727,7 +6727,7 @@ var jsonQuestions = [
     "option3": "WARM",
     "option4": "BELOW FREEZING",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6739,7 +6739,7 @@ var jsonQuestions = [
     "option3": "data new(bufsize = 2000 bufno = 3);<br/> set temp;<br/> run;",
     "option4": "data new(bufsize = 4000 bufno = 1);<br/> set temp;<br/> run;",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6751,7 +6751,7 @@ var jsonQuestions = [
     "option3": "data three;<br/> set one;<br/> set two;<br/> by num;<br/> run; ",
     "option4": "data three;<br/> set one;<br/> do i = 1 to numobs;<br/> set two(rename = (num = num2)) point = i<br/> nobs = numobs;<br/> if num2 = num then output;<br/> end;<br/> drop num2;<br/> run;",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6763,7 +6763,7 @@ var jsonQuestions = [
     "option3": "%if \"&sysday\" = Tuesday %then %do;",
     "option4": "%if '&sysday' = 'Tuesday' %then %do;",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6775,7 +6775,7 @@ var jsonQuestions = [
     "option3": "%let start = %sysfunc(today(),weekdate.);",
     "option4": "%let start = %sysfunc(%today(),weekdate.);",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6787,7 +6787,7 @@ var jsonQuestions = [
     "option3": "8",
     "option4": "11",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6799,7 +6799,7 @@ var jsonQuestions = [
     "option3": "if the data are often used for BY group processing",
     "option4": "if the SAS data set file page count is less than three pages",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6811,7 +6811,7 @@ var jsonQuestions = [
     "option3": "It allows new observations to be inserted wherever enough free space exists",
     "option4": "It specifies that a new empty data set with a given name replaces an existing data set with the same name",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6823,7 +6823,7 @@ var jsonQuestions = [
     "option3": "<table>   <tr>     <th>LEVEL</th>     <th>MAX</th>   </tr>   <tr>     <td>2</td>     <td>20</td>   </tr>   <tr>     <td>3</td>     <td>30</td>   </tr> </table>",
     "option4": "<table>   <tr>     <th>LEVEL</th>     <th>MAX</th>   </tr>   <tr>     <td>2</td>     <td>30</td>   </tr>   <tr>     <td>3</td>     <td>30</td>   </tr> </table>",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6835,7 +6835,7 @@ var jsonQuestions = [
     "option3": "The KEEP statement applies to all data sets created within the same DATA step",
     "option4": "The KEEP statement applies only to the first data set created within the same DATA step if more than one data set is created",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6847,7 +6847,7 @@ var jsonQuestions = [
     "option3": "VALIDATE VIEW statement",
     "option4": "DESCRIBE VIEW statement",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6859,7 +6859,7 @@ var jsonQuestions = [
     "option3": "5",
     "option4": "6",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6871,7 +6871,7 @@ var jsonQuestions = [
     "option3": "No report is generated as the case of the macro variable name is different",
     "option4": "A report is generated with the two original observations as the where clause does not work",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6883,7 +6883,7 @@ var jsonQuestions = [
     "option3": "metadata on all tables in the SASUSER library only",
     "option4": "metadata on all tables in the DICTIONARY library only",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6895,7 +6895,7 @@ var jsonQuestions = [
     "option3": "MSGLEVEL",
     "option4": "MAUTOSOURCE",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6907,7 +6907,7 @@ var jsonQuestions = [
     "option3": "orderby product, revenue desc",
     "option4": "order by product, desc revenue",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6919,7 +6919,7 @@ var jsonQuestions = [
     "option3": "positional",
     "option4": "command",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6931,7 +6931,7 @@ var jsonQuestions = [
     "option3": "proc sql;<br/> modify table testdata.one<br/> alter num format = 4.<br/> label = 'Number';<br/> quit;",
     "option4": "proc sql;<br/> alter table testdata.one<br/> modify num (format = 4.<br/> label = 'Number');<br/> quit;",
     "answer": "B",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6943,7 +6943,7 @@ var jsonQuestions = [
     "option3": "FORMAT",
     "option4": "DISTINCT",
     "answer": "A",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6955,7 +6955,7 @@ var jsonQuestions = [
     "option3": "referencing a view multiple times in the same program",
     "option4": "creating views on tables whose structures remain constant",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6967,7 +6967,7 @@ var jsonQuestions = [
     "option3": ".5+5",
     "option4": "null",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6979,7 +6979,7 @@ var jsonQuestions = [
     "option3": "%let name = Patel%str(')s Restaurant",
     "option4": "%let name = %str(Patel%'s Restaurant);",
     "answer": "D",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   },
@@ -6991,7 +6991,7 @@ var jsonQuestions = [
     "option3": "The %SCAN function has too many arguments",
     "option4": "The macro variable VAR does not get created properly",
     "answer": "C",
-    "set_num": 1,
+    "isexamquestion": 1,
     "explanation": null,
     "subject": "advance_sas"
   }
