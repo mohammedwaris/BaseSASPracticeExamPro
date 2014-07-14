@@ -205,7 +205,7 @@
              $('#user-last-result-div').removeClass('display-none');
              $('#user-last-rank').html(localStorage.getItem('user-rank'));
              $('#user-last-score').html(localStorage.getItem('user-score') + '%');
-             $('#user-last-time-taken').html(localStorage.getItem('time-taken') + ' min');
+             $('#user-last-time-taken').html(localStorage.getItem('time-taken'));
              $('#user-last-exam-date').html(localStorage.getItem('exam-date'));
            }
          });// end of document.ready
@@ -460,7 +460,8 @@
                         success: function(response){
                                     localStorage.setItem('user-score', per);
                                     localStorage.setItem('user-rank', response.msg);
-                                    localStorage.setItem('time-taken', time_taken_str);
+                                    localStorage.setItem('time-taken_str', time_taken_str);
+									localStorage.setItem('time-taken', time_taken);
                                     localStorage.setItem('exam-date', dt_str); 
                                     d = '<p>Your rank</p>';
                                     d = d + '<h3>' + response.msg + '</h3>';
@@ -474,7 +475,8 @@
                         error: function(e){
                                     localStorage.setItem('user-score', per);
                                     localStorage.setItem('user-rank', '-');
-                                    localStorage.setItem('time-taken', time_taken_str);
+                                    localStorage.setItem('time-taken_str', time_taken_str);
+									localStorage.setItem('time-taken', time_taken);
                                     localStorage.setItem('exam-date', dt_str); 
                                     $('#user-last-rank').html('-');
                                     $('#user-last-score').html(per + '%');
@@ -486,7 +488,8 @@
                }else{ //localStorage else part
                   localStorage.setItem('user-score', per);
                   localStorage.setItem('user-rank', '-');
-                  localStorage.setItem('time-taken', time_taken_str);
+                  localStorage.setItem('time-taken_str', time_taken_str);
+				  localStorage.setItem('time-taken', time_taken);
                   localStorage.setItem('exam-date', dt_str); 
                   $('#user-last-rank').html('-');
                   $('#user-last-score').html(per + '%');
