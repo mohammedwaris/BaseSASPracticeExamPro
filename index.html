@@ -405,7 +405,8 @@
               time_taken = (12*60) - time;
             }
 
-            time_taken = (time_taken/60).toFixed(2);
+            time_taken_str = parseInt((time_taken/60)) + " m " + (time_taken%60) + " s";
+            //time_taken = (time_taken/60).toFixed(2);
 
             per = ((correct/total_ques)*100).toFixed(2);
             d = '<table class="result-table" style="width:100%;">' + 
@@ -459,25 +460,25 @@
                         success: function(response){
                                     localStorage.setItem('user-score', per);
                                     localStorage.setItem('user-rank', response.msg);
-                                    localStorage.setItem('time-taken', time_taken);
+                                    localStorage.setItem('time-taken', time_taken_str);
                                     localStorage.setItem('exam-date', dt_str); 
                                     d = '<p>Your rank</p>';
                                     d = d + '<h3>' + response.msg + '</h3>';
                                     $('#virtual-exam-rank').html(d);
                                     $('#user-last-rank').html(response.msg);
                                     $('#user-last-score').html(per + '%');
-                                    $('#user-last-time-taken').html(time_taken + ' min');
+                                    $('#user-last-time-taken').html(time_taken_str);
                                     $('#user-last-exam-date').html(dt_str);
                                     $('#user-last-result-div').removeClass('display-none');
                                  },
                         error: function(e){
                                     localStorage.setItem('user-score', per);
                                     localStorage.setItem('user-rank', '-');
-                                    localStorage.setItem('time-taken', time_taken);
+                                    localStorage.setItem('time-taken', time_taken_str);
                                     localStorage.setItem('exam-date', dt_str); 
                                     $('#user-last-rank').html('-');
                                     $('#user-last-score').html(per + '%');
-                                    $('#user-last-time-taken').html(time_taken + ' min');
+                                    $('#user-last-time-taken').html(time_taken_str);
                                     $('#user-last-exam-date').html(dt_str);
                                     $('#user-last-result-div').removeClass('display-none');
                         }
@@ -485,11 +486,11 @@
                }else{ //localStorage else part
                   localStorage.setItem('user-score', per);
                   localStorage.setItem('user-rank', '-');
-                  localStorage.setItem('time-taken', time_taken);
+                  localStorage.setItem('time-taken', time_taken_str);
                   localStorage.setItem('exam-date', dt_str); 
                   $('#user-last-rank').html('-');
                   $('#user-last-score').html(per + '%');
-                  $('#user-last-time-taken').html(time_taken + ' min');
+                  $('#user-last-time-taken').html(time_taken_str);
                   $('#user-last-exam-date').html(dt_str);
                   $('#user-last-result-div').removeClass('display-none');
                }
@@ -859,6 +860,8 @@
                     data = '<table border="1" class="top-rankers-table">';
                     data = data + '<tr><th>Rank</th><th colspan="2">Ranker Info</th></tr>';
                     for(i=0;i<response.length;i++){
+					   time_taken = parseInt(response[i].time_taken);
+					   time_taken_str = parseInt((time_taken/60)) + " m " + (time_taken%60) + " s"
                        data = data + '<tr>';
                        data = data + '<td rowspan="5" style="text-align: center;">' + (i+1) + '</td>';
                        data = data + '<td style="background-color:#98FB98"><b>Name</b></td>';
@@ -870,7 +873,7 @@
                        data = data + '</tr>';
                        data = data + '<tr>';
                        data = data + '<td><b>Time Taken</b></td>';
-                       data = data + '<td>' + response[i].time_taken + '</td>';
+                       data = data + '<td>' + time_taken_str + '</td>';
                        data = data + '</tr>';
                        data = data + '<tr>';
                        data = data + '<td><b>Location</b></td>';
